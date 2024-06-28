@@ -1,18 +1,15 @@
-import { 
-  createBrowserRouter,
-} from "react-router-dom";
-import Root from "../pages/root/root"
-
+import { createBrowserRouter } from "react-router-dom"
+import Root from "../pages/root"
 
 export enum ROUTER_LIST {
-  root = "/"
+  root = "/",
 }
 
 const router = createBrowserRouter([
   {
     path: ROUTER_LIST.root,
-    element: <Root />
+    element: <Root />,
   },
-]);
+])
 
 export default router
