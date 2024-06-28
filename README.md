@@ -1,2 +1,1 @@
-# ivanova-portfolio
-Darya Ivanova. Portfolio
+# Ivanova Portfolio 
