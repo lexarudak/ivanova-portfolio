@@ -8,6 +8,8 @@ export const Header = () => {
 
   return (
     <header className={cn(styles.header, { [styles.fullScreen]: isHomePage })}>
+      <h1 className={cn(styles.title)}>DARYA IVANOVA</h1>
+      <h2 className={cn(styles.subtitle)}>Architect / Designer</h2>
       <Nav />
     </header>
   )

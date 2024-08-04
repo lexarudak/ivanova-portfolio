@@ -20,18 +20,27 @@
 }
 
 .list {
+  padding: 0;
   display: flex;
-  gap: 50px;
+  gap: 30px;
   color: var(--font-secondary);
   font-weight: 500;
 
   .link {
     transition: .3s;
-    width: 100px;
+    width: 70px;
     text-align: center;
   
     &:hover {
       color: var(--font-main);
+    }
+
+    &:nth-child(2) {
+      text-align: start;
+    }
+
+    &:last-child {
+      text-align: end;
     }
   }
 }

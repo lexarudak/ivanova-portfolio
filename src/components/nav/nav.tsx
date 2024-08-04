@@ -24,7 +24,7 @@ const Nav = () => {
           Home
         </Link>
         {navList.map(({ name, link }) => (
-          <Link to={link} className={styles.link}>
+          <Link to={link} key={name} className={styles.link}>
             {name}
           </Link>
         ))}
