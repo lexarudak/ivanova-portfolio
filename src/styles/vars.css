@@ -1,0 +1,10 @@
+:root {
+  /* color */
+  --bg-main: rgb(255, 255, 255);
+
+  --font-main: rgb(66, 66, 66);
+  --font-secondary: rgb(142, 142, 142);
+
+  /* size */
+  --header-height: 50px;
+}
