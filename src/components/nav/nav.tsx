@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 import { PAGES } from "../../router/constants"
 import styles from "./nav.module.css"
-import useHomePage from "../../hooks/use-home-page"
 import cn from "classnames"
 import sharedStyles from "../../styles/shared.module.css"
+// import useHomePage from "../../hooks/use-home-page"
 
 const navList = [
   { name: "Works", link: PAGES.works },
@@ -12,17 +12,10 @@ const navList = [
 ]
 
 const Nav = () => {
-  const { isHomePage } = useHomePage()
-
+  // const { isHomePage } = useHomePage()
   return (
     <nav className={cn(styles.nav, sharedStyles.container)}>
-      <ul className={styles.list}>
-        <Link
-          to={PAGES.home}
-          className={cn(styles.home, { [styles.hide]: isHomePage })}
-        >
-          Home
-        </Link>
+      <ul className={cn(styles.list)}>
         {navList.map(({ name, link }) => (
           <Link to={link} key={name} className={styles.link}>
             {name}

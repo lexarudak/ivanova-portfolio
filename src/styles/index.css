@@ -10,7 +10,7 @@
 }
 
 body {
-  margin-top: var(--header-height);
+  margin: var(--header-height) 0 0;
 }
 
 a {

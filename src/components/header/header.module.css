@@ -13,56 +13,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border-bottom: 2px solid var(--bg-active);
 
   &.fullScreen {
     height: 100vh;
-    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
-
-    .title {
-      padding-top: 200px;
-      height: 200px;
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .subtitle {
-      transform: translateY(0);
-      margin: 150px 0 50px;
-      opacity: 1;
-      visibility: visible;
-      background-color: yellowgreen;
-      height: 22px;
-    }
+    border-bottom: 2px solid transparent;
   }
 }
 
-.title {
-  transform: translateY(-200px);
-  transition: 1s;
-  visibility: hidden;
-  opacity: 0;
-  padding: 0px;
-  height: 0px;
-  width: 270px;
-  text-align: start;
-  font-size: 80px;
-  font-weight: 900;
-  line-height: 60px;
-  margin: 0;
-}
-
-.subtitle {
-  transform: translateY(-50px);
-  opacity: 0;
-  visibility: hidden;
-  height: 0;
-  margin: 0;
-  padding: 0;
-  transition: 1s;
-  text-transform: uppercase;
-  font-weight: 500;
-  width: 270px;
-  font-size: 16px;
-}

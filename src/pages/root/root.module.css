@@ -1,0 +1,16 @@
+.main {
+  section {
+    animation: install 1s ease-in-out;
+  }
+}
+
+@keyframes install {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
