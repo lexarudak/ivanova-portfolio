@@ -1,7 +1,9 @@
 :root {
   /* color */
   --bg-main: #ffffff;
+
   --bg-active: #62dde3;
+  --bg-active-light: #99e6ea;
 
   --font-main: #222222;
   --font-light: #ffffff;

@@ -31,3 +31,16 @@ section {
 p {
 	margin: 0;
 }
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: inherit;
+	letter-spacing: inherit;
+  line-height: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	cursor: pointer;
+}

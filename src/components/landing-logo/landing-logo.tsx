@@ -1,6 +1,7 @@
 import { FC } from "react"
 import styles from "./landing-logo.module.css"
 import classNames from "classnames"
+import Button, { ButtonVariant } from "../shared-components/button"
 
 type Props = {
   isActive: boolean
@@ -18,8 +19,16 @@ const LandingLogo: FC<Props> = ({ isActive }) => {
         </p>
       </h1>
       <div className={styles.blocks}>
-        <p className={styles.block}>ARCHITECT</p>
-        <p className={styles.block}>DESIGNER</p>
+        <Button variant={ButtonVariant.main} isActive>
+          ARCHITECT
+        </Button>
+        <Button
+          variant={ButtonVariant.main}
+          isActive
+          className={styles.secondButton}
+        >
+          DESIGNER
+        </Button>
       </div>
     </div>
   )

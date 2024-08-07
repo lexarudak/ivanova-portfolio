@@ -1,0 +1,16 @@
+.main {
+	background-color: var(--bg-main);
+	color: var(--font-main);
+	transition: .3s;
+	text-transform: uppercase;
+	padding: 10px 20px;
+
+  &.active {
+    background-color: var(--bg-active);
+  }
+
+	&:hover {
+		background-color: var(--bg-active-light);
+	}
+
+}

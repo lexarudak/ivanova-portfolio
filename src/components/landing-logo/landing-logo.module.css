@@ -52,23 +52,12 @@
 }
 
 .blocks {
-	margin: 85px 0 0 -138px;
+	margin: 85px 0 0 -142px;
 	display: flex;
 	gap: 5px;
-}
 
-.block {
-	margin: 0;
-	height: 45px;
-	width: 177px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: var(--bg-active);
-	color: var(--font-main);
-
-	&:first-child {
-		width: 144px;
+	.secondButton {
+		padding: 10px 30px;
 	}
 
 }
