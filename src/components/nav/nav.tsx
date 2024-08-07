@@ -3,8 +3,8 @@ import { PAGES } from "../../router/constants"
 import styles from "./nav.module.css"
 import cn from "classnames"
 import sharedStyles from "../../styles/shared.module.css"
-import useHomePage from "../../hooks/use-home-page"
 import classNames from "classnames"
+import useHomePage from "../../shared/hooks/use-home-page"
 
 const navList = [
   { name: "Works", link: PAGES.works },
