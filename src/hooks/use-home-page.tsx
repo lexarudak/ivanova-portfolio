@@ -7,6 +7,7 @@ const useHomePage = () => {
 
   return {
     isHomePage,
+    currentPage: pathname,
   }
 }
 

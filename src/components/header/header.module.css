@@ -1,23 +1,19 @@
 .header {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 100;
+	width: 100vw;
+	background-color: var(--bg-main);
+	transition: 1s;
+	height: var(--header-height);
 
-  position: fixed;
-  z-index: 100;
-  width: 100vw;
-  left: 0;
-  top: 0;
-  background-color: var(--bg-main);
-  transition: 1s;
-  height: var(--header-height);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 2px solid var(--bg-active);
+	&.fullScreen {
+		height: 100vh;
+	}
 
-  &.fullScreen {
-    height: 100vh;
-    border-bottom: 2px solid transparent;
-  }
 }
-

@@ -1,6 +1,6 @@
 export enum PAGES {
   home = "/",
   works = "/works",
-  skills = "/skills",
+  about = "/about",
   contacts = "/contacts",
 }

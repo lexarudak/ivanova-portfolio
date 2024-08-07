@@ -82,8 +82,8 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: PAGES.skills,
-        element: <section>skills</section>,
+        path: PAGES.about,
+        element: <section>About</section>,
       },
       {
         path: PAGES.contacts,

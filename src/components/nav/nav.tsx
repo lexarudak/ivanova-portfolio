@@ -3,21 +3,34 @@ import { PAGES } from "../../router/constants"
 import styles from "./nav.module.css"
 import cn from "classnames"
 import sharedStyles from "../../styles/shared.module.css"
-// import useHomePage from "../../hooks/use-home-page"
+import useHomePage from "../../hooks/use-home-page"
+import classNames from "classnames"
 
 const navList = [
   { name: "Works", link: PAGES.works },
-  { name: "Skills", link: PAGES.skills },
+  { name: "About", link: PAGES.about },
   { name: "Contacts", link: PAGES.contacts },
 ]
 
 const Nav = () => {
-  // const { isHomePage } = useHomePage()
+  const { isHomePage, currentPage } = useHomePage()
+
   return (
     <nav className={cn(styles.nav, sharedStyles.container)}>
       <ul className={cn(styles.list)}>
+        <Link
+          to={PAGES.home}
+          className={classNames({ [styles.hide]: isHomePage }, styles.home)}
+        />
+
         {navList.map(({ name, link }) => (
-          <Link to={link} key={name} className={styles.link}>
+          <Link
+            to={link}
+            key={name}
+            className={classNames(styles.link, {
+              [styles.active]: link === currentPage,
+            })}
+          >
             {name}
           </Link>
         ))}
