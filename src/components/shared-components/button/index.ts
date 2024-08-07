@@ -1,2 +1,2 @@
 export { default } from "./button"
-export { ButtonVariant } from "./constants"
+export { BUTTON_VARIANT } from "./constants"

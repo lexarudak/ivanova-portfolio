@@ -24,22 +24,18 @@ const Nav = () => {
           className={classNames({ [styles.hide]: isHomePage }, styles.home)}
         />
 
-        {navList.map(({ name, link }) => {
-          const isActive = link === currentPage
-
-          return (
-            <button
-              onClick={() => navigate(link)}
-              key={name}
-              disabled={isActive}
-              className={classNames(styles.link, {
-                [styles.active]: isActive,
-              })}
-            >
-              {name}
-            </button>
-          )
-        })}
+        {navList.map(({ name, link }) => (
+          <button
+            onClick={() => navigate(link)}
+            key={name}
+            disabled={link === currentPage}
+            className={classNames(styles.link, {
+              [styles.active]: link === currentPage,
+            })}
+          >
+            {name}
+          </button>
+        ))}
       </ul>
     </nav>
   )

@@ -1,7 +1,7 @@
 import { FC } from "react"
 import styles from "./landing-logo.module.css"
 import classNames from "classnames"
-import Button, { ButtonVariant } from "../shared-components/button"
+import Button, { BUTTON_VARIANT } from "../shared-components/button"
 import { FILTERS } from "../../shared/constants"
 import useFilterNavigate from "../../shared/hooks/use-filter-navigate"
 
@@ -24,14 +24,14 @@ const LandingLogo: FC<Props> = ({ isActive }) => {
       </h1>
       <div className={styles.blocks}>
         <Button
-          variant={ButtonVariant.main}
+          variant={BUTTON_VARIANT.architect}
           isActive
           onClick={() => navigate(FILTERS.architect)}
         >
           ARCHITECT
         </Button>
         <Button
-          variant={ButtonVariant.main}
+          variant={BUTTON_VARIANT.design}
           isActive
           className={styles.secondButton}
           onClick={() => navigate(FILTERS.design)}

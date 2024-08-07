@@ -1,10 +1,10 @@
 import { ButtonHTMLAttributes, FC } from "react"
 import styles from "./button.module.css"
 import classNames from "classnames"
-import { ButtonVariant } from "./constants"
+import { BUTTON_VARIANT } from "./constants"
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant: ButtonVariant
+  variant: BUTTON_VARIANT
   isActive?: boolean
 }
 
@@ -20,7 +20,10 @@ const Button: FC<Props> = ({
   }
 
   return (
-    <button {...rest} className={classNames(className, styles[variant], mode)}>
+    <button
+      {...rest}
+      className={classNames(className, styles[variant], mode, styles.btn)}
+    >
       {children}
     </button>
   )

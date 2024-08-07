@@ -1,16 +1,55 @@
-.main {
-	background-color: var(--bg-main);
-	color: var(--font-main);
+.btn {
 	transition: .3s;
 	text-transform: uppercase;
 	padding: 10px 20px;
+	background-color: var(--bg-main);
+	color: var(--font-main);
+}
 
-  &.active {
-    background-color: var(--bg-active);
-  }
+.main {
+	&.active {
+		background-color: var(--bg-active);
+	}
 
 	&:hover {
 		background-color: var(--bg-active-light);
+	}
+
+	&:disabled:hover {
+		background-color: var(--bg-active);
+		cursor: default;
+	}
+
+}
+
+.architect {
+	&.active {
+		background-color: var(--clr-architect);
+	}
+
+	&:hover {
+		background-color: var(--clr-architect-light);
+	}
+
+	&:disabled:hover {
+		background-color: var(--clr-architect);
+		cursor: default;
+	}
+
+}
+
+.design {
+	&.active {
+		background-color: var(--clr-design);
+	}
+
+	&:hover {
+		background-color: var(--clr-design-light);
+	}
+
+	&:disabled:hover {
+		background-color: var(--clr-design);
+		cursor: default;
 	}
 
 }
