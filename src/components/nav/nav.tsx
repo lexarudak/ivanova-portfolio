@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { PAGES } from "../../router/constants"
 import styles from "./nav.module.css"
 import cn from "classnames"
@@ -14,6 +14,7 @@ const navList = [
 
 const Nav = () => {
   const { isHomePage, currentPage } = useHomePage()
+  const navigate = useNavigate()
 
   return (
     <nav className={cn(styles.nav, sharedStyles.container)}>
@@ -23,17 +24,22 @@ const Nav = () => {
           className={classNames({ [styles.hide]: isHomePage }, styles.home)}
         />
 
-        {navList.map(({ name, link }) => (
-          <Link
-            to={link}
-            key={name}
-            className={classNames(styles.link, {
-              [styles.active]: link === currentPage,
-            })}
-          >
-            {name}
-          </Link>
-        ))}
+        {navList.map(({ name, link }) => {
+          const isActive = link === currentPage
+
+          return (
+            <button
+              onClick={() => navigate(link)}
+              key={name}
+              disabled={isActive}
+              className={classNames(styles.link, {
+                [styles.active]: isActive,
+              })}
+            >
+              {name}
+            </button>
+          )
+        })}
       </ul>
     </nav>
   )
