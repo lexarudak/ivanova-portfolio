@@ -1,0 +1,37 @@
+.card {
+  padding-bottom: 10px;
+	max-width: 345px;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	transition: .3s;
+	border-bottom: 2px solid var(--bg-main);
+	margin-bottom: 50px;
+
+	&:hover {
+		border-bottom: 2px solid var(--bg-active);
+		transform: translateY(-10px);
+	}
+
+	.title {
+		color: var(--font-secondary);
+	}
+
+	.year {
+		color: var(--font-secondary);
+		font-weight: 800;
+		font-size: 36px;
+	}
+
+	.img {
+		width: 345px;
+		height: 345px;
+		margin-bottom: 10px;
+	}
+
+	.filters {
+		display: flex;
+		gap: 16px;
+	}
+
+}

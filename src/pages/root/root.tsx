@@ -11,6 +11,7 @@ const Root = () => {
       <main className={cn(sharedStyles.container, styles.main)}>
         <Outlet />
       </main>
+      <footer />
     </>
   )
 }

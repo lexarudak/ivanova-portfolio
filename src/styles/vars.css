@@ -1,7 +1,15 @@
 :root {
   /* color */
   --bg-main: #ffffff;
-  --bg-active: #62dde3;
+
+  --bg-active: #7bdafd;
+  --bg-active-light: #a4e4fc;
+
+  --clr-architect: #cdcdcd;
+  --clr-architect-light: #dadada;
+
+  --clr-design: #f485bd;
+  --clr-design-light: #f5a2cb;
 
   --font-main: #222222;
   --font-light: #ffffff;

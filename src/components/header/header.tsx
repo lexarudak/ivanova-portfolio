@@ -1,8 +1,8 @@
 import styles from "./header.module.css"
 import cn from "classnames"
 import Nav from "../nav/nav"
-import useHomePage from "../../hooks/use-home-page"
 import LandingLogo from "../landing-logo/landing-logo"
+import useHomePage from "../../shared/hooks/use-home-page"
 
 export const Header = () => {
   const { isHomePage } = useHomePage()
