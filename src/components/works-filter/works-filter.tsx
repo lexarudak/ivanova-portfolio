@@ -1,10 +1,11 @@
-import { useLocation } from "react-router-dom"
-import { FILTERS, SEARCH_PARAMS } from "../../shared/constants"
+import { FILTERS } from "../../shared/constants"
 import useFilterNavigate from "../../shared/hooks/use-filter-navigate"
 import Button, { BUTTON_VARIANT } from "../shared-components/button"
 import styles from "./works-filter.module.css"
+import sharedStyles from "../../styles/shared.module.css"
 import { FC } from "react"
 import classNames from "classnames"
+import useWorkFilter from "../../shared/hooks/use-work-filter"
 
 const filterList = [
   { name: "All", variant: BUTTON_VARIANT.main },
@@ -22,12 +23,16 @@ type Props = {
 
 const WorksFilter: FC<Props> = ({ className }) => {
   const navigate = useFilterNavigate()
-  const { search } = useLocation()
-  const queryParams = new URLSearchParams(search)
-  const activeFilter = queryParams.get(SEARCH_PARAMS.filter)
+  const activeFilter = useWorkFilter()
 
   return (
-    <div className={classNames(className, styles.container)}>
+    <div
+      className={classNames(
+        className,
+        styles.container,
+        sharedStyles.container,
+      )}
+    >
       {filterList.map(({ name, filter, variant }) => (
         <Button
           key={name}

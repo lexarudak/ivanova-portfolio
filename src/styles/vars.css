@@ -2,14 +2,14 @@
   /* color */
   --bg-main: #ffffff;
 
-  --bg-active: #62dde3;
-  --bg-active-light: #99e6ea;
+  --bg-active: #7bdafd;
+  --bg-active-light: #a4e4fc;
 
-  --clr-architect: #63e3a9;
-  --clr-architect-light: #93e3bf;
+  --clr-architect: #cdcdcd;
+  --clr-architect-light: #dadada;
 
-  --clr-design: #e26ff2;
-  --clr-design-light: #e692f1;
+  --clr-design: #f485bd;
+  --clr-design-light: #f5a2cb;
 
   --font-main: #222222;
   --font-light: #ffffff;

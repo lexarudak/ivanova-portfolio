@@ -1,0 +1,26 @@
+.icon {
+  background-color: red;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  position: relative;
+
+  &.design {
+    background-color: var(--clr-design);
+  }
+
+  &.architect {
+    background-color: var(--clr-architect);
+  }
+
+
+  &::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: var(--bg-main);
+    position: absolute;
+    transform: translate(50%, 50%);
+  }
+}
