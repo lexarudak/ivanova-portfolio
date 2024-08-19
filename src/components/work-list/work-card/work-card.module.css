@@ -7,6 +7,7 @@
 	transition: .3s;
 	border-bottom: 2px solid var(--bg-main);
 	margin-bottom: 50px;
+	gap: 5px;
 
 	&:hover {
 		border-bottom: 2px solid var(--bg-active);
