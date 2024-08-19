@@ -4,4 +4,6 @@ export enum PAGES {
   project = "/works/:projectId",
   about = "/about",
   contacts = "/contacts",
+  architectWorks = "/works?filter=architect",
+  designWorks = "/works?filter=design",
 }

@@ -1,0 +1,21 @@
+.nav {
+	display: flex;
+	gap: 20px;
+	color: var(--font-secondary);
+	font-size: 14px;
+}
+
+.link {
+	transition: .3s;
+	border-bottom: 2px solid transparent;
+
+	&:hover {
+		border-color: var(--bg-active);
+	}
+
+	&:disabled:hover {
+		border-bottom: 2px solid transparent;
+    cursor: default;
+	}
+
+}
