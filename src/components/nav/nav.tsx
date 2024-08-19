@@ -30,7 +30,7 @@ const Nav = () => {
             key={name}
             disabled={link === currentPage}
             className={classNames(styles.link, {
-              [styles.active]: link === currentPage,
+              [styles.active]: currentPage.includes(link),
             })}
           >
             {name}
