@@ -6,5 +6,6 @@ export const MOCK_PROJECTS = [
     title: "Shchorsa 4B",
     year: "2020",
     filters: [FILTERS.design],
+    image: "/public/works/2.jpeg",
   },
 ]

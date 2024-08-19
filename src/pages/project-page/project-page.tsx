@@ -6,12 +6,14 @@ import { createCrumps } from "./helpers"
 
 const ProjectPage = () => {
   const { projectId } = useParams()
-  const { title, filters, id } =
+  const { title, filters, id, image } =
     MOCK_PROJECTS[Number(projectId)] || MOCK_PROJECTS[0]
 
   return (
     <section className={styles.page}>
-      {<Crumbs links={createCrumps(filters, title, id)} />}
+      <Crumbs links={createCrumps(filters, title, id)} />
+      <h1 className={styles.title}>{title}</h1>
+      <img src={image} alt={title} className={styles.img} />
     </section>
   )
 }
