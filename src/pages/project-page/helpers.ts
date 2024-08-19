@@ -7,12 +7,12 @@ export const createCrumps = (filters: FILTERS[], title: string, id: string) => {
     title: string
   }[] = [{ to: PAGES.works, title: "Works" }]
 
-  switch (filters) {
-    case [FILTERS.architect]:
+  switch (filters.join("")) {
+    case FILTERS.architect:
       links.push({ to: PAGES.architectWorks, title: "Architect" })
       break
 
-    case [FILTERS.design]:
+    case FILTERS.design:
       links.push({ to: PAGES.designWorks, title: "Design" })
       break
 
