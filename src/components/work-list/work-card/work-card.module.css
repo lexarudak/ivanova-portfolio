@@ -8,18 +8,15 @@
 	border-bottom: 2px solid var(--bg-main);
 	margin-bottom: 50px;
 	gap: 5px;
+	color: var(--font-secondary);
 
 	&:hover {
 		border-bottom: 2px solid var(--bg-active);
 		transform: translateY(-10px);
-	}
-
-	.title {
-		color: var(--font-secondary);
+		color: var(--font-main);
 	}
 
 	.year {
-		color: var(--font-secondary);
 		font-weight: 800;
 		font-size: 36px;
 	}

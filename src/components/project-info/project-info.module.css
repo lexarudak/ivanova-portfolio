@@ -1,0 +1,23 @@
+.container {
+  margin: 50px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  color: var(--font-secondary);
+  display: inline-block;
+  width: 170px;
+}
+
+.participation {
+  display: flex;
+  width: 60%;
+}
