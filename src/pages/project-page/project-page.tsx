@@ -5,10 +5,16 @@ import { MOCK_PROJECTS } from "../../mock/mock-projects"
 import { createCrumps } from "./helpers"
 import FilterIconBlock from "../../components/filter-icon-block"
 import ProjectInfo from "../../components/project-info"
+import { BLOCK_TYPE } from "../../shared/constants"
+import Carousel from "../../components/blocks/carousel"
+
+const blockList = {
+  [BLOCK_TYPE.carousel]: Carousel,
+}
 
 const ProjectPage = () => {
   const { projectId } = useParams()
-  const { title, filters, id, image, info } =
+  const { title, filters, id, image, info, blocks } =
     MOCK_PROJECTS[Number(projectId) - 1] || MOCK_PROJECTS[0]
 
   return (
@@ -18,6 +24,9 @@ const ProjectPage = () => {
       <FilterIconBlock filters={filters} className={styles.filters} />
       <img src={image} alt={title} className={styles.img} />
       <ProjectInfo {...info} />
+      {blocks.map(({ blockType, ...rest }) =>
+        blockList[blockType]({ ...rest }),
+      )}
     </section>
   )
 }

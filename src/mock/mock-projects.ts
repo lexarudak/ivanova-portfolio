@@ -1,4 +1,4 @@
-import { FILTERS } from "../shared/constants"
+import { BLOCK_TYPE, FILTERS } from "../shared/constants"
 
 export const MOCK_PROJECTS = [
   {
@@ -15,6 +15,17 @@ export const MOCK_PROJECTS = [
         "Preliminary 3D Exterior Concept",
       ],
     },
+    blocks: [
+      {
+        blockType: BLOCK_TYPE.carousel,
+        text: ["Small text just for test"],
+        images: [
+          "/public/works/1.jpeg",
+          "/public/works/2.jpeg",
+          "/public/works/3.jpeg",
+        ],
+      },
+    ],
   },
   {
     id: "2",
@@ -30,6 +41,17 @@ export const MOCK_PROJECTS = [
         "Construction Administration",
       ],
     },
+    blocks: [
+      {
+        blockType: BLOCK_TYPE.carousel,
+        text: [],
+        images: [
+          "/public/works/2.jpeg",
+          "/public/works/3.jpeg",
+          "/public/works/1.jpeg",
+        ],
+      },
+    ],
   },
   {
     id: "3",
@@ -45,5 +67,20 @@ export const MOCK_PROJECTS = [
         "Construction Administration (as part of team)",
       ],
     },
+    blocks: [
+      {
+        blockType: BLOCK_TYPE.carousel,
+        text: [
+          "Construction Administration (as part of team)",
+          "Construction Administration (as part of team),Construction Administration (as part of team), Construction Administration (as part of team), Construction Administration (as part of team), Construction Administration (as part of team),Construction Administration (as part of team) Construction Administration (as part of team) ",
+          "Construction Administration (as part of team), Construction Administration (as part of team), Construction Administration (as part of team)",
+        ],
+        images: [
+          "/public/works/2.jpeg",
+          "/public/works/3.jpeg",
+          "/public/works/1.jpeg",
+        ],
+      },
+    ],
   },
 ]

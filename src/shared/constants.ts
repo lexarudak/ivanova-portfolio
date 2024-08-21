@@ -6,3 +6,7 @@ export enum FILTERS {
   architect = "architect",
   design = "design",
 }
+
+export enum BLOCK_TYPE {
+  carousel = "carousel",
+}

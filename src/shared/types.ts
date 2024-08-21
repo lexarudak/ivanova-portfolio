@@ -7,3 +7,8 @@ export type WorkCardData = {
   image: string
   filters: Array<FILTERS>
 }
+
+export type Block = {
+  text?: string[]
+  images?: string[]
+}
