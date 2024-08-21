@@ -17,6 +17,7 @@ export const MOCK_PROJECTS = [
     },
     blocks: [
       {
+        id: "1",
         blockType: BLOCK_TYPE.carousel,
         text: ["Small text just for test"],
         images: [
@@ -43,6 +44,7 @@ export const MOCK_PROJECTS = [
     },
     blocks: [
       {
+        id: "1",
         blockType: BLOCK_TYPE.carousel,
         text: [],
         images: [
@@ -69,10 +71,11 @@ export const MOCK_PROJECTS = [
     },
     blocks: [
       {
+        id: "1",
         blockType: BLOCK_TYPE.carousel,
         text: [
           "Construction Administration (as part of team)",
-          "Construction Administration (as part of team),Construction Administration (as part of team), Construction Administration (as part of team), Construction Administration (as part of team), Construction Administration (as part of team),Construction Administration (as part of team) Construction Administration (as part of team) ",
+          "Construction Administration (as part of team), Construction Administration (as part of team),  Construction Administration (as part of team), Construction Administration (as part of team),  Construction Administration (as part of team), Construction Administration (as part of team) Construction Administration (as part of team) ",
           "Construction Administration (as part of team), Construction Administration (as part of team), Construction Administration (as part of team)",
         ],
         images: [

@@ -9,6 +9,7 @@ export type WorkCardData = {
 }
 
 export type Block = {
+  id: string
   text?: string[]
   images?: string[]
 }
