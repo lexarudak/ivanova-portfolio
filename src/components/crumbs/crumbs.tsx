@@ -20,7 +20,7 @@ const Crumbs: FC<Props> = ({ links, className }) => {
         }
 
         acc.push(
-          <Link className={styles.link} to={to}>
+          <Link className={styles.link} to={to} key={ind}>
             {title}
           </Link>,
         )

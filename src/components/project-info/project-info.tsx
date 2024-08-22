@@ -23,8 +23,8 @@ const ProjectInfo: FC<Props> = ({ year, location, participation }) => {
       <div className={styles.participation}>
         <span className={styles.title}>Participation:</span>
         <ul>
-          {participation.map(text => (
-            <li>{text}</li>
+          {participation.map((text, id) => (
+            <li key={id}>{text}</li>
           ))}
         </ul>
       </div>

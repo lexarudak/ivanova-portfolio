@@ -13,7 +13,7 @@ const FilterIconBlock: FC<Props> = ({ filters, className }) => {
   return (
     <div className={classNames(styles.filters, className)}>
       {filters.map(filter => (
-        <FilterIcon color={filter} />
+        <FilterIcon color={filter} key={filter} />
       ))}
     </div>
   )
