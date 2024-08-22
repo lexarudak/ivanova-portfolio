@@ -1,4 +1,5 @@
 import { BLOCK_TYPE, FILTERS } from "../shared/constants"
+import { MOCK_TEXT } from "./mock-text"
 
 export const MOCK_PROJECTS = [
   {
@@ -19,7 +20,7 @@ export const MOCK_PROJECTS = [
       {
         id: "1",
         blockType: BLOCK_TYPE.carousel,
-        text: ["Small text just for test"],
+        text: [MOCK_TEXT.small],
         images: [
           "/public/works/1.jpeg",
           "/public/works/2.jpeg",
@@ -73,11 +74,7 @@ export const MOCK_PROJECTS = [
       {
         id: "1",
         blockType: BLOCK_TYPE.carousel,
-        text: [
-          "Construction Administration (as part of team)",
-          "Construction Administration (as part of team), Construction Administration (as part of team),  Construction Administration (as part of team), Construction Administration (as part of team),  Construction Administration (as part of team), Construction Administration (as part of team) Construction Administration (as part of team) ",
-          "Construction Administration (as part of team), Construction Administration (as part of team), Construction Administration (as part of team)",
-        ],
+        text: [MOCK_TEXT.small, MOCK_TEXT.large, MOCK_TEXT.medium],
         images: [
           "/public/works/2.jpeg",
           "/public/works/3.jpeg",
