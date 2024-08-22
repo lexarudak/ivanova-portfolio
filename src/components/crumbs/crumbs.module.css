@@ -2,7 +2,6 @@
 	display: flex;
 	gap: 20px;
 	color: var(--font-secondary);
-	font-size: 14px;
 }
 
 .link {
