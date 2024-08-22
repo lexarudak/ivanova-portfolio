@@ -29,25 +29,25 @@ p {
 }
 
 button {
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  outline: inherit;
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	outline: inherit;
 	letter-spacing: inherit;
-  line-height: inherit;
+	line-height: inherit;
 	font-size: inherit;
 	font-family: inherit;
 	cursor: pointer;
 }
 
 ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 li {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }

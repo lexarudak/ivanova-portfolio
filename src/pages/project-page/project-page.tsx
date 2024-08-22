@@ -9,11 +9,15 @@ import { BLOCK_TYPE } from "../../shared/constants"
 import Carousel from "../../components/blocks/carousel"
 import TextColumns from "../../components/blocks/text-columns"
 import imageColumns from "../../components/blocks/image-columns"
+import HalfImage from "../../components/blocks/half-image"
+import HalfImageRight from "../../components/blocks/half-image-right"
 
 const blockList = {
   [BLOCK_TYPE.carousel]: Carousel,
   [BLOCK_TYPE.textColumns]: TextColumns,
   [BLOCK_TYPE.imageColumns]: imageColumns,
+  [BLOCK_TYPE.halfImage]: HalfImage,
+  [BLOCK_TYPE.halfImageRight]: HalfImageRight,
 }
 
 const ProjectPage = () => {

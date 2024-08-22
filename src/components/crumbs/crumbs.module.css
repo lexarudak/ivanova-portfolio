@@ -10,11 +10,12 @@
 
 	&:hover {
 		border-color: var(--bg-active);
+		color: var(--font-main);
 	}
 
 	&:disabled:hover {
 		border-bottom: 2px solid transparent;
-    cursor: default;
+		cursor: default;
 	}
 
 }
