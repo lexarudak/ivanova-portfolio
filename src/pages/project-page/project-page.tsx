@@ -7,11 +7,13 @@ import FilterIconBlock from "../../components/filter-icon-block"
 import ProjectInfo from "../../components/project-info"
 import { BLOCK_TYPE } from "../../shared/constants"
 import Carousel from "../../components/blocks/carousel"
-import TextColumns from "../../components/blocks/text-columns/text-columns"
+import TextColumns from "../../components/blocks/text-columns"
+import imageColumns from "../../components/blocks/image-columns"
 
 const blockList = {
   [BLOCK_TYPE.carousel]: Carousel,
   [BLOCK_TYPE.textColumns]: TextColumns,
+  [BLOCK_TYPE.imageColumns]: imageColumns,
 }
 
 const ProjectPage = () => {

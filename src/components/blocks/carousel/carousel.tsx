@@ -26,7 +26,7 @@ const Carousel: FC<Block> = ({ images, text, id }) => {
           ))}
         </div>
       </div>
-      <Description text={text} />
+      <Description text={text} className={styles.text} />
     </div>
   )
 }

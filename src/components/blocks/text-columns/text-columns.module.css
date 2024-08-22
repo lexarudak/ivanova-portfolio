@@ -2,8 +2,10 @@
   flex-direction: row;
   gap: 50px;
   justify-content: space-between;
+  margin: 100px 0;
 
   p {
     flex-grow: 1;
+    width: 100%;
   }
 }

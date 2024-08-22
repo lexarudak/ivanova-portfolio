@@ -1,11 +1,10 @@
 .block {
-  margin: 150px 0;
+  margin: 100px 0;
 }
 
 .carousel {
   overflow: hidden;
   height: 700px;
-  margin: 50px 0;
 }
 
 .container {
@@ -23,4 +22,8 @@
   &:active {
     cursor: grabbing;
   }
+}
+
+.text {
+  margin-top: 50px;
 }

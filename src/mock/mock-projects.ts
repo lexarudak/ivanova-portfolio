@@ -32,6 +32,11 @@ export const MOCK_PROJECTS = [
         blockType: BLOCK_TYPE.textColumns,
         text: [MOCK_TEXT.large],
       },
+      {
+        id: "3",
+        blockType: BLOCK_TYPE.imageColumns,
+        images: ["/public/works/1.jpeg"],
+      },
     ],
   },
   {
@@ -64,6 +69,11 @@ export const MOCK_PROJECTS = [
         blockType: BLOCK_TYPE.textColumns,
         text: [MOCK_TEXT.small, MOCK_TEXT.small],
       },
+      {
+        id: "3",
+        blockType: BLOCK_TYPE.imageColumns,
+        images: ["/public/works/2.jpeg", "/public/works/1.jpeg"],
+      },
     ],
   },
   {
@@ -95,6 +105,20 @@ export const MOCK_PROJECTS = [
         id: "2",
         blockType: BLOCK_TYPE.textColumns,
         text: [MOCK_TEXT.medium, MOCK_TEXT.medium, MOCK_TEXT.medium],
+      },
+      {
+        id: "3",
+        blockType: BLOCK_TYPE.imageColumns,
+        images: [
+          "/public/works/2.jpeg",
+          "/public/works/3.jpeg",
+          "/public/works/1.jpeg",
+        ],
+      },
+      {
+        id: "4",
+        blockType: BLOCK_TYPE.textColumns,
+        text: [MOCK_TEXT.small, MOCK_TEXT.small, MOCK_TEXT.medium],
       },
     ],
   },
