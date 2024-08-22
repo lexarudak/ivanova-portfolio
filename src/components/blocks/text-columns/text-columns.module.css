@@ -1,0 +1,9 @@
+.container {
+  flex-direction: row;
+  gap: 50px;
+  justify-content: space-between;
+
+  p {
+    flex-grow: 1;
+  }
+}

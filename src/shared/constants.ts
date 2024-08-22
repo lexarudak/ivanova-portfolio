@@ -9,4 +9,5 @@ export enum FILTERS {
 
 export enum BLOCK_TYPE {
   carousel = "carousel",
+  textColumns = "text-columns",
 }

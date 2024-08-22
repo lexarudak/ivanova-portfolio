@@ -19,11 +19,13 @@ const Description: FC<Props> = ({
   }
 
   return (
-    <div className={classNames(styles.container, styles[textAlign], className)}>
+    <article
+      className={classNames(className, styles.container, styles[textAlign])}
+    >
       {text.map((message, id) => (
         <p key={id}>{message}</p>
       ))}
-    </div>
+    </article>
   )
 }
 
