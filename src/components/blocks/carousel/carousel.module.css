@@ -17,4 +17,10 @@
   object-fit: cover;
   object-position: center;
   height: 700px;
+
+  cursor:grab;
+
+  &:active {
+    cursor: grabbing;
+  }
 }
