@@ -3,6 +3,7 @@ import styles from "./carousel.module.css"
 import { Block } from "../../../shared/types"
 import useEmblaCarousel from "embla-carousel-react"
 import Autoplay from "embla-carousel-autoplay"
+import Description from "../../shared-components/description"
 
 const Carousel: FC<Block> = ({ images, text, id }) => {
   const [emblaRef] = useEmblaCarousel({}, [Autoplay()])
@@ -25,13 +26,7 @@ const Carousel: FC<Block> = ({ images, text, id }) => {
           ))}
         </div>
       </div>
-      {!!text?.length && (
-        <div className={styles.textContainer}>
-          {text.map(message => (
-            <p>{message}</p>
-          ))}
-        </div>
-      )}
+      <Description text={text} />
     </div>
   )
 }

@@ -1,0 +1,36 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	&.center {
+		align-items: center;
+		padding: 0 50px;
+
+		p {
+			text-align: center;
+		}
+
+	}
+
+	&.left {
+		align-items: flex-start;
+		padding-right: 50px;
+
+		p {
+			text-align: left;
+		}
+
+	}
+
+	&.right {
+		align-items: flex-end;
+		padding-left: 50px;
+
+		p {
+			text-align: right;
+		}
+
+	}
+
+}

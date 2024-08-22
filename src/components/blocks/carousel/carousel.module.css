@@ -18,15 +18,3 @@
   object-position: center;
   height: 700px;
 }
-
-.textContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 50px;
-  gap: 10px;
-
-  p {
-    text-align: center;
-  }
-}
