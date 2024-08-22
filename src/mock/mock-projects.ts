@@ -142,7 +142,7 @@ export const MOCK_PROJECTS = [
         text: [MOCK_TEXT.small, MOCK_TEXT.small, MOCK_TEXT.medium],
       },
       {
-        id: "5",
+        id: "51",
         blockType: BLOCK_TYPE.halfImageRight,
         text: [MOCK_TEXT.medium],
         images: ["/public/works/3.jpeg"],

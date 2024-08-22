@@ -4,7 +4,7 @@ import { Block } from "../../../shared/types"
 import HalfImage from "../half-image/half-image"
 
 const HalfImageRight: FC<Block> = props => (
-  <HalfImage {...props} className={styles.rightView} />
+  <HalfImage {...props} className={styles.rightView} key={props.id} />
 )
 
 export default HalfImageRight
