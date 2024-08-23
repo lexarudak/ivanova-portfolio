@@ -4,22 +4,22 @@ import { WorkCardData } from "../shared/types"
 export const MOCK_WORKS: Array<WorkCardData> = [
   {
     id: "1",
-    title: "Project 1",
-    year: "2024",
+    title: "Batagai",
+    year: "2021",
     image: "/public/works/1.jpeg",
     filters: [FILTERS.architect],
   },
   {
     id: "2",
-    title: "Project 2",
-    year: "2024",
+    title: "Shchorsa 4B",
+    year: "2020",
     image: "/public/works/2.jpeg",
     filters: [FILTERS.design],
   },
   {
     id: "3",
-    title: "Project 3",
-    year: "2024",
+    title: "Hill House",
+    year: "2020",
     image: "/public/works/3.jpeg",
     filters: [FILTERS.architect, FILTERS.design],
   },

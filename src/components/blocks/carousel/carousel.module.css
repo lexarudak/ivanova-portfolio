@@ -1,0 +1,29 @@
+.block {
+  margin: 100px 0;
+}
+
+.carousel {
+  overflow: hidden;
+  height: 700px;
+}
+
+.container {
+  display: flex;
+}
+.slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  object-fit: cover;
+  object-position: center;
+  height: 700px;
+
+  cursor:grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.text {
+  margin-top: 50px;
+}

@@ -45,14 +45,10 @@
 		margin-left: 5px;
 	}
 
-	&:last-child {
-		margin-left: -3px;
-	}
-
 }
 
 .blocks {
-	margin: 85px 0 0 -142px;
+	margin: 85px 0 0 -115px;
 	display: flex;
 	gap: 5px;
 

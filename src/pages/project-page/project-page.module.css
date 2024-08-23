@@ -1,0 +1,14 @@
+.title {
+  font-size: 42px;
+  margin-bottom: 5px;
+}
+
+.filters {
+  margin-bottom: 50px;
+}
+
+.img {
+	width: 100%;
+	height: 400px;
+  object-fit: cover;
+}

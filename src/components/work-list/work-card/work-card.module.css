@@ -7,19 +7,17 @@
 	transition: .3s;
 	border-bottom: 2px solid var(--bg-main);
 	margin-bottom: 50px;
+	gap: 5px;
+	color: var(--font-secondary);
 
 	&:hover {
 		border-bottom: 2px solid var(--bg-active);
 		transform: translateY(-10px);
-	}
-
-	.title {
-		color: var(--font-secondary);
+		color: var(--font-main);
 	}
 
 	.year {
-		color: var(--font-secondary);
-		font-weight: 800;
+		font-weight: 700;
 		font-size: 36px;
 	}
 
@@ -27,6 +25,7 @@
 		width: 345px;
 		height: 345px;
 		margin-bottom: 10px;
+		object-fit: cover;
 	}
 
 	.filters {

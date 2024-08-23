@@ -7,14 +7,13 @@
 }
 
 .list {
-	width: 325px;
-	padding-left: 20px;
+	width: 345px;
 	margin-bottom: -5px;
+	padding-right: 15px;
 	display: flex;
 	align-items: flex-end;
 	justify-content: space-between;
 	position: relative;
-	font-size: 14px;
 }
 
 .link {
@@ -34,7 +33,7 @@
 
 .home {
 	position: absolute;
-	left: -135px;
+	left: -103px;
 	width: 30px;
 	height: 30px;
 	background-color: var(--font-main);
