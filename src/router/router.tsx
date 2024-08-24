@@ -3,6 +3,7 @@ import Root from "../pages/root"
 import { PAGES } from "./constants"
 import WorksPage from "../pages/works-page"
 import ProjectPage from "../pages/project-page"
+import AboutPage from "../pages/about-page/about-page"
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
       },
       {
         path: PAGES.about,
-        element: <section>About</section>,
+        element: <AboutPage />,
       },
       {
         path: PAGES.contacts,

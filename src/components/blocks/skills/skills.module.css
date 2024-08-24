@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  width: 50%;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.title {
+  color: var(--font-secondary);
+  margin-bottom: 20px;
+}
