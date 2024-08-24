@@ -29,8 +29,8 @@ const Nav = () => {
             onClick={() => navigate(link)}
             key={name}
             disabled={link === currentPage}
-            className={classNames(styles.link, {
-              [styles.active]: currentPage.includes(link),
+            className={classNames(sharedStyles.link, {
+              [sharedStyles.active]: currentPage.includes(link),
             })}
           >
             {name}

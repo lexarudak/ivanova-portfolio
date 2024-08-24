@@ -16,21 +16,6 @@
 	position: relative;
 }
 
-.link {
-	color: var(--font-main);
-	transition: .3s;
-	border-bottom: 2px solid transparent;
-
-	&:hover, &.active {
-		border-bottom: 2px solid var(--bg-active);
-	}
-
-	&:disabled {
-		cursor: default;
-	}
-
-}
-
 .home {
 	position: absolute;
 	left: -103px;
