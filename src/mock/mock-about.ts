@@ -2,7 +2,7 @@ export const MOCK_ABOUT = {
   image: "/public/ivanova.png",
   info: {
     location: "Almaty, Kazakhstan",
-    languages: ["English - C1", "Spanish - B1", "Russian - Native"],
+    languages: ["English C1", "Spanish B1", "Russian Native"],
   },
   skills: [
     {

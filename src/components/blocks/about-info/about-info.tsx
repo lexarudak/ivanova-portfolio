@@ -38,7 +38,7 @@ const AboutInfo: FC<Props> = ({ location, languages }) => {
     },
   }
 
-  return <InfoBlock {...props} />
+  return <InfoBlock {...props} lang />
 }
 
 export default AboutInfo
