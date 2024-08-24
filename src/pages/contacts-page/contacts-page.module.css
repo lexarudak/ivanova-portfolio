@@ -1,0 +1,9 @@
+.title {
+  display: inline-block;
+  width: 130px;
+  color: var(--font-secondary);
+}
+
+.list {
+  margin-top: 180px;
+}
