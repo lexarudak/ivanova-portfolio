@@ -13,3 +13,14 @@ export type Block = {
   text?: string[]
   images?: string[]
 }
+
+export type ExperienceData = {
+  title: string
+  location: string
+  position: string
+  period: string
+
+  time?: string
+  workType?: string
+  achievements?: string[]
+}
