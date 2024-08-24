@@ -49,7 +49,6 @@ export const MOCK_ABOUT = {
       period: "November 2013 - April 2020",
       achievements: [
         "Helped the company move from AutoCAD to Revit",
-        "Helped the company move from AutoCAD to Revit",
         "12 Interior Designs that have been realized",
         "Participation in more than 25 Exterior Designs of residential, private and public buildings",
         "From Schematic Design to Construction Administration project management",

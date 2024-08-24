@@ -1,4 +1,5 @@
 import AboutInfo from "../../components/blocks/about-info"
+import Education from "../../components/blocks/education"
 import ProfessionalExperience from "../../components/blocks/professional-experience"
 import Skills from "../../components/blocks/skills"
 import FilterIconBlock from "../../components/filter-icon-block"
@@ -8,7 +9,7 @@ import styles from "./about-page.module.css"
 
 const AboutPage = () => {
   const title = "Darya Ivanova"
-  const { info, image, skills, experience } = MOCK_ABOUT
+  const { info, image, skills, experience, about, education } = MOCK_ABOUT
   return (
     <section className={styles.page}>
       <h1 className={styles.title}>{title}</h1>
@@ -20,6 +21,13 @@ const AboutPage = () => {
       <AboutInfo {...info} />
       <Skills skills={skills} />
       <ProfessionalExperience experience={experience} />
+
+      <div className={styles.about}>
+        <p className={styles.desc}>About</p>
+        <p>{about}</p>
+      </div>
+
+      <Education education={education} />
     </section>
   )
 }

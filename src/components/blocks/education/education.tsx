@@ -3,17 +3,17 @@ import { ExperienceData } from "../../../shared/types"
 import ExperienceItem from "../experience-item"
 
 type Props = {
-  experience: ExperienceData[]
+  education: ExperienceData[]
 }
 
-const ProfessionalExperience: FC<Props> = ({ experience }) => {
+const Education: FC<Props> = ({ education }) => {
   return (
     <div>
-      {experience.map((data, idx) => (
+      {education.map((data, idx) => (
         <ExperienceItem key={idx} {...data} />
       ))}
     </div>
   )
 }
 
-export default ProfessionalExperience
+export default Education
