@@ -18,12 +18,11 @@ const Nav = () => {
 
   return (
     <nav className={cn(styles.nav, sharedStyles.container)}>
+      <Link
+        to={PAGES.home}
+        className={classNames({ [styles.hide]: isHomePage }, styles.home)}
+      />
       <ul className={cn(styles.list)}>
-        <Link
-          to={PAGES.home}
-          className={classNames({ [styles.hide]: isHomePage }, styles.home)}
-        />
-
         {navList.map(({ name, link }) => (
           <button
             onClick={() => navigate(link)}
@@ -37,6 +36,7 @@ const Nav = () => {
           </button>
         ))}
       </ul>
+      <div className={styles.invisible} />
     </nav>
   )
 }

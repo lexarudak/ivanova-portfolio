@@ -2,6 +2,5 @@
   display: flex;
   gap: 5px;
   width: max-content;
-  align-self: flex-end;
   margin: 0;
 }

@@ -2,7 +2,6 @@ import { FILTERS } from "../../shared/constants"
 import useFilterNavigate from "../../shared/hooks/use-filter-navigate"
 import Button, { BUTTON_VARIANT } from "../shared-components/button"
 import styles from "./works-filter.module.css"
-import sharedStyles from "../../styles/shared.module.css"
 import { FC } from "react"
 import classNames from "classnames"
 import useWorkFilter from "../../shared/hooks/use-work-filter"
@@ -26,13 +25,7 @@ const WorksFilter: FC<Props> = ({ className }) => {
   const activeFilter = useWorkFilter()
 
   return (
-    <div
-      className={classNames(
-        className,
-        styles.container,
-        sharedStyles.container,
-      )}
-    >
+    <div className={classNames(className, styles.container)}>
       {filterList.map(({ name, filter, variant }) => (
         <Button
           key={name}

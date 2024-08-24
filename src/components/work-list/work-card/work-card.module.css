@@ -1,6 +1,6 @@
 .card {
   padding-bottom: 10px;
-	max-width: 345px;
+	max-width: 340px;
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
@@ -22,8 +22,8 @@
 	}
 
 	.img {
-		width: 345px;
-		height: 345px;
+		width: 340px;
+		height: 340px;
 		margin-bottom: 10px;
 		object-fit: cover;
 	}

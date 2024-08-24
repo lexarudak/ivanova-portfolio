@@ -1,24 +1,26 @@
-.nav {
+nav.nav {
 	height: 40px;
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
-	position: relative;
+	max-width: 1315px;
 }
 
 .list {
-	width: 345px;
-	margin-bottom: -5px;
-	padding-right: 15px;
+	width: 340px;
 	display: flex;
 	align-items: flex-end;
 	justify-content: space-between;
 	position: relative;
+	padding-right: 15px;
+}
+
+.invisible {
+	width: 30px;
+	height: 30px;
 }
 
 .home {
-	position: absolute;
-	left: -103px;
 	width: 30px;
 	height: 30px;
 	background-color: var(--font-main);
