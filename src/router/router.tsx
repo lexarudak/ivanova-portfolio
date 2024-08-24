@@ -4,6 +4,7 @@ import { PAGES } from "./constants"
 import WorksPage from "../pages/works-page"
 import ProjectPage from "../pages/project-page"
 import AboutPage from "../pages/about-page/about-page"
+import ContactsPage from "../pages/contacts-page"
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: PAGES.contacts,
-        element: <section>contacts</section>,
+        element: <ContactsPage />,
       },
     ],
   },
