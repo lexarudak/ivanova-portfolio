@@ -1,7 +1,8 @@
 .title {
   display: inline-block;
-  width: 130px;
+  width: 120px;
   color: var(--font-secondary);
+  padding-right: 10px;
 }
 
 .list {
