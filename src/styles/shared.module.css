@@ -6,3 +6,19 @@
   padding: 0 30px;
   position: relative;
 }
+
+.link {
+	color: var(--font-secondary);
+	transition: .3s;
+	border-bottom: 2px solid transparent;
+
+	&:hover, &.active {
+		color: var(--font-main);
+		border-bottom: 2px solid var(--bg-active);
+	}
+
+	&:disabled {
+		cursor: default;
+	}
+
+}

@@ -18,19 +18,23 @@ const Nav = () => {
 
   return (
     <nav className={cn(styles.nav, sharedStyles.container)}>
-      <ul className={cn(styles.list)}>
-        <Link
-          to={PAGES.home}
-          className={classNames({ [styles.hide]: isHomePage }, styles.home)}
-        />
+      <Link
+        to={PAGES.home}
+        className={classNames({ [styles.hide]: isHomePage }, styles.home)}
+      />
 
+      <ul
+        className={cn(styles.list, {
+          [styles.center]: isHomePage,
+        })}
+      >
         {navList.map(({ name, link }) => (
           <button
             onClick={() => navigate(link)}
             key={name}
             disabled={link === currentPage}
-            className={classNames(styles.link, {
-              [styles.active]: currentPage.includes(link),
+            className={classNames(sharedStyles.link, {
+              [sharedStyles.active]: currentPage.includes(link),
             })}
           >
             {name}

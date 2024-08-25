@@ -4,7 +4,6 @@ import useWorkFilter from "../../shared/hooks/use-work-filter"
 import { WorkCardData } from "../../shared/types"
 import WorkCard from "./work-card"
 import styles from "./work-list.module.css"
-import sharedStyles from "../../styles/shared.module.css"
 import classNames from "classnames"
 
 const WorkList = () => {
@@ -17,7 +16,7 @@ const WorkList = () => {
     filters.includes(activeFilter)
 
   return (
-    <ul className={classNames(styles.list, sharedStyles.container)}>
+    <ul className={classNames(styles.list)}>
       {works.filter(filter).map(work => (
         <WorkCard key={work.id} {...work} />
       ))}

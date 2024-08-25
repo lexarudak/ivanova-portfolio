@@ -1,29 +1,39 @@
 .block {
-  margin: 100px 0;
+	margin: 100px 0;
 }
 
 .carousel {
-  overflow: hidden;
-  height: 700px;
+	overflow: hidden;
+	height: 700px;
+
+	@media (max-width:760px) {
+		height: 340px;
+	}
+
 }
 
 .container {
-  display: flex;
+	display: flex;
 }
+
 .slide {
-  flex: 0 0 100%;
-  min-width: 0;
-  object-fit: cover;
-  object-position: center;
-  height: 700px;
+	flex: 0 0 100%;
+	min-width: 0;
+	object-fit: cover;
+	object-position: center;
+	height: 700px;
+	cursor: grab;
 
-  cursor:grab;
+	&:active {
+		cursor: grabbing;
+	}
 
-  &:active {
-    cursor: grabbing;
-  }
+	@media (max-width:760px) {
+		height: 340px;
+	}
+
 }
 
 .text {
-  margin-top: 50px;
+	margin-top: 50px;
 }

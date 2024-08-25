@@ -22,12 +22,12 @@ const ExperienceItem: FC<ExperienceData> = ({
         <p className={styles.desc}>{location}</p>
       </div>
       {!!achievements?.length && (
-        <div className={styles.achievements}>
-          <p className={styles.title}>Achievements</p>
+        <ul className={styles.achievements}>
+          <li className={styles.title}>Achievements</li>
           {achievements.map((text, idx) => (
-            <p key={idx}>{text}</p>
+            <li key={idx}>{text}</li>
           ))}
-        </div>
+        </ul>
       )}
     </div>
   )
