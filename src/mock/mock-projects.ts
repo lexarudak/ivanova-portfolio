@@ -6,7 +6,7 @@ export const MOCK_PROJECTS = [
     id: "1",
     title: "Batagai",
     filters: [FILTERS.architect],
-    image: "/public/works/1.jpeg",
+    image: "//works/1.jpeg",
     info: {
       year: "2021",
       location: "Astana, Kazakhstan",
@@ -21,11 +21,7 @@ export const MOCK_PROJECTS = [
         id: "1",
         blockType: BLOCK_TYPE.carousel,
         text: [MOCK_TEXT.small],
-        images: [
-          "/public/works/1.jpeg",
-          "/public/works/2.jpeg",
-          "/public/works/3.jpeg",
-        ],
+        images: ["//works/1.jpeg", "//works/2.jpeg", "//works/3.jpeg"],
       },
       {
         id: "2",
@@ -35,7 +31,7 @@ export const MOCK_PROJECTS = [
       {
         id: "3",
         blockType: BLOCK_TYPE.imageColumns,
-        images: ["/public/works/1.jpeg"],
+        images: ["//works/1.jpeg"],
       },
       {
         id: "5",
@@ -46,7 +42,7 @@ export const MOCK_PROJECTS = [
         id: "6",
         blockType: BLOCK_TYPE.halfImage,
         text: [MOCK_TEXT.medium],
-        images: ["/public/works/1.jpeg"],
+        images: ["//works/1.jpeg"],
       },
       {
         id: "4",
@@ -59,7 +55,7 @@ export const MOCK_PROJECTS = [
     id: "2",
     title: "Shchorsa 4B",
     filters: [FILTERS.design],
-    image: "/public/works/2.jpeg",
+    image: "//works/2.jpeg",
     info: {
       year: "2020",
       location: "Minsk, Belarus",
@@ -74,11 +70,7 @@ export const MOCK_PROJECTS = [
         id: "1",
         blockType: BLOCK_TYPE.carousel,
         text: [],
-        images: [
-          "/public/works/2.jpeg",
-          "/public/works/3.jpeg",
-          "/public/works/1.jpeg",
-        ],
+        images: ["//works/2.jpeg", "//works/3.jpeg", "//works/1.jpeg"],
       },
       {
         id: "2",
@@ -88,7 +80,7 @@ export const MOCK_PROJECTS = [
       {
         id: "3",
         blockType: BLOCK_TYPE.imageColumns,
-        images: ["/public/works/2.jpeg", "/public/works/1.jpeg"],
+        images: ["//works/2.jpeg", "//works/1.jpeg"],
       },
       {
         id: "4",
@@ -101,7 +93,7 @@ export const MOCK_PROJECTS = [
     id: "3",
     title: "Hill House",
     filters: [FILTERS.architect, FILTERS.design],
-    image: "/public/works/3.jpeg",
+    image: "//works/3.jpeg",
     info: {
       year: "2020",
       location: "Minsk, Belarus",
@@ -116,11 +108,7 @@ export const MOCK_PROJECTS = [
         id: "1",
         blockType: BLOCK_TYPE.carousel,
         text: [MOCK_TEXT.small, MOCK_TEXT.large, MOCK_TEXT.medium],
-        images: [
-          "/public/works/2.jpeg",
-          "/public/works/3.jpeg",
-          "/public/works/1.jpeg",
-        ],
+        images: ["//works/2.jpeg", "//works/3.jpeg", "//works/1.jpeg"],
       },
       {
         id: "2",
@@ -130,11 +118,7 @@ export const MOCK_PROJECTS = [
       {
         id: "3",
         blockType: BLOCK_TYPE.imageColumns,
-        images: [
-          "/public/works/2.jpeg",
-          "/public/works/3.jpeg",
-          "/public/works/1.jpeg",
-        ],
+        images: ["//works/2.jpeg", "//works/3.jpeg", "//works/1.jpeg"],
       },
       {
         id: "4",
@@ -145,7 +129,7 @@ export const MOCK_PROJECTS = [
         id: "51",
         blockType: BLOCK_TYPE.halfImageRight,
         text: [MOCK_TEXT.medium],
-        images: ["/public/works/3.jpeg"],
+        images: ["//works/3.jpeg"],
       },
     ],
   },
