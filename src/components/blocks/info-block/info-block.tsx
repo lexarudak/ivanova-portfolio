@@ -21,16 +21,16 @@ const InfoBlock: FC<Props> = ({ items, list, lang }) => {
           <span>{secondItem.value}</span>
         </p>
       </div>
-      <div className={styles.list}>
+      <div className={styles.block}>
         <span className={styles.title}>{list.title}</span>
-        <ul>
+        <ul className={styles.list}>
           {list.values.map((text, id) => {
             if (lang) {
               const arr = text.split(" ")
               const lastWord = arr.pop()
 
               return (
-                <li key={id}>
+                <li key={id} className={styles.lang}>
                   <span className={styles.lang}>{arr.join(" ")}</span>{" "}
                   <span>{lastWord}</span>
                 </li>

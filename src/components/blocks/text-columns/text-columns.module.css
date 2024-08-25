@@ -1,11 +1,16 @@
 .container {
-  flex-direction: row;
-  gap: 50px;
-  justify-content: space-between;
-  margin: 100px 0;
+	flex-direction: row;
+	gap: 50px;
+	justify-content: space-between;
+	margin: 100px 0;
 
-  p {
-    flex-grow: 1;
-    width: 100%;
-  }
+	@media (max-width:760px) {
+		gap: 20px;
+	}
+
+	p {
+		flex-grow: 1;
+		width: 100%;
+	}
+
 }
