@@ -1,6 +1,5 @@
 import { FC } from "react"
 import styles from "./info-block.module.css"
-import classNames from "classnames"
 
 type Props = {
   items: { title: string; value: string }[]
@@ -26,17 +25,19 @@ const InfoBlock: FC<Props> = ({ items, list, lang }) => {
         <span className={styles.title}>{list.title}</span>
         <ul>
           {list.values.map((text, id) => {
-            const arr = text.split(" ")
-            const lastWord = arr.pop()
+            if (lang) {
+              const arr = text.split(" ")
+              const lastWord = arr.pop()
 
-            return (
-              <li key={id}>
-                <span className={classNames({ [styles.lang]: lang })}>
-                  {arr.join(" ")}
-                </span>{" "}
-                <span>{lastWord}</span>
-              </li>
-            )
+              return (
+                <li key={id}>
+                  <span className={styles.lang}>{arr.join(" ")}</span>{" "}
+                  <span>{lastWord}</span>
+                </li>
+              )
+            }
+
+            return <li key={id}>{text}</li>
           })}
         </ul>
       </div>
