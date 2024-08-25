@@ -20,6 +20,8 @@ body {
 	margin: var(--header-height) 0 0;
 	min-height: calc(100vh - var(--header-height));
 	position: relative;
+
+	min-width: 400px;
 }
 
 main {

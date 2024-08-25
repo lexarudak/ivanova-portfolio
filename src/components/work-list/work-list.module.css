@@ -3,6 +3,6 @@
   flex-wrap: wrap;
   margin-top: 100px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 30px;
 }

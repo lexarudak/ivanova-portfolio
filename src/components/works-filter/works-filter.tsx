@@ -25,18 +25,22 @@ const WorksFilter: FC<Props> = ({ className }) => {
   const activeFilter = useWorkFilter()
 
   return (
-    <div className={classNames(className, styles.container)}>
-      {filterList.map(({ name, filter, variant }) => (
-        <Button
-          key={name}
-          variant={variant}
-          onClick={() => navigate(filter)}
-          isActive={filter == activeFilter}
-          disabled={filter == activeFilter}
-        >
-          {name}
-        </Button>
-      ))}
+    <div className={styles.container}>
+      <div className={classNames(className, styles.filter)}>
+        {filterList.map(({ name, filter, variant }) => (
+          <Button
+            key={name}
+            variant={variant}
+            onClick={() => navigate(filter)}
+            isActive={filter == activeFilter}
+            disabled={filter == activeFilter}
+          >
+            {name}
+          </Button>
+        ))}
+      </div>
+      <div className={styles.invisible} />
+      <div className={styles.invisible} />
     </div>
   )
 }
