@@ -22,7 +22,12 @@ const Nav = () => {
         to={PAGES.home}
         className={classNames({ [styles.hide]: isHomePage }, styles.home)}
       />
-      <ul className={cn(styles.list)}>
+
+      <ul
+        className={cn(styles.list, {
+          [styles.center]: isHomePage,
+        })}
+      >
         {navList.map(({ name, link }) => (
           <button
             onClick={() => navigate(link)}
@@ -36,7 +41,6 @@ const Nav = () => {
           </button>
         ))}
       </ul>
-      <div className={styles.invisible} />
     </nav>
   )
 }

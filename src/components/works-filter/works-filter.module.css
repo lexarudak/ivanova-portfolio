@@ -1,34 +1,6 @@
 .container {
-	width: 100%;
-	display: flex;
-	justify-content: space-around;
-	gap: 30px;
-}
-
-.filter {
 	display: flex;
 	gap: 5px;
 	width: max-content;
 	margin: 0;
-}
-
-.invisible, .filter {
-	width: 340px;
-}
-
-@media (max-width:1139px) {
-	.invisible {
-		&:last-child {
-			display: none;
-		}
-
-	}
-
-}
-
-@media (max-width:769px) {
-	.invisible {
-		display: none;
-	}
-
 }

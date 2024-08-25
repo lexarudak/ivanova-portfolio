@@ -1,9 +1,9 @@
 nav.nav {
 	height: 40px;
 	display: flex;
-	justify-content: space-around;
 	align-items: center;
 	max-width: 1315px;
+	justify-content: space-between;
 }
 
 .list {
@@ -11,23 +11,45 @@ nav.nav {
 	display: flex;
 	align-items: flex-end;
 	justify-content: space-between;
-	position: relative;
+	position: absolute;
 	padding-right: 15px;
-}
+	right: 50%;
+	transform: translate(50%);
+	transition: 1s;
 
-.invisible {
-	width: 30px;
-	height: 30px;
+	@media (max-width:650px) {
+		width: 240px;
+		right: 30px;
+		padding-right: 0;
+		transform: translate(0);
+	}
+
+	&.center {
+		@media (max-width:650px) {
+			right: 50%;
+			transform: translate(50%);
+		}
+
+	}
+
 }
 
 .home {
+	display: block;
+	position: relative;
 	width: 30px;
 	height: 30px;
 	background-color: var(--font-main);
+	transition: 1s;
 	visibility: visible;
 	opacity: 1;
-	transition: 1s;
 	transform: translateY(0px);
+
+	&.hide {
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(100px);
+	}
 
 	&::after {
 		content: "";
@@ -37,12 +59,6 @@ nav.nav {
 		position: absolute;
 		right: 6px;
 		bottom: 0;
-	}
-
-	&.hide {
-		opacity: 0;
-		visibility: hidden;
-		transform: translateY(100px);
 	}
 
 }
