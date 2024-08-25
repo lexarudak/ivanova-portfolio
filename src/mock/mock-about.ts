@@ -1,5 +1,5 @@
 export const MOCK_ABOUT = {
-  image: "//ivanova.png",
+  image: "/ivanova.png",
   info: {
     location: "Almaty, Kazakhstan",
     languages: ["English C1", "Spanish B1", "Russian Native"],
