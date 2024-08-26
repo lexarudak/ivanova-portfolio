@@ -66,3 +66,5 @@ export type About = {
     period: string
   }[]
 }
+
+export type Contacts = { contacts: { title: string; value: string }[] }

@@ -1,8 +1,10 @@
-import { MOCK_CONTACTS } from "../../mock/mock-contacts"
+import { useLoaderData } from "react-router-dom"
 import styles from "./contacts-page.module.css"
+import { Contacts } from "../../shared/types"
 
 const ContactsPage = () => {
-  const { contacts } = MOCK_CONTACTS
+  const { contacts } = useLoaderData() as Contacts
+
   return (
     <section className={styles.page}>
       <ul className={styles.list}>

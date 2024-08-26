@@ -30,6 +30,7 @@ const router = createBrowserRouter([
       {
         path: PAGES.contacts,
         element: <ContactsPage />,
+        loader: projectService().getContacts,
       },
     ],
   },
