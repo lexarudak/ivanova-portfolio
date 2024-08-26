@@ -20,6 +20,7 @@ const router = createBrowserRouter([
       {
         path: PAGES.project,
         element: <ProjectPage />,
+        loader: projectService().getProject,
       },
       {
         path: PAGES.about,

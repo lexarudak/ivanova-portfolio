@@ -1,4 +1,4 @@
-import { FILTERS } from "./constants"
+import { BLOCK_TYPE, FILTERS } from "./constants"
 
 export type WorkCardData = {
   id: string
@@ -23,4 +23,17 @@ export type ExperienceData = {
   time?: string
   workType?: string
   achievements?: string[]
+}
+
+export type Project = {
+  id: string
+  title: string
+  filters: FILTERS[]
+  image: string
+  info: {
+    year: string
+    location: string
+    participation: string[]
+  }
+  blocks: (Block & { blockType: BLOCK_TYPE })[]
 }

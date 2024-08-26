@@ -1,7 +1,6 @@
-import { useParams } from "react-router-dom"
+import { useLoaderData } from "react-router-dom"
 import styles from "./project-page.module.css"
 import Crumbs from "../../components/crumbs"
-import { MOCK_PROJECTS } from "../../mock/mock-projects"
 import { createCrumps } from "./helpers"
 import FilterIconBlock from "../../components/filter-icon-block"
 import ProjectInfo from "../../components/blocks/project-info"
@@ -11,6 +10,7 @@ import TextColumns from "../../components/blocks/text-columns"
 import imageColumns from "../../components/blocks/image-columns"
 import HalfImage from "../../components/blocks/half-image"
 import HalfImageRight from "../../components/blocks/half-image-right"
+import { Project } from "../../shared/types"
 
 const blockList = {
   [BLOCK_TYPE.carousel]: Carousel,
@@ -21,9 +21,7 @@ const blockList = {
 }
 
 const ProjectPage = () => {
-  const { projectId } = useParams()
-  const { title, filters, id, image, info, blocks } =
-    MOCK_PROJECTS[Number(projectId) - 1] || MOCK_PROJECTS[0]
+  const { title, filters, id, image, info, blocks } = useLoaderData() as Project
 
   return (
     <section className={styles.page}>
