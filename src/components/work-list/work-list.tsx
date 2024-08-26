@@ -1,4 +1,4 @@
-import { MOCK_WORKS } from "../../mock/mock-works"
+import { FC } from "react"
 import { FILTERS } from "../../shared/constants"
 import useWorkFilter from "../../shared/hooks/use-work-filter"
 import { WorkCardData } from "../../shared/types"
@@ -6,8 +6,13 @@ import WorkCard from "./work-card"
 import styles from "./work-list.module.css"
 import classNames from "classnames"
 
-const WorkList = () => {
-  const works = MOCK_WORKS
+type Props = {
+  works: WorkCardData[]
+}
+
+const WorkList: FC<Props> = ({ works }) => {
+  console.log(works)
+
   const activeFilter = useWorkFilter() as FILTERS
 
   const filter = ({ filters }: WorkCardData) =>
