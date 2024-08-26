@@ -25,6 +25,7 @@ const router = createBrowserRouter([
       {
         path: PAGES.about,
         element: <AboutPage />,
+        loader: projectService().getAbout,
       },
       {
         path: PAGES.contacts,

@@ -1,15 +1,17 @@
+import { useLoaderData } from "react-router-dom"
 import AboutInfo from "../../components/blocks/about-info"
 import Education from "../../components/blocks/education"
 import ProfessionalExperience from "../../components/blocks/professional-experience"
 import Skills from "../../components/blocks/skills"
 import FilterIconBlock from "../../components/filter-icon-block"
-import { MOCK_ABOUT } from "../../mock/mock-about"
 import { FILTERS } from "../../shared/constants"
 import styles from "./about-page.module.css"
+import { About } from "../../shared/types"
 
 const AboutPage = () => {
-  const title = "Darya Ivanova"
-  const { info, image, skills, experience, about, education } = MOCK_ABOUT
+  const { title, info, image, skills, experience, about, education } =
+    useLoaderData() as About
+
   return (
     <section className={styles.page}>
       <h1 className={styles.title}>{title}</h1>

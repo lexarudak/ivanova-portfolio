@@ -37,3 +37,32 @@ export type Project = {
   }
   blocks: (Block & { blockType: BLOCK_TYPE })[]
 }
+
+export type About = {
+  title: string
+  image: string
+  info: {
+    location: string
+    languages: string[]
+  }
+  skills: {
+    title: string
+    list: string[]
+  }[]
+  experience: {
+    title: string
+    location: string
+    position: string
+    time: string
+    workType: string
+    period: string
+    achievements: string[]
+  }[]
+  about: string
+  education: {
+    title: string
+    location: string
+    position: string
+    period: string
+  }[]
+}
