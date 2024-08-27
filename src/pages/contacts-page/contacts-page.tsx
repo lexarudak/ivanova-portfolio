@@ -5,6 +5,15 @@ import { Contacts } from "../../shared/types"
 const ContactsPage = () => {
   const { contacts } = useLoaderData() as Contacts
 
+  if (!contacts?.length) {
+    return (
+      <p>
+        <span className={styles.title}>Telegram</span>
+        <span className={styles.value}>@DaryaIvanov</span>
+      </p>
+    )
+  }
+
   return (
     <section className={styles.page}>
       <ul className={styles.list}>

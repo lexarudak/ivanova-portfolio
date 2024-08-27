@@ -3,6 +3,10 @@
   width: 120px;
   color: var(--font-secondary);
   padding-right: 10px;
+
+  &::after {
+    content: ":";
+  }
 }
 
 .list {
