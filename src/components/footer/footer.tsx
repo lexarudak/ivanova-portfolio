@@ -3,6 +3,7 @@ import styles from "./footer.module.css"
 import { PAGES } from "../../router/constants"
 import useHomePage from "../../shared/hooks/use-home-page"
 import sharedStyles from "../../styles/shared.module.css"
+import Lock from "../lock"
 
 const Footer = () => {
   const { isHomePage, currentPage } = useHomePage()
@@ -20,6 +21,7 @@ const Footer = () => {
       >
         {isContactsPage ? "To my projects" : "Contact me"}
       </Link>
+      <Lock />
     </footer>
   )
 }
