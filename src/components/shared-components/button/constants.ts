@@ -3,3 +3,8 @@ export enum BUTTON_VARIANT {
   architect = "architect",
   design = "design",
 }
+
+export enum EDIT_BUTTON_VARIANT {
+  edit = "edit",
+  delete = "delete",
+}
