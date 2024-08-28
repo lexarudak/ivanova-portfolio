@@ -1,5 +1,14 @@
 .btn {
-  display: flex;
-  margin-left: 10px;
-  padding-bottom: 4px;
+	display: flex;
+	margin-left: 10px;
+	padding-bottom: 4px;
+}
+
+.img {
+  transition: .3s;
+	filter: brightness(1);
+
+  &:hover {
+    filter: brightness(0.4);
+  }
 }
