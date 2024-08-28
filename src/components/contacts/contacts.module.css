@@ -1,14 +1,29 @@
 .title {
-  display: inline-block;
-  width: 120px;
-  color: var(--font-secondary);
-  padding-right: 10px;
+	display: inline-block;
+	width: 120px;
+	color: var(--font-secondary);
+	padding-right: 10px;
 
-  &::after {
-    content: ":";
-  }
+	&::after {
+		content: ":";
+	}
+
 }
 
 .save {
-  margin-top: 20px;
+	margin-top: 20px;
+}
+
+.value {
+	width: 400px;
+}
+
+.li > span {
+	border: 1px solid transparent;
+	padding: 5px 10px;
+}
+
+.li {
+  gap: 5px;
+  display: flex;
 }

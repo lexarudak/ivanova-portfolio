@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit"
 import app from "./app"
+import contacts from "./contacts"
 
 export const store = configureStore({
   reducer: {
     app,
+    contacts,
   },
 })
 

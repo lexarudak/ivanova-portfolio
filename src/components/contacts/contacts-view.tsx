@@ -1,12 +1,14 @@
-import { FC } from "react"
 import styles from "./contacts.module.css"
-import { ContactsData } from "../../shared/types"
+import { useSelector } from "react-redux"
+import { selectContacts } from "../../store/contacts/selectors"
 
-const ContactsView: FC<ContactsData> = ({ contacts }) => {
+const ContactsView = () => {
+  const contacts = useSelector(selectContacts)
+
   return (
     <ul>
       {contacts.map(({ title, value }, idx) => (
-        <li key={idx}>
+        <li key={idx} className={styles.li}>
           <span className={styles.title}>{title}</span>
           <span className={styles.value}>{value}</span>
         </li>

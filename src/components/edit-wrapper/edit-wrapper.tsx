@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState } from "react"
+import { FC, ReactNode } from "react"
 import styles from "./edit-wrapper.module.css"
 import { useSelector } from "react-redux"
 import { selectIsEditMode } from "../../store/app/selectors"
@@ -9,12 +9,19 @@ import classNames from "classnames"
 type Props = {
   view: ReactNode
   form: ReactNode
+  isBlockEdit: boolean
+  setIsBlockEdit: (isEdit: boolean) => void
   className?: string
 }
 
-const EditWrapper: FC<Props> = ({ view, form, className }) => {
+const EditWrapper: FC<Props> = ({
+  view,
+  form,
+  className,
+  isBlockEdit,
+  setIsBlockEdit,
+}) => {
   const isEditMode = useSelector(selectIsEditMode)
-  const [isBlockEdit, setIsBlockEdit] = useState(false)
 
   if (isBlockEdit) {
     return (

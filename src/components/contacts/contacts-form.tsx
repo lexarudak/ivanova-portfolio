@@ -1,9 +1,13 @@
-import { FC, useState } from "react"
+import { useState } from "react"
 import styles from "./contacts.module.css"
-import { ContactsData } from "../../shared/types"
 import { v4 } from "uuid"
 import EditButton from "../shared-components/edit-button"
 import { EDIT_BUTTON_VARIANT } from "../shared-components/button/constants"
+import { useDispatch, useSelector } from "react-redux"
+import { setIsLoading } from "../../store/app"
+import { contactsService } from "../../service/contacts-service/contacts-service"
+import { selectContacts } from "../../store/contacts/selectors"
+import { setContacts, setIsEdit } from "../../store/contacts"
 
 type Item = {
   title: string
@@ -11,12 +15,25 @@ type Item = {
   id: string
 }
 
-const ContactsForm: FC<ContactsData> = ({ contacts }) => {
+const ContactsForm = () => {
+  const contacts = useSelector(selectContacts)
+  const dispatch = useDispatch()
+
   const [items, setItems] = useState<Item[]>(
     contacts.map(val => ({ ...val, id: v4() })),
   )
 
-  const submit = () => console.log(items)
+  const submit = async () => {
+    dispatch(setIsLoading(true))
+
+    try {
+      const contacts = await contactsService().postContacts(items)
+      dispatch(setContacts(contacts))
+      dispatch(setIsEdit(false))
+    } finally {
+      dispatch(setIsLoading(false))
+    }
+  }
 
   const onChange = ({ id, title, value }: Item) => {
     setItems(prev => {
@@ -29,10 +46,11 @@ const ContactsForm: FC<ContactsData> = ({ contacts }) => {
     })
   }
   return (
-    <form className={styles.form}>
+    <ul className={styles.form}>
       {items.map(({ title, value, id }) => (
-        <div key={id}>
+        <li key={id} className={styles.li}>
           <input
+            className={styles.title}
             type="text"
             value={title}
             onChange={e => {
@@ -44,6 +62,7 @@ const ContactsForm: FC<ContactsData> = ({ contacts }) => {
             }}
           />
           <input
+            className={styles.value}
             type="text"
             value={value}
             onChange={e => {
@@ -54,7 +73,7 @@ const ContactsForm: FC<ContactsData> = ({ contacts }) => {
               })
             }}
           />
-        </div>
+        </li>
       ))}
       <EditButton
         className={styles.save}
@@ -62,7 +81,7 @@ const ContactsForm: FC<ContactsData> = ({ contacts }) => {
         type="button"
         onClick={submit}
       />
-    </form>
+    </ul>
   )
 }
 

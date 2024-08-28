@@ -67,4 +67,4 @@ export type About = {
   }[]
 }
 
-export type ContactsData = { contacts: { title: string; value: string }[] }
+export type ContactsData = { title: string; value: string }[]
