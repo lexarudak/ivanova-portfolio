@@ -1,8 +1,7 @@
 .title {
 	display: inline-block;
-	width: 120px;
+	width: 100px;
 	color: var(--font-secondary);
-	padding-right: 10px;
 
 	&::after {
 		content: ":";
@@ -15,15 +14,42 @@
 }
 
 .value {
-	width: 400px;
-}
-
-.li > span {
-	border: 1px solid transparent;
-	padding: 5px 10px;
+	width: 235px;
 }
 
 .li {
-  gap: 5px;
+  margin-top: 5px;
+	gap: 5px;
+	display: flex;
+  align-items: center;
+
+	& > span {
+		border: 1px solid transparent;
+		padding: 5px 10px;
+	}
+
+}
+
+.addButton {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--font-secondary);
+  padding: 5px 10px;
+  width: 100%;
+  margin-top: 20px;
+  color: var(--font-secondary);
+  transition: .3s;
+  min-width: 400px;
+
+  &:hover {
+    color: var(--font-main);
+    border: 1px solid var(--font-main);
+  }
+}
+
+.list {
+  margin-left: -10px;
+  width: fit-content;
+  position: relative;
 }

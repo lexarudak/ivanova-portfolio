@@ -6,7 +6,7 @@ const ContactsView = () => {
   const contacts = useSelector(selectContacts)
 
   return (
-    <ul>
+    <ul className={styles.list}>
       {contacts.map(({ title, value }, idx) => (
         <li key={idx} className={styles.li}>
           <span className={styles.title}>{title}</span>

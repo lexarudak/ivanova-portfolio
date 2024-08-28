@@ -9,6 +9,8 @@ import { contactsService } from "../../service/contacts-service/contacts-service
 import { selectContacts } from "../../store/contacts/selectors"
 import { setContacts, setIsEdit } from "../../store/contacts"
 
+const MAX_FIELDS = 15
+
 type Item = {
   title: string
   value: string
@@ -45,8 +47,23 @@ const ContactsForm = () => {
       return newArr
     })
   }
+
+  const addField = () => {
+    const newField = {
+      id: v4(),
+      title: "",
+      value: "",
+    }
+
+    setItems(prev => [...prev, newField])
+  }
+
+  const removeField = (id: string) => {
+    setItems(prev => [...prev.filter(item => item.id !== id)])
+  }
+
   return (
-    <ul className={styles.form}>
+    <ul className={styles.list}>
       {items.map(({ title, value, id }) => (
         <li key={id} className={styles.li}>
           <input
@@ -73,8 +90,17 @@ const ContactsForm = () => {
               })
             }}
           />
+          <EditButton
+            variant={EDIT_BUTTON_VARIANT.delete}
+            onClick={() => removeField(id)}
+          />
         </li>
       ))}
+      {items.length < MAX_FIELDS && (
+        <button className={styles.addButton} onClick={addField}>
+          +
+        </button>
+      )}
       <EditButton
         className={styles.save}
         variant={EDIT_BUTTON_VARIANT.save}
