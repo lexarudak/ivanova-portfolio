@@ -1,14 +1,3 @@
-.title {
-  display: inline-block;
-  width: 120px;
-  color: var(--font-secondary);
-  padding-right: 10px;
-
-  &::after {
-    content: ":";
-  }
-}
-
-.list {
+.container {
   margin-top: 180px;
 }

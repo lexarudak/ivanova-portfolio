@@ -1,9 +1,12 @@
 import { useLoaderData } from "react-router-dom"
 import styles from "./contacts-page.module.css"
-import { Contacts } from "../../shared/types"
+import { ContactsData } from "../../shared/types"
+import EditWrapper from "../../components/edit-wrapper/edit-wrapper"
+import ContactsView from "../../components/contacts/contacts-view"
+import ContactsForm from "../../components/contacts/contacts-form"
 
 const ContactsPage = () => {
-  const { contacts } = useLoaderData() as Contacts
+  const { contacts } = useLoaderData() as ContactsData
 
   if (!contacts?.length) {
     return (
@@ -16,14 +19,11 @@ const ContactsPage = () => {
 
   return (
     <section className={styles.page}>
-      <ul className={styles.list}>
-        {contacts.map(({ title, value }, idx) => (
-          <li key={idx}>
-            <span className={styles.title}>{title}</span>
-            <span className={styles.value}>{value}</span>
-          </li>
-        ))}
-      </ul>
+      <EditWrapper
+        className={styles.container}
+        view={<ContactsView contacts={contacts} />}
+        form={<ContactsForm contacts={contacts} />}
+      />
     </section>
   )
 }

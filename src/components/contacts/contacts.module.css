@@ -1,0 +1,14 @@
+.title {
+  display: inline-block;
+  width: 120px;
+  color: var(--font-secondary);
+  padding-right: 10px;
+
+  &::after {
+    content: ":";
+  }
+}
+
+.save {
+  margin-top: 20px;
+}

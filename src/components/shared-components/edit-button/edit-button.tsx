@@ -10,7 +10,9 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 const scrList = {
   [EDIT_BUTTON_VARIANT.edit]: "/edit.svg",
-  [EDIT_BUTTON_VARIANT.delete]: "/x-circle.svg",
+  [EDIT_BUTTON_VARIANT.cancel]: "/x-circle.svg",
+  [EDIT_BUTTON_VARIANT.delete]: "/backspace.svg",
+  [EDIT_BUTTON_VARIANT.save]: "/save.svg",
 }
 
 const EditButton: FC<Props> = ({ variant, className, ...rest }) => {
