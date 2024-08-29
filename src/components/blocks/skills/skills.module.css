@@ -22,4 +22,5 @@
 .title {
 	color: var(--font-secondary);
 	margin-bottom: 20px;
+	text-transform: capitalize;
 }

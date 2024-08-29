@@ -1,14 +1,16 @@
 import { FC } from "react"
 import styles from "./skills.module.css"
+import { SkillsData } from "../../../shared/types"
 
 type Props = {
-  skills: { title: string; list: string[] }[]
+  skills: SkillsData
 }
 
 const Skills: FC<Props> = ({ skills }) => {
+  const data = Object.entries(skills)
   return (
     <div className={styles.container}>
-      {skills.map(({ title, list }) => (
+      {data.map(([title, list]) => (
         <div key={title} className={styles.block}>
           <p className={styles.title}>{title}</p>
           <ul className={styles.list}>
