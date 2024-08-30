@@ -8,6 +8,11 @@ export const selectAbout = createSelector(
   about => about.about,
 )
 
+export const selectSkills = createSelector(
+  selectAboutSlice,
+  about => about.skills,
+)
+
 export const selectAboutEditBlockId = createSelector(
   selectAboutSlice,
   about => about.editBlockId,

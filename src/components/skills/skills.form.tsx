@@ -1,12 +1,10 @@
-import { FC } from "react"
 import styles from "./skills.module.css"
-import { SkillsData } from "../../../shared/types"
+import { selectSkills } from "../../store/about/selectors"
+import { useSelector } from "react-redux"
 
-type Props = {
-  skills: SkillsData
-}
+export const SkillsForm = () => {
+  const skills = useSelector(selectSkills)
 
-const Skills: FC<Props> = ({ skills }) => {
   const data = Object.entries(skills)
   return (
     <div className={styles.container}>
@@ -25,5 +23,3 @@ const Skills: FC<Props> = ({ skills }) => {
     </div>
   )
 }
-
-export default Skills

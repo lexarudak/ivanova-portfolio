@@ -21,4 +21,5 @@ export enum LS_KEY {
 
 export enum ABOUT_BLOCK_ID {
   about = "about",
+  skills = "skills",
 }

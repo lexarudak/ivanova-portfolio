@@ -2,7 +2,6 @@ import { useLoaderData } from "react-router-dom"
 import AboutInfo from "../../components/blocks/about-info"
 import Education from "../../components/blocks/education"
 import ProfessionalExperience from "../../components/blocks/professional-experience"
-import Skills from "../../components/blocks/skills"
 import FilterIconBlock from "../../components/filter-icon-block"
 import { ABOUT_BLOCK_ID, FILTERS } from "../../shared/constants"
 import styles from "./about-page.module.css"
@@ -13,11 +12,11 @@ import EditWrapper from "../../components/edit-wrapper/edit-wrapper"
 import { setAboutData, setEditBlockId } from "../../store/about"
 import { AboutForm, AboutView } from "../../components/about"
 import { useEffect } from "react"
+import { SkillsForm, SkillsView } from "../../components/skills"
 
 const AboutPage = () => {
   const aboutData = useLoaderData() as About
-  const { title, languages, location, image, skills, experience, education } =
-    aboutData
+  const { title, languages, location, image, experience, education } = aboutData
 
   const editBlockId = useSelector(selectAboutEditBlockId)
   const dispatch = useDispatch()
@@ -36,9 +35,19 @@ const AboutPage = () => {
         filters={[FILTERS.architect, FILTERS.design]}
         className={styles.filters}
       />
+
       <img src={image} alt={title} className={styles.img} />
+
       <AboutInfo {...{ languages, location }} />
-      <Skills skills={skills} />
+
+      <EditWrapper
+        className={styles.skills}
+        isBlockEdit={editBlockId === ABOUT_BLOCK_ID.skills}
+        setIsBlockEdit={setEditId(ABOUT_BLOCK_ID.skills)}
+        view={<SkillsView />}
+        form={<SkillsForm />}
+      />
+
       <ProfessionalExperience experience={experience} />
 
       <EditWrapper

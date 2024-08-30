@@ -8,7 +8,7 @@ export const AboutView = () => {
   return (
     <div className={styles.about}>
       <p className={styles.title}>About</p>
-      <p className={styles.text}>{text}</p>
+      <div className={styles.text}>{text}</div>
     </div>
   )
 }
