@@ -10,8 +10,6 @@ interface ProjectService {
 
 export const projectService: ProjectService = () => {
   const ORIGIN = `${import.meta.env.VITE_APP_API_URL}`
-  console.log(import.meta.env)
-
   return {
     async getAllProjects() {
       const res = await fetch(`${ORIGIN}/projects`)

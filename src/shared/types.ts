@@ -41,10 +41,8 @@ export type Project = {
 export type About = {
   title: string
   image: string
-  info: {
-    location: string
-    languages: string[]
-  }
+  location: string
+  languages: string[]
   skills: SkillsData
   experience: {
     title: string

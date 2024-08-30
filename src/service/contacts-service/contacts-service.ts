@@ -7,6 +7,8 @@ interface ContactsService {
   }
 }
 
+const headers = { "Content-Type": "application/json" }
+
 export const contactsService: ContactsService = () => {
   const ORIGIN = `${import.meta.env.VITE_APP_API_URL}/contacts`
 
@@ -21,7 +23,7 @@ export const contactsService: ContactsService = () => {
     async postContacts(contacts) {
       const res = await fetch(ORIGIN, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers,
         body: JSON.stringify({
           contacts: contacts.map(({ title, value }) => ({ title, value })),
         }),

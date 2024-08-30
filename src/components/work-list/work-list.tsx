@@ -11,8 +11,6 @@ type Props = {
 }
 
 const WorkList: FC<Props> = ({ works }) => {
-  console.log(works)
-
   const activeFilter = useWorkFilter() as FILTERS
 
   const filter = ({ filters }: WorkCardData) =>

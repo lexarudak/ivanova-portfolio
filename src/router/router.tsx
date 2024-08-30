@@ -7,6 +7,7 @@ import AboutPage from "../pages/about-page/about-page"
 import ContactsPage from "../pages/contacts-page"
 import { projectService } from "../service/projects-service/projects-service"
 import { contactsService } from "../service/contacts-service/contacts-service"
+import { aboutService } from "../service/about-service/about-service"
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
       {
         path: PAGES.about,
         element: <AboutPage />,
-        loader: projectService().getAbout,
+        loader: aboutService().getAbout,
       },
       {
         path: PAGES.contacts,

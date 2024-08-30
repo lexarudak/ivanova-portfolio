@@ -14,3 +14,11 @@ export enum BLOCK_TYPE {
   halfImage = "half-image",
   halfImageRight = "half-image-right",
 }
+
+export enum LS_KEY {
+  isEditMode = "is-edit-mode",
+}
+
+export enum ABOUT_BLOCK_ID {
+  about = "about",
+}

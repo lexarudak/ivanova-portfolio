@@ -4,13 +4,30 @@ import Education from "../../components/blocks/education"
 import ProfessionalExperience from "../../components/blocks/professional-experience"
 import Skills from "../../components/blocks/skills"
 import FilterIconBlock from "../../components/filter-icon-block"
-import { FILTERS } from "../../shared/constants"
+import { ABOUT_BLOCK_ID, FILTERS } from "../../shared/constants"
 import styles from "./about-page.module.css"
 import { About } from "../../shared/types"
+import { useDispatch, useSelector } from "react-redux"
+import { selectAboutEditBlockId } from "../../store/about/selectors"
+import EditWrapper from "../../components/edit-wrapper/edit-wrapper"
+import { setAboutData, setEditBlockId } from "../../store/about"
+import { AboutForm, AboutView } from "../../components/about"
+import { useEffect } from "react"
 
 const AboutPage = () => {
-  const { title, info, image, skills, experience, about, education } =
-    useLoaderData() as About
+  const aboutData = useLoaderData() as About
+  const { title, languages, location, image, skills, experience, education } =
+    aboutData
+
+  const editBlockId = useSelector(selectAboutEditBlockId)
+  const dispatch = useDispatch()
+
+  const setEditId = (id: ABOUT_BLOCK_ID) => (isEdit: boolean) =>
+    dispatch(setEditBlockId(isEdit ? id : null))
+
+  useEffect(() => {
+    dispatch(setAboutData(aboutData))
+  }, [aboutData, dispatch])
 
   return (
     <section className={styles.page}>
@@ -20,14 +37,17 @@ const AboutPage = () => {
         className={styles.filters}
       />
       <img src={image} alt={title} className={styles.img} />
-      <AboutInfo {...info} />
+      <AboutInfo {...{ languages, location }} />
       <Skills skills={skills} />
       <ProfessionalExperience experience={experience} />
 
-      <div className={styles.about}>
-        <p className={styles.desc}>About</p>
-        <p>{about}</p>
-      </div>
+      <EditWrapper
+        className={styles.about}
+        isBlockEdit={editBlockId === ABOUT_BLOCK_ID.about}
+        setIsBlockEdit={setEditId(ABOUT_BLOCK_ID.about)}
+        view={<AboutView />}
+        form={<AboutForm />}
+      />
 
       <Education education={education} />
     </section>
