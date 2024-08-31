@@ -1,25 +1,78 @@
 import styles from "./skills.module.css"
 import { selectSkills } from "../../store/about/selectors"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { ChangeEvent, useState } from "react"
+import { SkillsData } from "../../shared/types"
+import EditButton from "../shared-components/edit-button"
+import { EDIT_BUTTON_VARIANT } from "../../shared/constants"
+import { aboutService } from "../../service/about-service/about-service"
+import { setIsLoading } from "../../store/app"
+import { setEditBlockId, setSkills } from "../../store/about"
+import { cleanObjectArrays } from "../../shared/helpers"
 
 export const SkillsForm = () => {
-  const skills = useSelector(selectSkills)
+  const dispatch = useDispatch()
+  const initSkills = useSelector(selectSkills)
+  const [currentSkills, setCurrentSkills] = useState(initSkills)
+  const data = Object.entries(currentSkills) as [keyof SkillsData, string[]][]
 
-  const data = Object.entries(skills)
+  const onChange =
+    (list: string[], idx: number, title: keyof SkillsData) =>
+    (e: ChangeEvent<HTMLInputElement>) =>
+      setCurrentSkills(prev => {
+        const newList = [...list]
+        newList[idx] = e.target.value
+        return { ...prev, [title]: newList }
+      })
+
+  const onClick = (title: keyof SkillsData) => () =>
+    setCurrentSkills({
+      ...currentSkills,
+      [title]: [...currentSkills[title], ""],
+    })
+
+  const submit = async () => {
+    dispatch(setIsLoading(true))
+
+    try {
+      const { skills } = await aboutService().setSkills(
+        cleanObjectArrays(currentSkills),
+      )
+      dispatch(setSkills(skills))
+      dispatch(setEditBlockId(null))
+    } finally {
+      dispatch(setIsLoading(false))
+    }
+  }
+
   return (
-    <div className={styles.container}>
-      {data.map(([title, list]) => (
-        <div key={title} className={styles.block}>
-          <p className={styles.title}>{title}</p>
-          <ul className={styles.list}>
-            {list.map(skill => (
-              <li key={skill} className={styles.list}>
-                {skill}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </div>
+    <>
+      <div className={styles.container}>
+        {data.map(([title, list]) => (
+          <div key={title} className={styles.block}>
+            <p className={styles.title}>{title}</p>
+
+            <ul className={styles.list}>
+              {list.map((skill, idx) => (
+                <li key={idx} className={styles.item}>
+                  <input value={skill} onChange={onChange(list, idx, title)} />
+                </li>
+              ))}
+            </ul>
+
+            <EditButton
+              variant={EDIT_BUTTON_VARIANT.plus}
+              onClick={onClick(title)}
+              className={styles.plus}
+            />
+          </div>
+        ))}
+      </div>
+      <EditButton
+        variant={EDIT_BUTTON_VARIANT.save}
+        onClick={submit}
+        className={styles.save}
+      />
+    </>
   )
 }

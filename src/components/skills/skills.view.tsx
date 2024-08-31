@@ -12,8 +12,8 @@ export const SkillsView = () => {
         <div key={title} className={styles.block}>
           <p className={styles.title}>{title}</p>
           <ul className={styles.list}>
-            {list.map(skill => (
-              <li key={skill} className={styles.list}>
+            {list.map((skill, idx) => (
+              <li key={idx} className={styles.item}>
                 {skill}
               </li>
             ))}

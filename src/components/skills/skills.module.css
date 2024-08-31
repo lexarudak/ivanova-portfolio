@@ -1,26 +1,35 @@
 .container {
 	display: flex;
-	width: 50%;
+	width: 60%;
 	align-items: flex-start;
-	justify-content: space-between;
-  flex-wrap: wrap;
+	flex-wrap: wrap;
+	gap: 50px;
 
 	@media (max-width:800px) {
-		width: 80%;
-	}
-
-  @media (max-width:600px) {
 		width: 100%;
 	}
 
 }
 
+.list {
+	flex: 1 1 auto;
+	min-width: 120px;
+}
+
 .block {
-  margin-right: 20px;
+	margin-right: 20px;
 }
 
 .title {
 	color: var(--font-secondary);
 	margin-bottom: 20px;
 	text-transform: capitalize;
+}
+
+.plus, .save {
+	margin-top: 20px;
+}
+
+.item > input {
+	margin-bottom: 5px;
 }

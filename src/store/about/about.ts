@@ -26,8 +26,8 @@ const initialState: AboutState = {
   },
   image: "",
   skills: {
-    intermediate: [],
     advanced: [],
+    intermediate: [],
     novice: [],
   },
   experience: [],
@@ -40,9 +40,13 @@ export const aboutSlice = createSlice({
   reducers: {
     setAboutData: (state, action) => {
       state.about = action.payload.about
+      state.skills = action.payload.skills
     },
     setAbout: (state, action) => {
       state.about = action.payload
+    },
+    setSkills: (state, action) => {
+      state.skills = action.payload
     },
     setEditBlockId: (state, action) => {
       state.editBlockId = action.payload
@@ -50,6 +54,7 @@ export const aboutSlice = createSlice({
   },
 })
 
-export const { setAbout, setEditBlockId, setAboutData } = aboutSlice.actions
+export const { setAbout, setEditBlockId, setAboutData, setSkills } =
+  aboutSlice.actions
 
 export default aboutSlice.reducer

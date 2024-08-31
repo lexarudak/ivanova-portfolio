@@ -5,6 +5,7 @@ export enum BUTTON_VARIANT {
 }
 
 export enum EDIT_BUTTON_VARIANT {
+  plus = "plus",
   edit = "edit",
   delete = "delete",
   cancel = "cancel",

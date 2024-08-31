@@ -2,12 +2,12 @@ import { useState } from "react"
 import styles from "./contacts.module.css"
 import { v4 } from "uuid"
 import EditButton from "../shared-components/edit-button"
-import { EDIT_BUTTON_VARIANT } from "../shared-components/button/constants"
 import { useDispatch, useSelector } from "react-redux"
 import { setIsLoading } from "../../store/app"
 import { contactsService } from "../../service/contacts-service/contacts-service"
 import { selectContacts } from "../../store/contacts/selectors"
 import { setContacts, setIsEdit } from "../../store/contacts"
+import { EDIT_BUTTON_VARIANT } from "../../shared/constants"
 
 const MAX_FIELDS = 15
 
@@ -25,11 +25,16 @@ const ContactsForm = () => {
     contacts.map(val => ({ ...val, id: v4() })),
   )
 
+  const removeEmptyItems = (items: Item[]) =>
+    items.filter(({ value, title }) => value || title)
+
   const submit = async () => {
     dispatch(setIsLoading(true))
 
     try {
-      const contacts = await contactsService().postContacts(items)
+      const contacts = await contactsService().postContacts(
+        removeEmptyItems(items),
+      )
       dispatch(setContacts(contacts))
       dispatch(setIsEdit(false))
     } finally {
@@ -56,10 +61,6 @@ const ContactsForm = () => {
     }
 
     setItems(prev => [...prev, newField])
-  }
-
-  const removeField = (id: string) => {
-    setItems(prev => [...prev.filter(item => item.id !== id)])
   }
 
   return (
@@ -90,16 +91,14 @@ const ContactsForm = () => {
               })
             }}
           />
-          <EditButton
-            variant={EDIT_BUTTON_VARIANT.delete}
-            onClick={() => removeField(id)}
-          />
         </li>
       ))}
       {items.length < MAX_FIELDS && (
-        <button className={styles.addButton} onClick={addField}>
-          +
-        </button>
+        <EditButton
+          variant={EDIT_BUTTON_VARIANT.plus}
+          onClick={addField}
+          className={styles.plus}
+        />
       )}
       <EditButton
         className={styles.save}

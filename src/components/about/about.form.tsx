@@ -4,9 +4,10 @@ import { selectAbout } from "../../store/about/selectors"
 import { setAbout, setEditBlockId } from "../../store/about"
 import { ChangeEvent, useState } from "react"
 import EditButton from "../shared-components/edit-button"
-import { EDIT_BUTTON_VARIANT } from "../shared-components/button/constants"
+
 import { aboutService } from "../../service/about-service/about-service"
 import { setIsLoading } from "../../store/app"
+import { EDIT_BUTTON_VARIANT } from "../../shared/constants"
 
 export const AboutForm = () => {
   const text = useSelector(selectAbout)
@@ -18,10 +19,11 @@ export const AboutForm = () => {
 
   const submit = async () => {
     try {
+      dispatch(setIsLoading(true))
+
       const { about } = await aboutService().setAbout(value)
       dispatch(setAbout(about))
       dispatch(setEditBlockId(null))
-      dispatch(setIsLoading(true))
     } finally {
       dispatch(setIsLoading(false))
     }
@@ -31,7 +33,11 @@ export const AboutForm = () => {
     <div className={styles.about}>
       <p className={styles.title}>About</p>
       <textarea value={value} onChange={onChange} className={styles.text} />
-      <EditButton variant={EDIT_BUTTON_VARIANT.save} onClick={submit} />
+      <EditButton
+        variant={EDIT_BUTTON_VARIANT.save}
+        onClick={submit}
+        className={styles.save}
+      />
     </div>
   )
 }

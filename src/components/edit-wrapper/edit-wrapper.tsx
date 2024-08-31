@@ -3,8 +3,9 @@ import styles from "./edit-wrapper.module.css"
 import { useSelector } from "react-redux"
 import { selectIsEditMode } from "../../store/app/selectors"
 import EditButton from "../shared-components/edit-button"
-import { EDIT_BUTTON_VARIANT } from "../shared-components/button/constants"
+
 import classNames from "classnames"
+import { EDIT_BUTTON_VARIANT } from "../../shared/constants"
 
 type Props = {
   view: ReactNode
