@@ -62,18 +62,30 @@ const ProfessionalExperience = () => {
           Add Experience
         </button>
       )}
-      {experience.map(data => (
-        <EditWrapper
-          key={data.id}
-          className={styles.item}
-          isBlockEdit={
-            editBlockId === `${ABOUT_BLOCK_ID.experience}-${data.id}`
-          }
-          setIsBlockEdit={setEditId(`${ABOUT_BLOCK_ID.experience}-${data.id}`)}
-          form={<ExperienceItemForm initialValues={data} />}
-          view={<ExperienceItemView experience={data} />}
-        />
-      ))}
+      {experience.map(data => {
+        const removeInfo = {
+          text: "Do you really want to remove this Work Experience?",
+          remove: () => {
+            console.log(data.id)
+          },
+        }
+
+        return (
+          <EditWrapper
+            key={data.id}
+            className={styles.item}
+            isBlockEdit={
+              editBlockId === `${ABOUT_BLOCK_ID.experience}-${data.id}`
+            }
+            setIsBlockEdit={setEditId(
+              `${ABOUT_BLOCK_ID.experience}-${data.id}`,
+            )}
+            removeInfo={removeInfo}
+            form={<ExperienceItemForm initialValues={data} />}
+            view={<ExperienceItemView experience={data} />}
+          />
+        )
+      })}
     </>
   )
 }

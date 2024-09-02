@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react"
+import { FC, ReactNode, useState } from "react"
 import styles from "./edit-wrapper.module.css"
 import { useSelector } from "react-redux"
 import { selectIsEditMode } from "../../store/app/selectors"
@@ -6,6 +6,13 @@ import EditButton from "../shared-components/edit-button"
 
 import classNames from "classnames"
 import { EDIT_BUTTON_VARIANT } from "../../shared/constants"
+import { createPortal } from "react-dom"
+import RemovePopup from "../remove-popup"
+
+type RemoveInfo = {
+  text: string
+  remove: () => Promise<void>
+}
 
 type Props = {
   view: ReactNode
@@ -13,6 +20,7 @@ type Props = {
   isBlockEdit: boolean
   setIsBlockEdit: (isEdit: boolean) => void
   className?: string
+  removeInfo?: RemoveInfo
 }
 
 const EditWrapper: FC<Props> = ({
@@ -21,8 +29,18 @@ const EditWrapper: FC<Props> = ({
   className,
   isBlockEdit,
   setIsBlockEdit,
+  removeInfo,
 }) => {
   const isEditMode = useSelector(selectIsEditMode)
+  const [removeItem, setRemoveItem] = useState<RemoveInfo | null>(null)
+
+  const onRemoveClick = () => removeInfo && setRemoveItem(removeInfo)
+  const onCancel = () => setRemoveItem(null)
+
+  const onRemove = async () => {
+    await removeItem?.remove()
+    setRemoveItem(null)
+  }
 
   if (isBlockEdit) {
     return (
@@ -46,9 +64,24 @@ const EditWrapper: FC<Props> = ({
             variant={EDIT_BUTTON_VARIANT.edit}
             onClick={() => setIsBlockEdit(true)}
           />
+          {removeInfo && (
+            <EditButton
+              variant={EDIT_BUTTON_VARIANT.delete}
+              onClick={onRemoveClick}
+            />
+          )}
         </div>
       )}
       {view}
+      {removeItem &&
+        createPortal(
+          <RemovePopup
+            text={removeItem.text}
+            remove={onRemove}
+            cancel={onCancel}
+          />,
+          document.body,
+        )}
     </div>
   )
 }
