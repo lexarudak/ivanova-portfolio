@@ -7,6 +7,7 @@ import EditWrapper from "../../edit-wrapper/edit-wrapper"
 import { ABOUT_BLOCK_ID } from "../../../shared/constants"
 import {
   clearExperience,
+  deleteExperience,
   setEditBlockId,
   setExperience,
 } from "../../../store/about"
@@ -18,6 +19,8 @@ import { selectIsEditMode } from "../../../store/app/selectors"
 import { v4 } from "uuid"
 import { useEffect } from "react"
 import { WorkExperienceData } from "../../../shared/types"
+import { setIsLoading } from "../../../store/app"
+import { aboutService } from "../../../service/about-service/about-service"
 
 const defaultExperience: WorkExperienceData = {
   id: "",
@@ -65,8 +68,11 @@ const ProfessionalExperience = () => {
       {experience.map(data => {
         const removeInfo = {
           text: "Do you really want to remove this Work Experience?",
-          remove: () => {
-            console.log(data.id)
+          remove: async () => {
+            dispatch(setIsLoading(true))
+            const { id } = await aboutService().deleteExperience(data.id)
+            dispatch(deleteExperience(id))
+            dispatch(setIsLoading(false))
           },
         }
 

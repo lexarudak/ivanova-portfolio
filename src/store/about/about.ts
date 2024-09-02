@@ -70,6 +70,11 @@ export const aboutSlice = createSlice({
     setEditBlockId: (state, action) => {
       state.editBlockId = action.payload
     },
+    deleteExperience: (state, action) => {
+      state.experience = state.experience.filter(
+        ({ id }) => id !== action.payload,
+      )
+    },
   },
 })
 
@@ -80,6 +85,7 @@ export const {
   setSkills,
   setExperience,
   clearExperience,
+  deleteExperience,
 } = aboutSlice.actions
 
 export default aboutSlice.reducer

@@ -5,6 +5,7 @@ interface ProjectService {
     getAbout: LoaderFunction<About>
     setAbout: (about: string) => Promise<{ about: string }>
     setSkills: (skills: SkillsData) => Promise<{ skills: SkillsData }>
+    deleteExperience: (id: string) => Promise<{ id: string }>
     updateExperience: (
       experience: WorkExperienceData,
     ) => Promise<{ experience: WorkExperienceData }>
@@ -53,6 +54,15 @@ export const aboutService: ProjectService = () => {
         body: JSON.stringify({ experience }),
       })
       const data: { experience: WorkExperienceData } = await res.json()
+
+      return data
+    },
+
+    async deleteExperience(id: string) {
+      const res = await fetch(`${ORIGIN}/experience/${id}`, {
+        method: "DELETE",
+      })
+      const data: { id: string } = await res.json()
 
       return data
     },
