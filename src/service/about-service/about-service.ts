@@ -1,10 +1,13 @@
 import { LoaderFunction } from "react-router-dom"
-import { About, SkillsData } from "../../shared/types"
+import { About, SkillsData, WorkExperienceData } from "../../shared/types"
 interface ProjectService {
   (): {
     getAbout: LoaderFunction<About>
     setAbout: (about: string) => Promise<{ about: string }>
     setSkills: (skills: SkillsData) => Promise<{ skills: SkillsData }>
+    updateExperience: (
+      experience: WorkExperienceData,
+    ) => Promise<{ experience: WorkExperienceData }>
   }
 }
 
@@ -39,6 +42,17 @@ export const aboutService: ProjectService = () => {
         body: JSON.stringify({ skills }),
       })
       const data: { skills: SkillsData } = await res.json()
+
+      return data
+    },
+
+    async updateExperience(experience: WorkExperienceData) {
+      const res = await fetch(`${ORIGIN}/experience`, {
+        method: "PATCH",
+        headers,
+        body: JSON.stringify({ experience }),
+      })
+      const data: { experience: WorkExperienceData } = await res.json()
 
       return data
     },

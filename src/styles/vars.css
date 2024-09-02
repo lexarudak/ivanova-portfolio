@@ -14,6 +14,7 @@
   --font-main: #222222;
   --font-light: #ffffff;
   --font-secondary: #8e8e8e;
+  --font-disabled: #e1dfdf;
 
   /* size */
   --header-height: 60px;

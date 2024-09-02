@@ -16,7 +16,7 @@ import { SkillsForm, SkillsView } from "../../components/skills"
 
 const AboutPage = () => {
   const aboutData = useLoaderData() as About
-  const { title, languages, location, image, experience, education } = aboutData
+  const { title, languages, location, image, education } = aboutData
 
   const editBlockId = useSelector(selectAboutEditBlockId)
   const dispatch = useDispatch()
@@ -48,7 +48,7 @@ const AboutPage = () => {
         form={<SkillsForm />}
       />
 
-      <ProfessionalExperience experience={experience} />
+      <ProfessionalExperience />
 
       <EditWrapper
         className={styles.about}

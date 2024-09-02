@@ -1,0 +1,30 @@
+.item {
+	margin: 100px 0;
+}
+
+.add {
+	margin: 100px 0;
+	display: flex;
+	padding: 10px 20px;
+	border: 1px dashed var(--font-secondary);
+	border-radius: 5px;
+	color: var(--font-secondary);
+	transition: .3s;
+
+	&:hover {
+		color: var(--font-main);
+		border-color: var(--font-main);
+	}
+
+	&:disabled {
+		cursor: default;
+    background-color: var(--font-disabled);
+
+		&:hover {
+			color: var(--font-secondary);
+			border-color: var(--font-secondary);
+		}
+
+	}
+
+}

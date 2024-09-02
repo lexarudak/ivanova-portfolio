@@ -1,15 +1,21 @@
 import { FC } from "react"
 import styles from "./experience-item.module.css"
-import { ExperienceData } from "../../../shared/types"
+import { WorkExperienceData } from "../../../shared/types"
 
-const ExperienceItem: FC<ExperienceData> = ({
-  title,
-  location,
-  period,
-  position,
-  time,
-  workType,
-  achievements,
+type Props = {
+  experience: WorkExperienceData
+}
+
+export const ExperienceItemView: FC<Props> = ({
+  experience: {
+    title,
+    location,
+    period,
+    position,
+    time,
+    workType,
+    achievements,
+  },
 }) => {
   return (
     <div className={styles.container}>
@@ -32,5 +38,3 @@ const ExperienceItem: FC<ExperienceData> = ({
     </div>
   )
 }
-
-export default ExperienceItem

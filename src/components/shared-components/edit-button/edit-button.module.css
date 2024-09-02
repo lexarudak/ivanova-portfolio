@@ -1,6 +1,7 @@
 .btn {
 	display: flex;
 	height: 20px;
+	width: 20px;
 }
 
 .img {

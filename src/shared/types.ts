@@ -15,6 +15,7 @@ export type Block = {
 }
 
 export type ExperienceData = {
+  id: string
   title: string
   location: string
   position: string
@@ -23,7 +24,10 @@ export type ExperienceData = {
   time?: string
   workType?: string
   achievements?: string[]
+  isSaved: boolean
 }
+
+export type WorkExperienceData = Required<ExperienceData>
 
 export type Project = {
   id: string
@@ -44,22 +48,9 @@ export type About = {
   location: string
   languages: string[]
   skills: SkillsData
-  experience: {
-    title: string
-    location: string
-    position: string
-    time: string
-    workType: string
-    period: string
-    achievements: string[]
-  }[]
+  experience: ExperienceData[]
   about: string
-  education: {
-    title: string
-    location: string
-    position: string
-    period: string
-  }[]
+  education: ExperienceData[]
 }
 
 export type ContactsData = { title: string; value: string }[]

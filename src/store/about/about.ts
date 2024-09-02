@@ -1,6 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { ABOUT_BLOCK_ID } from "../../shared/constants"
-import { ExperienceData, SkillsData } from "../../shared/types"
+import {
+  ExperienceData,
+  SkillsData,
+  WorkExperienceData,
+} from "../../shared/types"
 
 type AboutState = {
   about: string
@@ -12,7 +16,7 @@ type AboutState = {
   }
   image: string
   skills: SkillsData
-  experience: ExperienceData[]
+  experience: WorkExperienceData[]
   education: ExperienceData[]
 }
 
@@ -41,6 +45,7 @@ export const aboutSlice = createSlice({
     setAboutData: (state, action) => {
       state.about = action.payload.about
       state.skills = action.payload.skills
+      state.experience = action.payload.experience
     },
     setAbout: (state, action) => {
       state.about = action.payload
@@ -48,13 +53,33 @@ export const aboutSlice = createSlice({
     setSkills: (state, action) => {
       state.skills = action.payload
     },
+    setExperience: (state, action) => {
+      const idx = state.experience.findIndex(
+        ({ id }) => action.payload.id === id,
+      )
+
+      if (idx === -1) {
+        state.experience = [action.payload, ...state.experience]
+      } else {
+        state.experience[idx] = action.payload
+      }
+    },
+    clearExperience: state => {
+      state.experience = state.experience.filter(({ isSaved }) => isSaved)
+    },
     setEditBlockId: (state, action) => {
       state.editBlockId = action.payload
     },
   },
 })
 
-export const { setAbout, setEditBlockId, setAboutData, setSkills } =
-  aboutSlice.actions
+export const {
+  setAbout,
+  setEditBlockId,
+  setAboutData,
+  setSkills,
+  setExperience,
+  clearExperience,
+} = aboutSlice.actions
 
 export default aboutSlice.reducer
