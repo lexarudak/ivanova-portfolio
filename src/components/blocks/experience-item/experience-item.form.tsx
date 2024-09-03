@@ -39,13 +39,7 @@ export const ExperienceItemForm: FC<Props> = ({ initialValues }) => {
       enableReinitialize
       validateOnBlur
     >
-      {({
-        values: { achievements },
-        submitForm,
-        setFieldValue,
-        errors,
-        touched,
-      }) => {
+      {({ values: { achievements }, setFieldValue, errors, touched }) => {
         const addAchievement = () =>
           setFieldValue("achievements", [...achievements, ""])
 
@@ -93,7 +87,6 @@ export const ExperienceItemForm: FC<Props> = ({ initialValues }) => {
                 <EditButton
                   variant={EDIT_BUTTON_VARIANT.save}
                   className={styles.save}
-                  onClick={submitForm}
                   type="submit"
                 />
               </div>
