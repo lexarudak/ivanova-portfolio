@@ -7,8 +7,3 @@ export const selectContacts = createSelector(
   selectContactsSlice,
   contacts => contacts.contacts,
 )
-
-export const selectIsContactsEdit = createSelector(
-  selectContactsSlice,
-  contacts => contacts.isEdit,
-)

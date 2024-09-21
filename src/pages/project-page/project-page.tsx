@@ -29,7 +29,9 @@ const ProjectPage = () => {
       <h1 className={styles.title}>{title}</h1>
       <FilterIconBlock filters={filters} className={styles.filters} />
       <img src={image} alt={title} className={styles.img} />
+
       <ProjectInfo {...info} />
+
       {blocks.map(({ blockType, ...rest }) =>
         blockList[blockType]({ ...rest }),
       )}

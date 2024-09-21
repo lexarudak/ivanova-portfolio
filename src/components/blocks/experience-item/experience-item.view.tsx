@@ -1,22 +1,22 @@
 import { FC } from "react"
 import styles from "./experience-item.module.css"
-import { WorkExperienceData } from "../../../shared/types"
+import { useSelector } from "react-redux"
+import { selectExperienceById } from "../../../store/about/selectors"
 
 type Props = {
-  experience: WorkExperienceData
+  id: string
 }
 
-export const ExperienceItemView: FC<Props> = ({
-  experience: {
-    title,
-    location,
-    period,
-    position,
-    time,
-    workType,
-    achievements,
-  },
-}) => {
+export const ExperienceItemView: FC<Props> = ({ id }) => {
+  const experience = useSelector(selectExperienceById(id))
+
+  if (!experience) {
+    return null
+  }
+
+  const { title, location, period, position, time, workType, achievements } =
+    experience
+
   return (
     <div className={styles.container}>
       <div className={styles.info}>

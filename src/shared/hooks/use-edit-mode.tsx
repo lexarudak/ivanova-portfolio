@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { selectIsEditMode } from "../../store/app/selectors"
 import { useDispatch, useSelector } from "react-redux"
-import { setIsEditMode } from "../../store/app"
+import { setEditBlockId, setIsEditMode } from "../../store/app"
 import { LS_KEY } from "../constants"
 
 const useEditMode = (): [boolean, () => void] => {
@@ -12,6 +12,9 @@ const useEditMode = (): [boolean, () => void] => {
     const newValue = !isEditMode
 
     dispatch(setIsEditMode(newValue))
+    if (!newValue) {
+      dispatch(setEditBlockId(""))
+    }
     localStorage.setItem(LS_KEY.isEditMode, newValue ? "edit" : "")
   }
 

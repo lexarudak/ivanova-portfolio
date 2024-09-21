@@ -3,7 +3,6 @@ import { ContactsData } from "../../shared/types"
 
 const initialState = {
   contacts: [] as ContactsData,
-  isEdit: false,
 }
 
 export const contactsSlice = createSlice({
@@ -13,12 +12,9 @@ export const contactsSlice = createSlice({
     setContacts: (state, action) => {
       state.contacts = action.payload
     },
-    setIsEdit: (state, action) => {
-      state.isEdit = action.payload
-    },
   },
 })
 
-export const { setContacts, setIsEdit } = contactsSlice.actions
+export const { setContacts } = contactsSlice.actions
 
 export default contactsSlice.reducer

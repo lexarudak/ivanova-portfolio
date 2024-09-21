@@ -6,8 +6,8 @@ import { SkillsData } from "../../shared/types"
 import EditButton from "../shared-components/edit-button"
 import { EDIT_BUTTON_VARIANT } from "../../shared/constants"
 import { aboutService } from "../../service/about-service/about-service"
-import { setIsLoading } from "../../store/app"
-import { setEditBlockId, setSkills } from "../../store/about"
+import { setEditBlockId, setIsLoading } from "../../store/app"
+import { setSkills } from "../../store/about"
 import { cleanObjectArrays } from "../../shared/helpers"
 
 export const SkillsForm = () => {
@@ -32,14 +32,13 @@ export const SkillsForm = () => {
     })
 
   const submit = async () => {
-    dispatch(setIsLoading(true))
-
     try {
+      dispatch(setIsLoading(true))
       const { skills } = await aboutService().setSkills(
         cleanObjectArrays(currentSkills),
       )
       dispatch(setSkills(skills))
-      dispatch(setEditBlockId(null))
+      dispatch(setEditBlockId(""))
     } finally {
       dispatch(setIsLoading(false))
     }

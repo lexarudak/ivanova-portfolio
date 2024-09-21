@@ -48,9 +48,10 @@ export type About = {
   location: string
   languages: string[]
   skills: SkillsData
-  experience: ExperienceData[]
+  experience: WorkExperienceData[]
   about: string
   education: ExperienceData[]
+  experienceOrder: string
 }
 
 export type ContactsData = { title: string; value: string }[]

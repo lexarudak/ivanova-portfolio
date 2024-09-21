@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit"
 const initialState = {
   isLoading: false,
   isEditMode: false,
+  editBlockId: "",
 }
 
 export const appSlice = createSlice({
@@ -15,9 +16,12 @@ export const appSlice = createSlice({
     setIsEditMode: (state, action) => {
       state.isEditMode = action.payload
     },
+    setEditBlockId: (state, action) => {
+      state.editBlockId = action.payload
+    },
   },
 })
 
-export const { setIsLoading, setIsEditMode } = appSlice.actions
+export const { setIsLoading, setIsEditMode, setEditBlockId } = appSlice.actions
 
 export default appSlice.reducer

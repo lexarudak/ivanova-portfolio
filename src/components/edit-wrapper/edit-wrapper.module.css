@@ -1,5 +1,29 @@
 .editButtons {
-  margin-bottom: 20px;
-  display: flex;
-  gap: 20px;
+	margin-bottom: 20px;
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+
+.container {
+	background-color: var(--bg-main);
+	border-radius: 10px;
+	margin-bottom: 100px;
+
+	&.edit {
+		padding: 20px;
+	}
+
+	&.isDragging {
+		opacity: 0.4;
+	}
+
+}
+
+.dndHandler {
+	width: 20px;
+	height: 6px;
+	border-top: 3px solid var(--font-secondary);
+	border-bottom: 3px solid var(--font-secondary);
+	cursor: grab;
 }

@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux"
 import styles from "./about.module.css"
 import { selectAbout } from "../../store/about/selectors"
-import { setAbout, setEditBlockId } from "../../store/about"
+import { setAbout } from "../../store/about"
 import { ChangeEvent, useState } from "react"
 import EditButton from "../shared-components/edit-button"
 
 import { aboutService } from "../../service/about-service/about-service"
-import { setIsLoading } from "../../store/app"
+import { setEditBlockId, setIsLoading } from "../../store/app"
 import { EDIT_BUTTON_VARIANT } from "../../shared/constants"
 
 export const AboutForm = () => {
@@ -20,10 +20,9 @@ export const AboutForm = () => {
   const submit = async () => {
     try {
       dispatch(setIsLoading(true))
-
       const { about } = await aboutService().setAbout(value)
       dispatch(setAbout(about))
-      dispatch(setEditBlockId(null))
+      dispatch(setEditBlockId(""))
     } finally {
       dispatch(setIsLoading(false))
     }

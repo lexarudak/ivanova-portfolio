@@ -3,6 +3,7 @@
 	width: 85%;
 	position: relative;
 	justify-content: space-between;
+	background-color: var(--bg-main);
 
 	@media (max-width:800px) {
 		width: 100%;

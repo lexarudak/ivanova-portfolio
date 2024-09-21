@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit"
-import { ABOUT_BLOCK_ID } from "../../shared/constants"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import {
+  About,
   ExperienceData,
   SkillsData,
   WorkExperienceData,
@@ -8,7 +8,6 @@ import {
 
 type AboutState = {
   about: string
-  editBlockId: ABOUT_BLOCK_ID | null
   title: string
   info: {
     location: string
@@ -18,12 +17,12 @@ type AboutState = {
   skills: SkillsData
   experience: WorkExperienceData[]
   education: ExperienceData[]
+  experienceOrder: string[]
 }
 
 const initialState: AboutState = {
   about: "",
   title: "",
-  editBlockId: null,
   info: {
     languages: [],
     location: "",
@@ -36,16 +35,21 @@ const initialState: AboutState = {
   },
   experience: [],
   education: [],
+  experienceOrder: [],
 }
 
 export const aboutSlice = createSlice({
   name: "about",
   initialState,
   reducers: {
-    setAboutData: (state, action) => {
+    setAboutData: (state, action: PayloadAction<About>) => {
       state.about = action.payload.about
       state.skills = action.payload.skills
       state.experience = action.payload.experience
+      state.experienceOrder = action.payload.experienceOrder.split(",")
+    },
+    setExperienceOrder: (state, action) => {
+      state.experienceOrder = action.payload
     },
     setAbout: (state, action) => {
       state.about = action.payload
@@ -64,28 +68,33 @@ export const aboutSlice = createSlice({
         state.experience[idx] = action.payload
       }
     },
+    setAllExperiences: (state, action) => {
+      state.experience = action.payload
+    },
     clearExperience: state => {
       state.experience = state.experience.filter(({ isSaved }) => isSaved)
-    },
-    setEditBlockId: (state, action) => {
-      state.editBlockId = action.payload
+      state.experienceOrder = state.experienceOrder.filter(
+        id => !id.includes("new"),
+      )
     },
     deleteExperience: (state, action) => {
       state.experience = state.experience.filter(
-        ({ id }) => id !== action.payload,
+        ({ id }) => id !== action.payload.id,
       )
+      state.experienceOrder = action.payload.experienceOrder.split(",")
     },
   },
 })
 
 export const {
   setAbout,
-  setEditBlockId,
   setAboutData,
   setSkills,
   setExperience,
   clearExperience,
   deleteExperience,
+  setAllExperiences,
+  setExperienceOrder,
 } = aboutSlice.actions
 
 export default aboutSlice.reducer

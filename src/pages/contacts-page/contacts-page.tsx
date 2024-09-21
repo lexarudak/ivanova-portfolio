@@ -5,14 +5,13 @@ import EditWrapper from "../../components/edit-wrapper/edit-wrapper"
 import ContactsView from "../../components/contacts/contacts.view"
 import ContactsForm from "../../components/contacts/contacts.form"
 import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { setContacts, setIsEdit } from "../../store/contacts"
-import { selectIsContactsEdit } from "../../store/contacts/selectors"
+import { useDispatch } from "react-redux"
+import { setContacts } from "../../store/contacts"
+import { BLOCK_ID } from "../../shared/constants"
 
 const ContactsPage = () => {
   const contacts = useLoaderData() as ContactsData
   const dispatch = useDispatch()
-  const isBlockEdit = useSelector(selectIsContactsEdit)
 
   useEffect(() => {
     if (contacts) {
@@ -20,16 +19,13 @@ const ContactsPage = () => {
     }
   }, [contacts, dispatch])
 
-  const setIsBlockEdit = (isEdit: boolean) => dispatch(setIsEdit(isEdit))
-
   return (
     <section className={styles.page}>
       <EditWrapper
         className={styles.container}
-        isBlockEdit={isBlockEdit}
-        setIsBlockEdit={setIsBlockEdit}
         view={<ContactsView />}
         form={<ContactsForm />}
+        id={BLOCK_ID.contacts}
       />
     </section>
   )

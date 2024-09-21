@@ -5,10 +5,13 @@ interface ProjectService {
     getAbout: LoaderFunction<About>
     setAbout: (about: string) => Promise<{ about: string }>
     setSkills: (skills: SkillsData) => Promise<{ skills: SkillsData }>
-    deleteExperience: (id: string) => Promise<{ id: string }>
+    deleteExperience: (
+      id: string,
+    ) => Promise<{ id: string; experienceOrder: string }>
+    saveExperienceOrder: (order: string[]) => Promise<{ order: string[] }>
     updateExperience: (
       experience: WorkExperienceData,
-    ) => Promise<{ experience: WorkExperienceData }>
+    ) => Promise<WorkExperienceData>
   }
 }
 
@@ -53,7 +56,7 @@ export const aboutService: ProjectService = () => {
         headers,
         body: JSON.stringify({ experience }),
       })
-      const data: { experience: WorkExperienceData } = await res.json()
+      const data: WorkExperienceData = await res.json()
 
       return data
     },
@@ -62,9 +65,22 @@ export const aboutService: ProjectService = () => {
       const res = await fetch(`${ORIGIN}/experience/${id}`, {
         method: "DELETE",
       })
-      const data: { id: string } = await res.json()
+      const data: { id: string; experienceOrder: string } = await res.json()
 
       return data
+    },
+
+    async saveExperienceOrder(newOrder: string[]) {
+      const res = await fetch(`${ORIGIN}/experience/order`, {
+        method: "PATCH",
+        headers,
+        body: JSON.stringify({ newOrder }),
+      })
+      const data: { experienceOrder: string } = await res.json()
+
+      console.log(data)
+
+      return { order: data?.experienceOrder.split(",") || "" }
     },
   }
 }

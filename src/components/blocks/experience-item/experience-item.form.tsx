@@ -3,32 +3,47 @@ import styles from "./experience-item.module.css"
 import { WorkExperienceData } from "../../../shared/types"
 import EditButton from "../../shared-components/edit-button"
 import { EDIT_BUTTON_VARIANT } from "../../../shared/constants"
-import { setIsLoading } from "../../../store/app"
-import { useDispatch } from "react-redux"
+import { setEditBlockId, setIsLoading } from "../../../store/app"
+import { useDispatch, useSelector } from "react-redux"
 import { aboutService } from "../../../service/about-service/about-service"
-import { setEditBlockId, setExperience } from "../../../store/about"
+import { setExperience, setExperienceOrder } from "../../../store/about"
 import { Field, Form, Formik } from "formik"
 import { workExperienceSchema } from "./shema"
 import classNames from "classnames"
+import {
+  selectExperienceById,
+  selectExperienceOrder,
+} from "../../../store/about/selectors"
 
 type Props = {
-  initialValues: WorkExperienceData
+  id: string
 }
 
-export const ExperienceItemForm: FC<Props> = ({ initialValues }) => {
+export const ExperienceItemForm: FC<Props> = ({ id }) => {
   const dispatch = useDispatch()
+  const savedExperienceOrder = useSelector(selectExperienceOrder)
+  const initialValues = useSelector(selectExperienceById(id))
+
+  if (!initialValues) {
+    return null
+  }
 
   const submit = async (values: WorkExperienceData) => {
-    dispatch(setIsLoading(true))
-
-    const experience = await aboutService().updateExperience({
-      ...values,
-      achievements: values.achievements.filter(val => !!val),
-    })
-
-    dispatch(setExperience(experience))
-    dispatch(setEditBlockId(null))
-    dispatch(setIsLoading(false))
+    try {
+      dispatch(setIsLoading(true))
+      const experience = await aboutService().updateExperience({
+        ...values,
+        id: id.replace(/-new$/, ""),
+        achievements: values.achievements.filter(Boolean),
+      })
+      if (id.includes("new")) {
+        dispatch(setExperienceOrder([experience.id, ...savedExperienceOrder]))
+      }
+      dispatch(setExperience(experience))
+      dispatch(setEditBlockId(""))
+    } finally {
+      dispatch(setIsLoading(false))
+    }
   }
 
   return (

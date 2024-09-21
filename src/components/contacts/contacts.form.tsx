@@ -3,10 +3,10 @@ import styles from "./contacts.module.css"
 import { v4 } from "uuid"
 import EditButton from "../shared-components/edit-button"
 import { useDispatch, useSelector } from "react-redux"
-import { setIsLoading } from "../../store/app"
+import { setEditBlockId, setIsLoading } from "../../store/app"
 import { contactsService } from "../../service/contacts-service/contacts-service"
 import { selectContacts } from "../../store/contacts/selectors"
-import { setContacts, setIsEdit } from "../../store/contacts"
+import { setContacts } from "../../store/contacts"
 import { EDIT_BUTTON_VARIANT } from "../../shared/constants"
 
 const MAX_FIELDS = 15
@@ -29,14 +29,13 @@ const ContactsForm = () => {
     items.filter(({ value, title }) => value || title)
 
   const submit = async () => {
-    dispatch(setIsLoading(true))
-
     try {
+      dispatch(setIsLoading(true))
       const contacts = await contactsService().postContacts(
         removeEmptyItems(items),
       )
       dispatch(setContacts(contacts))
-      dispatch(setIsEdit(false))
+      dispatch(setEditBlockId(""))
     } finally {
       dispatch(setIsLoading(false))
     }

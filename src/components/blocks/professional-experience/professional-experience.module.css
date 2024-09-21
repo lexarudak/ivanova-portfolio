@@ -1,9 +1,5 @@
-.item {
-	margin: 100px 0;
-}
-
 .add {
-	margin: 100px 0;
+	margin: 100px 20px;
 	display: flex;
 	padding: 10px 20px;
 	border: 1px dashed var(--font-secondary);
@@ -18,7 +14,7 @@
 
 	&:disabled {
 		cursor: default;
-    background-color: var(--font-disabled);
+		background-color: var(--font-disabled);
 
 		&:hover {
 			color: var(--font-secondary);
@@ -27,4 +23,24 @@
 
 	}
 
+}
+
+.overlay {
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.container {
+	border: 2px dashed transparent;
+	transition: .3s;
+	overflow: hidden;
+
+	&.changed {
+		border-color: var(--bg-active);
+		border-radius: 10px;
+	}
+
+}
+
+.saveOrder {
+	margin-top: 20px;
 }

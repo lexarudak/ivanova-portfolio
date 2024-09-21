@@ -19,10 +19,11 @@ export enum LS_KEY {
   isEditMode = "is-edit-mode",
 }
 
-export enum ABOUT_BLOCK_ID {
+export enum BLOCK_ID {
   about = "about",
   skills = "skills",
   experience = "experience",
+  contacts = "contacts",
 }
 
 export enum BUTTON_VARIANT {
