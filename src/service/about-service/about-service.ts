@@ -1,5 +1,10 @@
 import { LoaderFunction } from "react-router-dom"
-import { About, SkillsData, WorkExperienceData } from "../../shared/types"
+import {
+  About,
+  ExperienceData,
+  SkillsData,
+  WorkExperienceData,
+} from "../../shared/types"
 interface ProjectService {
   (): {
     getAbout: LoaderFunction<About>
@@ -8,10 +13,15 @@ interface ProjectService {
     deleteExperience: (
       id: string,
     ) => Promise<{ id: string; experienceOrder: string }>
+    deleteEducation: (
+      id: string,
+    ) => Promise<{ id: string; educationOrder: string }>
     saveExperienceOrder: (order: string[]) => Promise<{ order: string[] }>
+    saveEducationOrder: (order: string[]) => Promise<{ order: string[] }>
     updateExperience: (
       experience: WorkExperienceData,
     ) => Promise<WorkExperienceData>
+    updateEducation: (education: ExperienceData) => Promise<ExperienceData>
   }
 }
 
@@ -61,11 +71,31 @@ export const aboutService: ProjectService = () => {
       return data
     },
 
+    async updateEducation(education: ExperienceData) {
+      const res = await fetch(`${ORIGIN}/education`, {
+        method: "PATCH",
+        headers,
+        body: JSON.stringify({ education }),
+      })
+      const data: ExperienceData = await res.json()
+
+      return data
+    },
+
     async deleteExperience(id: string) {
       const res = await fetch(`${ORIGIN}/experience/${id}`, {
         method: "DELETE",
       })
       const data: { id: string; experienceOrder: string } = await res.json()
+
+      return data
+    },
+
+    async deleteEducation(id: string) {
+      const res = await fetch(`${ORIGIN}/education/${id}`, {
+        method: "DELETE",
+      })
+      const data: { id: string; educationOrder: string } = await res.json()
 
       return data
     },
@@ -81,6 +111,19 @@ export const aboutService: ProjectService = () => {
       console.log(data)
 
       return { order: data?.experienceOrder.split(",") || "" }
+    },
+
+    async saveEducationOrder(newOrder: string[]) {
+      const res = await fetch(`${ORIGIN}/education/order`, {
+        method: "PATCH",
+        headers,
+        body: JSON.stringify({ newOrder }),
+      })
+      const data: { educationOrder: string } = await res.json()
+
+      console.log(data)
+
+      return { order: data?.educationOrder.split(",") || "" }
     },
   }
 }

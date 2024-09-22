@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { selectExperienceOrder } from "../../../store/about/selectors"
 import {
@@ -9,12 +9,10 @@ import {
 } from "../../../store/about"
 import { v4 } from "uuid"
 import { WorkExperienceData } from "../../../shared/types"
-import { DragEndEvent, DragStartEvent } from "@dnd-kit/core"
-import { arrayMove } from "@dnd-kit/sortable"
 import { setEditBlockId, setIsLoading } from "../../../store/app"
 import { aboutService } from "../../../service/about-service/about-service"
-import { isEqual } from "lodash"
 import { selectEditBlockId } from "../../../store/app/selectors"
+import { NEW_ITEM_KEY } from "../../../shared/constants"
 
 const defaultExperience: WorkExperienceData = {
   id: "",
@@ -34,13 +32,13 @@ export const useWorkExperienceUpdate = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    if (!editBlockId.includes("new")) {
+    if (!editBlockId.includes(NEW_ITEM_KEY.experience)) {
       dispatch(clearExperience())
     }
   }, [dispatch, editBlockId])
 
   const addExperience = () => {
-    const id = `${v4()}-new`
+    const id = `${v4()}${NEW_ITEM_KEY.experience}`
     dispatch(setExperience({ ...defaultExperience, id }))
     dispatch(setExperienceOrder([id, ...savedExperienceOrder]))
     dispatch(setEditBlockId(id))
@@ -56,40 +54,7 @@ export const useWorkExperienceUpdate = () => {
     }
   }
 
-  return { addExperience, getRemoveCallback }
-}
-
-export const useWorkExperienceOrder = () => {
-  const dispatch = useDispatch()
-  const savedExperienceOrder = useSelector(selectExperienceOrder)
-  const [currentOrder, setCurrentOrder] = useState(savedExperienceOrder)
-  const [activeId, setActiveId] = useState<string | null>(null)
-
-  useEffect(() => {
-    setCurrentOrder(savedExperienceOrder)
-  }, [savedExperienceOrder])
-
-  const handleDragStart = ({ active: { id } }: DragStartEvent) => {
-    setActiveId(String(id))
-  }
-
-  const handleDragEnd = (event: DragEndEvent) => {
-    setActiveId(null)
-    const { active, over } = event
-
-    if (over && active.id !== over.id) {
-      setCurrentOrder(prev => {
-        const oldIndex = prev.indexOf(String(active.id))
-        const newIndex = prev.indexOf(String(over.id))
-
-        return arrayMove(prev, oldIndex, newIndex)
-      })
-    }
-  }
-
-  const isOrderChanged = !isEqual(savedExperienceOrder, currentOrder)
-
-  const saveOrder = async () => {
+  const saveOrder = async (currentOrder: string[]) => {
     try {
       dispatch(setIsLoading(true))
       const { order } = await aboutService().saveExperienceOrder(currentOrder)
@@ -99,12 +64,5 @@ export const useWorkExperienceOrder = () => {
     }
   }
 
-  return {
-    isOrderChanged,
-    activeId,
-    handleDragStart,
-    handleDragEnd,
-    saveOrder,
-    currentOrder,
-  }
+  return { addExperience, getRemoveCallback, saveOrder }
 }

@@ -1,6 +1,5 @@
 import { useLoaderData } from "react-router-dom"
 import AboutInfo from "../../components/blocks/about-info"
-import Education from "../../components/blocks/education"
 import ProfessionalExperience from "../../components/blocks/professional-experience"
 import FilterIconBlock from "../../components/filter-icon-block"
 import { BLOCK_ID, FILTERS } from "../../shared/constants"
@@ -12,10 +11,11 @@ import { setAboutData } from "../../store/about"
 import { AboutForm, AboutView } from "../../components/about"
 import { useEffect } from "react"
 import { SkillsForm, SkillsView } from "../../components/skills"
+import Education from "../../components/blocks/education"
 
 const AboutPage = () => {
   const aboutData = useLoaderData() as About
-  const { title, languages, location, image, education } = aboutData
+  const { title, languages, location, image } = aboutData
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -50,7 +50,7 @@ const AboutPage = () => {
         form={<AboutForm />}
       />
 
-      <Education education={education} />
+      <Education />
     </section>
   )
 }

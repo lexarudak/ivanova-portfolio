@@ -51,7 +51,8 @@ export type About = {
   experience: WorkExperienceData[]
   about: string
   education: ExperienceData[]
-  experienceOrder: string
+  experienceOrder: string | null
+  educationOrder: string | null
 }
 
 export type ContactsData = { title: string; value: string }[]

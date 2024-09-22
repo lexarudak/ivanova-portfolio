@@ -39,3 +39,8 @@ export enum EDIT_BUTTON_VARIANT {
   cancel = "cancel",
   save = "save",
 }
+
+export enum NEW_ITEM_KEY {
+  experience = "-new-work",
+  education = "-new-education",
+}

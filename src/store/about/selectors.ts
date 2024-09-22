@@ -23,7 +23,17 @@ export const selectExperienceById = (expId: string) =>
     about.experience.find(({ id }) => id === expId),
   )
 
+export const selectEducationById = (edId: string) =>
+  createSelector(selectAboutSlice, about =>
+    about.education.find(({ id }) => id === edId),
+  )
+
 export const selectExperienceOrder = createSelector(
   selectAboutSlice,
   about => about.experienceOrder,
+)
+
+export const selectEducationOrder = createSelector(
+  selectAboutSlice,
+  about => about.educationOrder,
 )

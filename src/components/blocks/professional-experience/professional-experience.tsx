@@ -15,22 +15,25 @@ import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable"
 import classNames from "classnames"
 import ProfessionalExpOverlay from "./dnd-overlay"
 import { messages } from "./messages"
-import { useWorkExperienceOrder, useWorkExperienceUpdate } from "./hooks"
+import { useWorkExperienceUpdate } from "./hooks"
 import EditButton from "../../shared-components/edit-button"
 import { EDIT_BUTTON_VARIANT } from "../../../shared/constants"
+import useOrder from "../../../shared/hooks/use-order"
+import { selectExperienceOrder } from "../../../store/about/selectors"
 
 const ProfessionalExperience = () => {
   const isEditMode = useSelector(selectIsEditMode)
   const sensors = useSensors(useSensor(PointerSensor))
-  const { addExperience, getRemoveCallback } = useWorkExperienceUpdate()
+  const savedOrder = useSelector(selectExperienceOrder)
+  const { addExperience, getRemoveCallback, saveOrder } =
+    useWorkExperienceUpdate()
   const {
     handleDragEnd,
     handleDragStart,
     activeId,
     isOrderChanged,
-    saveOrder,
     currentOrder,
-  } = useWorkExperienceOrder()
+  } = useOrder(savedOrder)
 
   return (
     <>
@@ -77,7 +80,7 @@ const ProfessionalExperience = () => {
       {isOrderChanged && (
         <EditButton
           variant={EDIT_BUTTON_VARIANT.save}
-          onClick={saveOrder}
+          onClick={() => saveOrder(currentOrder)}
           className={styles.saveOrder}
         />
       )}

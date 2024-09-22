@@ -2,7 +2,7 @@ import { FC } from "react"
 import styles from "./experience-item.module.css"
 import { WorkExperienceData } from "../../../shared/types"
 import EditButton from "../../shared-components/edit-button"
-import { EDIT_BUTTON_VARIANT } from "../../../shared/constants"
+import { EDIT_BUTTON_VARIANT, NEW_ITEM_KEY } from "../../../shared/constants"
 import { setEditBlockId, setIsLoading } from "../../../store/app"
 import { useDispatch, useSelector } from "react-redux"
 import { aboutService } from "../../../service/about-service/about-service"
@@ -33,10 +33,10 @@ export const ExperienceItemForm: FC<Props> = ({ id }) => {
       dispatch(setIsLoading(true))
       const experience = await aboutService().updateExperience({
         ...values,
-        id: id.replace(/-new$/, ""),
+        id: id.replace(/-new-work$/, ""),
         achievements: values.achievements.filter(Boolean),
       })
-      if (id.includes("new")) {
+      if (id.includes(NEW_ITEM_KEY.experience)) {
         dispatch(setExperienceOrder([experience.id, ...savedExperienceOrder]))
       }
       dispatch(setExperience(experience))
