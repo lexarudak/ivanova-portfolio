@@ -55,7 +55,8 @@ export type About = {
   educationOrder: string | null
 }
 
-export type ContactsData = { title: string; value: string }[]
+export type TitleValueItem = { title: string; value: string; id: string }
+export type TitleValueData = TitleValueItem[]
 
 export type SkillsData = {
   advanced: string[]

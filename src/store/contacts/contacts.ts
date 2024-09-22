@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { ContactsData } from "../../shared/types"
+import { TitleValueData } from "../../shared/types"
 
 const initialState = {
-  contacts: [] as ContactsData,
+  contacts: [] as TitleValueData,
 }
 
 export const contactsSlice = createSlice({

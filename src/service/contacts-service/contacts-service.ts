@@ -1,9 +1,9 @@
 import { LoaderFunction } from "react-router-dom"
-import { ContactsData } from "../../shared/types"
+import { TitleValueData } from "../../shared/types"
 interface ContactsService {
   (): {
-    getContacts: LoaderFunction<ContactsData>
-    postContacts: (contacts: ContactsData) => Promise<ContactsData>
+    getContacts: LoaderFunction<TitleValueData>
+    postContacts: (contacts: TitleValueData) => Promise<TitleValueData>
   }
 }
 
@@ -25,7 +25,7 @@ export const contactsService: ContactsService = () => {
         method: "POST",
         headers,
         body: JSON.stringify({
-          contacts: contacts.map(({ title, value }) => ({ title, value })),
+          contacts,
         }),
       })
       const data = await res.json()
