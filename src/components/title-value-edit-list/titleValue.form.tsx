@@ -5,6 +5,7 @@ import EditButton from "../shared-components/edit-button"
 import { EDIT_BUTTON_VARIANT } from "../../shared/constants"
 import { TitleValueData, TitleValueItem } from "../../shared/types"
 import classNames from "classnames"
+import { isEqual } from "lodash"
 
 type Props = {
   initItems: TitleValueData
@@ -79,6 +80,7 @@ export const TitleValueForm: FC<Props> = ({
         variant={EDIT_BUTTON_VARIANT.save}
         type="button"
         onClick={() => onSubmit(items)}
+        disabled={isEqual(initItems, items)}
       />
     </ul>
   )

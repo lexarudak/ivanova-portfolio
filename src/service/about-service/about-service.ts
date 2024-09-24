@@ -9,6 +9,7 @@ interface ProjectService {
   (): {
     getAbout: LoaderFunction<About>
     setAbout: (about: string) => Promise<{ about: string }>
+    updateLocation: (location: string) => Promise<{ location: string }>
     setSkills: (skills: SkillsData) => Promise<{ skills: SkillsData }>
     deleteExperience: (
       id: string,
@@ -45,6 +46,17 @@ export const aboutService: ProjectService = () => {
         body: JSON.stringify({ about }),
       })
       const data: { about: string } = await res.json()
+
+      return data
+    },
+
+    async updateLocation(location: string) {
+      const res = await fetch(`${ORIGIN}/location`, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({ location }),
+      })
+      const data: { location: string } = await res.json()
 
       return data
     },

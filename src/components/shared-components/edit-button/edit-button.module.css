@@ -2,14 +2,16 @@
 	display: flex;
 	height: 20px;
 	width: 20px;
-}
-
-.img {
 	transition: .3s;
 	filter: brightness(1);
 
 	&:hover {
-		filter: brightness(0.4);
+		filter: brightness(0.8);
+	}
+
+	&:disabled {
+		filter: brightness(0);
+		cursor: default;
 	}
 
 }

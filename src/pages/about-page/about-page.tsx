@@ -15,7 +15,7 @@ import Education from "../../components/blocks/education"
 
 const AboutPage = () => {
   const aboutData = useLoaderData() as About
-  const { title, languages, location, image } = aboutData
+  const { title, image } = aboutData
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const AboutPage = () => {
 
       <img src={image} alt={title} className={styles.img} />
 
-      <AboutInfo {...{ languages, location }} />
+      <AboutInfo />
 
       <EditWrapper
         className={styles.skills}

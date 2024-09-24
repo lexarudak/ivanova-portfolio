@@ -1,44 +1,32 @@
-import { FC } from "react"
-import InfoBlock from "../info-block"
+import styles from "./about-info.module.css"
+import { getExperience } from "../../../shared/helpers"
+import TitleValueEditList from "../../title-value-edit-list/title-value-edit-list"
+import { TitleValueData } from "../../../shared/types"
+import EditWrapper from "../../edit-wrapper/edit-wrapper"
+import LocationView from "./location/location.view"
+import { BLOCK_ID } from "../../../shared/constants"
+import LocationForm from "./location/location.form"
 
-type Props = {
-  location: string
-  languages: string[]
-}
-
-const getExperience = () => {
-  const now = new Date()
-  const then = new Date(2013, 0, 1)
-  const differenceInMilliseconds = now.getTime() - then.getTime()
-
-  const differenceInYears = Math.floor(
-    differenceInMilliseconds / (1000 * 60 * 60 * 24 * 365.25),
+const AboutInfo = () => {
+  return (
+    <div className={styles.container}>
+      <EditWrapper
+        view={<LocationView />}
+        form={<LocationForm />}
+        id={BLOCK_ID.aboutLocation}
+      />
+      <div className={styles.block}>
+        <span className={styles.title}>{"Languages"}</span>
+        {/* <TitleValueEditList
+          initItems={[]}
+          onSubmit={function (items: TitleValueData): Promise<void> {
+            throw new Error("Function not implemented.")
+          }}
+          blockId={""}
+        /> */}
+      </div>
+    </div>
   )
-
-  const currentYear = now.getFullYear()
-
-  return `${differenceInYears}+ years (2013 - ${currentYear})`
-}
-
-const AboutInfo: FC<Props> = ({ location, languages }) => {
-  const props = {
-    items: [
-      {
-        title: "Experience:",
-        value: getExperience(),
-      },
-      {
-        title: "Location:",
-        value: location,
-      },
-    ],
-    list: {
-      title: "Languages:",
-      values: languages,
-    },
-  }
-
-  return <InfoBlock {...props} lang />
 }
 
 export default AboutInfo

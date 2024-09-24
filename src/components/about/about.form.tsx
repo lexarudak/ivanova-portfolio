@@ -6,8 +6,8 @@ import { ChangeEvent, useState } from "react"
 import EditButton from "../shared-components/edit-button"
 
 import { aboutService } from "../../service/about-service/about-service"
-import { setEditBlockId, setIsLoading } from "../../store/app"
 import { EDIT_BUTTON_VARIANT } from "../../shared/constants"
+import useSubmit from "../../shared/hooks/use-submit"
 
 export const AboutForm = () => {
   const text = useSelector(selectAbout)
@@ -17,16 +17,10 @@ export const AboutForm = () => {
   const onChange = (e: ChangeEvent<HTMLTextAreaElement>) =>
     setValue(e.target.value)
 
-  const submit = async () => {
-    try {
-      dispatch(setIsLoading(true))
-      const { about } = await aboutService().setAbout(value)
-      dispatch(setAbout(about))
-      dispatch(setEditBlockId(""))
-    } finally {
-      dispatch(setIsLoading(false))
-    }
-  }
+  const submit = useSubmit(async () => {
+    const { about } = await aboutService().setAbout(value)
+    dispatch(setAbout(about))
+  })
 
   return (
     <div className={styles.about}>
@@ -36,6 +30,7 @@ export const AboutForm = () => {
         variant={EDIT_BUTTON_VARIANT.save}
         onClick={submit}
         className={styles.save}
+        disabled={text === value}
       />
     </div>
   )

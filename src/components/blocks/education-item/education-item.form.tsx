@@ -3,17 +3,17 @@ import styles from "./education-item.module.css"
 import { ExperienceData } from "../../../shared/types"
 import EditButton from "../../shared-components/edit-button"
 import { EDIT_BUTTON_VARIANT, NEW_ITEM_KEY } from "../../../shared/constants"
-import { setEditBlockId, setIsLoading } from "../../../store/app"
 import { useDispatch, useSelector } from "react-redux"
 import { aboutService } from "../../../service/about-service/about-service"
 import { setEducation, setEducationOrder } from "../../../store/about"
 import { Field, Form, Formik } from "formik"
-import { EducationSchema } from "./shema"
+import { EducationSchema } from "./schema"
 import classNames from "classnames"
 import {
   selectEducationById,
   selectEducationOrder,
 } from "../../../store/about/selectors"
+import useSubmit from "../../../shared/hooks/use-submit"
 
 type Props = {
   id: string
@@ -24,25 +24,19 @@ export const EducationItemForm: FC<Props> = ({ id }) => {
   const savedOrder = useSelector(selectEducationOrder)
   const initialValues = useSelector(selectEducationById(id))
 
+  const submit = useSubmit(async (values: ExperienceData) => {
+    const education = await aboutService().updateEducation({
+      ...values,
+      id: id.replace(/-new-education$/, ""),
+    })
+    if (id.includes(NEW_ITEM_KEY.education)) {
+      dispatch(setEducationOrder([education.id, ...savedOrder]))
+    }
+    dispatch(setEducation(education))
+  })
+
   if (!initialValues) {
     return null
-  }
-
-  const submit = async (values: ExperienceData) => {
-    try {
-      dispatch(setIsLoading(true))
-      const education = await aboutService().updateEducation({
-        ...values,
-        id: id.replace(/-new-education$/, ""),
-      })
-      if (id.includes(NEW_ITEM_KEY.education)) {
-        dispatch(setEducationOrder([education.id, ...savedOrder]))
-      }
-      dispatch(setEducation(education))
-      dispatch(setEditBlockId(""))
-    } finally {
-      dispatch(setIsLoading(false))
-    }
   }
 
   return (
@@ -53,7 +47,8 @@ export const EducationItemForm: FC<Props> = ({ id }) => {
       enableReinitialize
       validateOnBlur
     >
-      {({ errors, touched }) => {
+      {({ errors, touched, dirty }) => {
+        console.log({ dirty })
         const errorStyle = (name: keyof ExperienceData) => ({
           [styles.error]: errors[name] && touched[name],
         })
@@ -89,6 +84,7 @@ export const EducationItemForm: FC<Props> = ({ id }) => {
                   variant={EDIT_BUTTON_VARIANT.save}
                   className={styles.save}
                   type="submit"
+                  disabled={!dirty}
                 />
               </div>
             </div>

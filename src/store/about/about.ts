@@ -55,10 +55,12 @@ export const aboutSlice = createSlice({
           educationOrder,
           experience,
           experienceOrder,
+          location,
         },
       }: PayloadAction<About>,
     ) => {
       state.about = about
+      state.info.location = location
       state.skills = skills
       state.experience = experience
       state.experienceOrder = experienceOrder
@@ -77,6 +79,9 @@ export const aboutSlice = createSlice({
     },
     setAbout: (state, action) => {
       state.about = action.payload
+    },
+    setLocation: (state, action) => {
+      state.info.location = action.payload
     },
     setSkills: (state, action) => {
       state.skills = action.payload
@@ -150,6 +155,7 @@ export const {
   deleteExperience,
   setAllExperiences,
   setExperienceOrder,
+  setLocation,
 } = aboutSlice.actions
 
 export default aboutSlice.reducer

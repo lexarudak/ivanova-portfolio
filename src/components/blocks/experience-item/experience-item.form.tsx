@@ -3,7 +3,6 @@ import styles from "./experience-item.module.css"
 import { WorkExperienceData } from "../../../shared/types"
 import EditButton from "../../shared-components/edit-button"
 import { EDIT_BUTTON_VARIANT, NEW_ITEM_KEY } from "../../../shared/constants"
-import { setEditBlockId, setIsLoading } from "../../../store/app"
 import { useDispatch, useSelector } from "react-redux"
 import { aboutService } from "../../../service/about-service/about-service"
 import { setExperience, setExperienceOrder } from "../../../store/about"
@@ -14,6 +13,7 @@ import {
   selectExperienceById,
   selectExperienceOrder,
 } from "../../../store/about/selectors"
+import useSubmit from "../../../shared/hooks/use-submit"
 
 type Props = {
   id: string
@@ -24,26 +24,20 @@ export const ExperienceItemForm: FC<Props> = ({ id }) => {
   const savedExperienceOrder = useSelector(selectExperienceOrder)
   const initialValues = useSelector(selectExperienceById(id))
 
+  const submit = useSubmit(async (values: WorkExperienceData) => {
+    const experience = await aboutService().updateExperience({
+      ...values,
+      id: id.replace(/-new-work$/, ""),
+      achievements: values.achievements.filter(Boolean),
+    })
+    if (id.includes(NEW_ITEM_KEY.experience)) {
+      dispatch(setExperienceOrder([experience.id, ...savedExperienceOrder]))
+    }
+    dispatch(setExperience(experience))
+  })
+
   if (!initialValues) {
     return null
-  }
-
-  const submit = async (values: WorkExperienceData) => {
-    try {
-      dispatch(setIsLoading(true))
-      const experience = await aboutService().updateExperience({
-        ...values,
-        id: id.replace(/-new-work$/, ""),
-        achievements: values.achievements.filter(Boolean),
-      })
-      if (id.includes(NEW_ITEM_KEY.experience)) {
-        dispatch(setExperienceOrder([experience.id, ...savedExperienceOrder]))
-      }
-      dispatch(setExperience(experience))
-      dispatch(setEditBlockId(""))
-    } finally {
-      dispatch(setIsLoading(false))
-    }
   }
 
   return (
@@ -54,7 +48,13 @@ export const ExperienceItemForm: FC<Props> = ({ id }) => {
       enableReinitialize
       validateOnBlur
     >
-      {({ values: { achievements }, setFieldValue, errors, touched }) => {
+      {({
+        values: { achievements },
+        setFieldValue,
+        errors,
+        touched,
+        dirty,
+      }) => {
         const addAchievement = () =>
           setFieldValue("achievements", [...achievements, ""])
 
@@ -103,6 +103,7 @@ export const ExperienceItemForm: FC<Props> = ({ id }) => {
                   variant={EDIT_BUTTON_VARIANT.save}
                   className={styles.save}
                   type="submit"
+                  disabled={!dirty}
                 />
               </div>
 

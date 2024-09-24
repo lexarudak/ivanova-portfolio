@@ -24,7 +24,7 @@ export enum BLOCK_ID {
   skills = "skills",
   experience = "experience",
   contacts = "contacts",
-  aboutInfo = "about-info",
+  aboutLocation = "about-location",
 }
 
 export enum BUTTON_VARIANT {

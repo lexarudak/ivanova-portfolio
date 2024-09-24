@@ -6,9 +6,10 @@ import { SkillsData } from "../../shared/types"
 import EditButton from "../shared-components/edit-button"
 import { EDIT_BUTTON_VARIANT } from "../../shared/constants"
 import { aboutService } from "../../service/about-service/about-service"
-import { setEditBlockId, setIsLoading } from "../../store/app"
 import { setSkills } from "../../store/about"
 import { cleanObjectArrays } from "../../shared/helpers"
+import useSubmit from "../../shared/hooks/use-submit"
+import { isEqual } from "lodash"
 
 export const SkillsForm = () => {
   const dispatch = useDispatch()
@@ -31,18 +32,12 @@ export const SkillsForm = () => {
       [title]: [...currentSkills[title], ""],
     })
 
-  const submit = async () => {
-    try {
-      dispatch(setIsLoading(true))
-      const { skills } = await aboutService().setSkills(
-        cleanObjectArrays(currentSkills),
-      )
-      dispatch(setSkills(skills))
-      dispatch(setEditBlockId(""))
-    } finally {
-      dispatch(setIsLoading(false))
-    }
-  }
+  const submit = useSubmit(async () => {
+    const { skills } = await aboutService().setSkills(
+      cleanObjectArrays(currentSkills),
+    )
+    dispatch(setSkills(skills))
+  })
 
   return (
     <>
@@ -71,6 +66,7 @@ export const SkillsForm = () => {
         variant={EDIT_BUTTON_VARIANT.save}
         onClick={submit}
         className={styles.save}
+        disabled={isEqual(currentSkills, initSkills)}
       />
     </>
   )

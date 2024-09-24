@@ -5,7 +5,6 @@ import { EDIT_BUTTON_VARIANT } from "../../../shared/constants"
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant: EDIT_BUTTON_VARIANT
-  isActive?: boolean
 }
 
 const scrList = {
