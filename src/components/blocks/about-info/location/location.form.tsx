@@ -23,7 +23,7 @@ const LocationForm = () => {
     <div className={styles.info}>
       <p>
         <span className={styles.title}>{"Experience"}</span>
-        <span>{getExperience()}</span>
+        <span className={styles.value}>{getExperience()}</span>
       </p>
       <p>
         <span className={styles.title}>{"Location"}</span>
@@ -33,8 +33,8 @@ const LocationForm = () => {
           placeholder="Almaty, Kazakhstan"
         />
       </p>
-      {}
       <EditButton
+        className={styles.saveLocation}
         variant={EDIT_BUTTON_VARIANT.save}
         onClick={submit}
         disabled={value === location}

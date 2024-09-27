@@ -13,10 +13,10 @@
 }
 
 .li {
-  margin-bottom: 5px;
+	margin-bottom: 5px;
 	gap: 5px;
 	display: flex;
-  align-items: center;
+	align-items: center;
 
 	& > span {
 		border: 1px solid transparent;
@@ -26,7 +26,14 @@
 }
 
 .list {
-  margin-left: -10px;
-  width: fit-content;
-  position: relative;
+	width: fit-content;
+	position: relative;
+}
+
+.container {
+	display: flex;
+
+	&.viewContainer {
+		margin-bottom: 75px;
+	}
 }

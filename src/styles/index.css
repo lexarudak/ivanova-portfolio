@@ -87,4 +87,8 @@ input, textarea {
 	font-size: 12px;
 	border: 1px solid var(--font-secondary);
 	padding: 5px 10px;
+
+	&::placeholder {
+		color: var(--font-placeholder);
+	}
 }

@@ -1,4 +1,3 @@
-import { FC } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { selectContacts } from "../../store/contacts/selectors"
 import { TitleValueData } from "../../shared/types"
@@ -7,16 +6,12 @@ import { setContacts } from "../../store/contacts"
 import TitleValueEditList from "../title-value-edit-list/title-value-edit-list"
 import { BLOCK_ID } from "../../shared/constants"
 import useSubmit from "../../shared/hooks/use-submit"
+import { removeEmptyItems } from "../../shared/helpers"
+import styles from "./contacts-list.module.css"
 
-type Props = {
-  className?: string
-}
-
-const ContactsList: FC<Props> = ({ className }) => {
+const ContactsList = () => {
   const initValues = useSelector(selectContacts)
   const dispatch = useDispatch()
-  const removeEmptyItems = (items: TitleValueData) =>
-    items.filter(({ value, title }) => value || title)
 
   const submit = useSubmit(async (items: TitleValueData) => {
     const contacts = await contactsService().postContacts(
@@ -25,13 +20,13 @@ const ContactsList: FC<Props> = ({ className }) => {
     dispatch(setContacts(contacts))
   })
   return (
-    <div className={className}>
-      <TitleValueEditList
-        initItems={initValues}
-        onSubmit={submit}
-        blockId={BLOCK_ID.contacts}
-      />
-    </div>
+    <TitleValueEditList
+      className={styles.list}
+      placeholders={["telegram", "@example"]}
+      initItems={initValues}
+      onSubmit={submit}
+      blockId={BLOCK_ID.contacts}
+    />
   )
 }
 

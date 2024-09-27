@@ -8,7 +8,6 @@
 .container {
 	background-color: var(--bg-main);
 	border-radius: 10px;
-	margin-bottom: 100px;
 
 	&.edit {
 		padding: 20px;

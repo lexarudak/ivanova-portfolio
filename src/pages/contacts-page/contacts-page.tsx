@@ -18,7 +18,9 @@ const ContactsPage = () => {
 
   return (
     <section className={styles.page}>
-      <ContactsList className={styles.container} />
+      <div className={styles.container}>
+        <ContactsList />
+      </div>
     </section>
   )
 }

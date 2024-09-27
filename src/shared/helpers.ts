@@ -1,3 +1,6 @@
+import { v4 } from "uuid"
+import { TitleValueData } from "./types"
+
 type ObjectWithArrays<T extends string> = {
   [key in T]: string[]
 }
@@ -25,3 +28,12 @@ export const getExperience = () => {
 
   return `${differenceInYears}+ years (2013 - ${currentYear})`
 }
+
+export const removeEmptyItems = (items: TitleValueData) =>
+  items.filter(({ value, title }) => value.trim() || title.trim())
+
+export const createNewTitleValueItem = (title = "", value = "") => ({
+  id: v4(),
+  title,
+  value,
+})

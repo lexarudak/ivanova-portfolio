@@ -3,6 +3,7 @@ import {
   About,
   ExperienceData,
   SkillsData,
+  TitleValueData,
   WorkExperienceData,
 } from "../../shared/types"
 import { NEW_ITEM_KEY } from "../../shared/constants"
@@ -12,7 +13,7 @@ type AboutState = {
   title: string
   info: {
     location: string
-    languages: string[]
+    languages: TitleValueData
   }
   image: string
   skills: SkillsData
@@ -56,11 +57,13 @@ export const aboutSlice = createSlice({
           experience,
           experienceOrder,
           location,
+          languages,
         },
       }: PayloadAction<About>,
     ) => {
       state.about = about
       state.info.location = location
+      state.info.languages = languages
       state.skills = skills
       state.experience = experience
       state.experienceOrder = experienceOrder
@@ -85,6 +88,9 @@ export const aboutSlice = createSlice({
     },
     setSkills: (state, action) => {
       state.skills = action.payload
+    },
+    setLanguages: (state, action) => {
+      state.info.languages = action.payload
     },
     setExperience: (state, action) => {
       const idx = state.experience.findIndex(
@@ -156,6 +162,7 @@ export const {
   setAllExperiences,
   setExperienceOrder,
   setLocation,
+  setLanguages,
 } = aboutSlice.actions
 
 export default aboutSlice.reducer

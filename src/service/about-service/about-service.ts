@@ -3,6 +3,7 @@ import {
   About,
   ExperienceData,
   SkillsData,
+  TitleValueData,
   WorkExperienceData,
 } from "../../shared/types"
 interface ProjectService {
@@ -11,6 +12,9 @@ interface ProjectService {
     setAbout: (about: string) => Promise<{ about: string }>
     updateLocation: (location: string) => Promise<{ location: string }>
     setSkills: (skills: SkillsData) => Promise<{ skills: SkillsData }>
+    updateLanguages: (
+      languages: TitleValueData,
+    ) => Promise<{ languages: TitleValueData }>
     deleteExperience: (
       id: string,
     ) => Promise<{ id: string; experienceOrder: string }>
@@ -68,6 +72,17 @@ export const aboutService: ProjectService = () => {
         body: JSON.stringify({ skills }),
       })
       const data: { skills: SkillsData } = await res.json()
+
+      return data
+    },
+
+    async updateLanguages(languages: TitleValueData) {
+      const res = await fetch(`${ORIGIN}/lang`, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({ languages }),
+      })
+      const data: { languages: TitleValueData } = await res.json()
 
       return data
     },

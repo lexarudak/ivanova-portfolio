@@ -1,5 +1,5 @@
 .container {
-	margin: 50px 0 150px;
+	margin: 50px 0;
 	display: flex;
 	justify-content: space-between;
 	gap: 20px;
@@ -15,8 +15,12 @@
 	flex-direction: column;
 	justify-content: space-between;
 
+	&.infoView {
+		margin-bottom: 40px;
+	}
+
 	& > p {
-		margin-bottom: 20px;
+		margin-bottom: 5px;
 	}
 
 }
@@ -26,6 +30,11 @@
 	display: inline-block;
 	width: 150px;
 	flex-shrink: 0;
+	padding: 6px 0;
+}
+
+.value {
+	padding-left: 11px;
 }
 
 .block {
@@ -55,4 +64,20 @@ span.lang {
 
 li.lang {
 	margin: 0;
+}
+
+.editBlock {
+	li > span, input {
+		color: var(--font-main);
+	}
+
+	li > span:last-child, input:last-child {
+		width: 50px;
+	}
+
+}
+
+.saveLocation {
+	margin-left: 160px;
+	margin-top: 20px;
 }

@@ -46,7 +46,7 @@ export type About = {
   title: string
   image: string
   location: string
-  languages: string[]
+  languages: TitleValueData
   skills: SkillsData
   experience: WorkExperienceData[]
   about: string

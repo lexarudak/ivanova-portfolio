@@ -23,6 +23,11 @@ export const selectAboutLocation = createSelector(
   about => about.info.location,
 )
 
+export const selectAboutLanguages = createSelector(
+  selectAboutSlice,
+  about => about.info.languages,
+)
+
 export const selectExperienceById = (expId: string) =>
   createSelector(selectAboutSlice, about =>
     about.experience.find(({ id }) => id === expId),
