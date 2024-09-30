@@ -42,32 +42,38 @@ export const SkillsForm = () => {
   return (
     <>
       <div className={styles.container}>
-        {data.map(([title, list]) => (
-          <div key={title} className={styles.block}>
-            <p className={styles.title}>{title}</p>
+        <div className={styles.listContainer}>
+          {data.map(([title, list]) => (
+            <div key={title} className={styles.block}>
+              <p className={styles.title}>{title}</p>
 
-            <ul className={styles.list}>
-              {list.map((skill, idx) => (
-                <li key={idx} className={styles.item}>
-                  <input value={skill} onChange={onChange(list, idx, title)} />
-                </li>
-              ))}
-            </ul>
+              <ul className={styles.list}>
+                {list.map((skill, idx) => (
+                  <li key={idx} className={styles.item}>
+                    <input
+                      value={skill}
+                      onChange={onChange(list, idx, title)}
+                    />
+                  </li>
+                ))}
+              </ul>
 
-            <EditButton
-              variant={EDIT_BUTTON_VARIANT.plus}
-              onClick={onClick(title)}
-              className={styles.plus}
-            />
-          </div>
-        ))}
+              <EditButton
+                variant={EDIT_BUTTON_VARIANT.plus}
+                onClick={onClick(title)}
+                className={styles.plus}
+              />
+            </div>
+          ))}
+        </div>
+
+        <EditButton
+          variant={EDIT_BUTTON_VARIANT.save}
+          onClick={submit}
+          className={styles.save}
+          disabled={isEqual(currentSkills, initSkills)}
+        />
       </div>
-      <EditButton
-        variant={EDIT_BUTTON_VARIANT.save}
-        onClick={submit}
-        className={styles.save}
-        disabled={isEqual(currentSkills, initSkills)}
-      />
     </>
   )
 }
