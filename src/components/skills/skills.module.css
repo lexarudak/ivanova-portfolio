@@ -1,9 +1,9 @@
 .container {
 
-	margin-bottom: 50px;
+	margin-bottom: 25px;
 
 	&.view {
-		margin-bottom: 125px;
+		margin-bottom: 100px;
 	}
 
 }
