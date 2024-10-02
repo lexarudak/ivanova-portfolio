@@ -65,10 +65,10 @@ export const ExperienceItemForm: FC<Props> = ({ id }) => {
         return (
           <Form>
             <div className={styles.container}>
-              <div className={styles.info}>
+              <div className={classNames(styles.info, styles.form)}>
                 <Field
                   name={"title"}
-                  className={classNames(styles.title, errorStyle("title"))}
+                  className={classNames(styles.last, errorStyle("title"))}
                   placeholder="Company (Required)"
                 />
                 <Field
@@ -86,7 +86,7 @@ export const ExperienceItemForm: FC<Props> = ({ id }) => {
                 />
                 <Field
                   name={"workType"}
-                  className={classNames(styles.type, errorStyle("workType"))}
+                  className={classNames(styles.last, errorStyle("workType"))}
                   placeholder="Work Location (remote / office)"
                 />
                 <Field
@@ -107,8 +107,8 @@ export const ExperienceItemForm: FC<Props> = ({ id }) => {
                 />
               </div>
 
-              <ul className={styles.achievements}>
-                <li className={styles.title}>Achievements</li>
+              <ul className={classNames(styles.achievements, styles.form)}>
+                <li className={styles.last}>Achievements</li>
                 {achievements.map((_, idx) => (
                   <Field
                     as={"textarea"}

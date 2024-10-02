@@ -37,6 +37,9 @@ const ProfessionalExperience = () => {
 
   return (
     <>
+      <h2 className={classNames({ [styles.editMode]: isEditMode })}>
+        EXPERIENCE
+      </h2>
       {isEditMode && (
         <button className={styles.add} onClick={addExperience}>
           {messages.add}
@@ -77,13 +80,15 @@ const ProfessionalExperience = () => {
           <ProfessionalExpOverlay activeId={activeId} />
         </DndContext>
       </div>
-      {isOrderChanged && (
-        <EditButton
-          variant={EDIT_BUTTON_VARIANT.save}
-          onClick={() => saveOrder(currentOrder)}
-          className={styles.saveOrder}
-        />
-      )}
+
+      <EditButton
+        variant={EDIT_BUTTON_VARIANT.save}
+        onClick={() => saveOrder(currentOrder)}
+        className={classNames({
+          [styles.saveOrder]: true,
+          [styles.hide]: !isOrderChanged,
+        })}
+      />
     </>
   )
 }

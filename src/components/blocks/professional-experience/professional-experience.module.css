@@ -1,5 +1,5 @@
 .add {
-	margin: 0 20px 50px;
+	margin: 0 10px 50px;
 	display: flex;
 	padding: 10px 20px;
 	border: 1px dashed var(--font-secondary);
@@ -33,6 +33,7 @@
 	border: 2px dashed transparent;
 	transition: .3s;
 	overflow: hidden;
+	margin-bottom: 20px;
 
 	&.changed {
 		border-color: var(--bg-active);
@@ -43,4 +44,15 @@
 
 .saveOrder {
 	margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+
+	&.hide {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.editMode {
+	margin-left: 20px;
 }

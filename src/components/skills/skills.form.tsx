@@ -42,6 +42,7 @@ export const SkillsForm = () => {
   return (
     <>
       <div className={styles.container}>
+        <h2>SKILLS</h2>
         <div className={styles.listContainer}>
           {data.map(([title, list]) => (
             <div key={title} className={styles.block}>

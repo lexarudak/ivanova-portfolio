@@ -35,6 +35,9 @@ const Education = () => {
 
   return (
     <>
+      <h2 className={classNames({ [styles.editMode]: isEditMode })}>
+        EDUCATION
+      </h2>
       {isEditMode && (
         <button className={styles.add} onClick={addEducation}>
           {messages.add}
@@ -75,13 +78,15 @@ const Education = () => {
           <EducationOverlay activeId={activeId} />
         </DndContext>
       </div>
-      {isOrderChanged && (
-        <EditButton
-          variant={EDIT_BUTTON_VARIANT.save}
-          onClick={() => saveOrder(currentOrder)}
-          className={styles.saveOrder}
-        />
-      )}
+
+      <EditButton
+        variant={EDIT_BUTTON_VARIANT.save}
+        onClick={() => saveOrder(currentOrder)}
+        className={classNames({
+          [styles.saveOrder]: true,
+          [styles.hide]: !isOrderChanged,
+        })}
+      />
     </>
   )
 }

@@ -19,4 +19,8 @@
 
   /* size */
   --header-height: 60px;
+
+  --input-padding: 1px 10px;
+  --input-border: 1px solid var(--font-secondary);
+  --common-border: 1px solid transparent;
 }

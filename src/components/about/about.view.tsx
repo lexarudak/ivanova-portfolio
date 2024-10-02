@@ -7,7 +7,7 @@ export const AboutView = () => {
 
   return (
     <div className={styles.about}>
-      <p className={styles.title}>About</p>
+      <h2>ABOUT</h2>
       <div className={styles.text}>{text}</div>
     </div>
   )

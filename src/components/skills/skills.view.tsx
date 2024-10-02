@@ -9,6 +9,7 @@ export const SkillsView = () => {
 
   return (
     <div className={classNames(styles.container, styles.view)}>
+      <h2>SKILLS</h2>
       <div className={styles.listContainer}>
         {data.map(([title, list]) => (
           <div key={title} className={styles.block}>

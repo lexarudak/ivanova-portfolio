@@ -19,8 +19,8 @@
 	align-items: center;
 
 	& > span {
-		border: 1px solid transparent;
-		padding: 5px 10px;
+		border: var(--common-border);
+		padding: var(--input-padding);
 	}
 
 }

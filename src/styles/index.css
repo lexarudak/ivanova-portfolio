@@ -85,10 +85,15 @@ input, textarea {
 	letter-spacing: 1px;
 	line-height: 1.7;
 	font-size: 12px;
-	border: 1px solid var(--font-secondary);
-	padding: 5px 10px;
+	border: var(--input-border);
+	padding: var(--input-padding);
 
 	&::placeholder {
 		color: var(--font-placeholder);
 	}
+}
+
+h2 {
+	margin: 0;
+	margin-bottom: 50px;
 }

@@ -31,8 +31,14 @@ const AboutPage = () => {
       />
 
       <img src={image} alt={title} className={styles.img} />
-
       <AboutInfo />
+
+      <EditWrapper
+        className={styles.about}
+        id={BLOCK_ID.about}
+        view={<AboutView />}
+        form={<AboutForm />}
+      />
 
       <EditWrapper
         className={styles.skills}
@@ -42,13 +48,6 @@ const AboutPage = () => {
       />
 
       <ProfessionalExperience />
-
-      <EditWrapper
-        className={styles.about}
-        id={BLOCK_ID.about}
-        view={<AboutView />}
-        form={<AboutForm />}
-      />
 
       <Education />
     </section>

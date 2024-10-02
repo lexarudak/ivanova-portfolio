@@ -56,37 +56,34 @@ export const EducationItemForm: FC<Props> = ({ id }) => {
         return (
           <Form>
             <div className={styles.container}>
-              <div className={styles.info}>
+              <div className={classNames(styles.info, styles.form)}>
                 <Field
                   name={"title"}
-                  className={classNames(styles.title, errorStyle("title"))}
+                  className={classNames(styles.last, errorStyle("title"))}
                   placeholder="University (Belorussian National Technical University)"
                 />
                 <Field
-                  className={classNames(
-                    styles.position,
-                    errorStyle("position"),
-                  )}
+                  className={classNames(styles.last, errorStyle("position"))}
                   name={"position"}
                   placeholder="Specialty (Bachelor of Architecture)"
                 />
                 <Field
-                  className={classNames(styles.desc, errorStyle("period"))}
+                  className={classNames(errorStyle("period"))}
                   name={"period"}
                   placeholder="Period (September 2008 - June 2014)"
                 />
                 <Field
-                  className={classNames(styles.desc, errorStyle("location"))}
+                  className={classNames(errorStyle("location"))}
                   name={"location"}
                   placeholder="Location (Minsk, Belarus)"
                 />
-                <EditButton
-                  variant={EDIT_BUTTON_VARIANT.save}
-                  className={styles.save}
-                  type="submit"
-                  disabled={!dirty}
-                />
               </div>
+              <EditButton
+                variant={EDIT_BUTTON_VARIANT.save}
+                className={styles.save}
+                type="submit"
+                disabled={!dirty}
+              />
             </div>
           </Form>
         )

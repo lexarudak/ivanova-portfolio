@@ -8,6 +8,7 @@ import EditButton from "../shared-components/edit-button"
 import { aboutService } from "../../service/about-service/about-service"
 import { EDIT_BUTTON_VARIANT } from "../../shared/constants"
 import useSubmit from "../../shared/hooks/use-submit"
+import classNames from "classnames"
 
 export const AboutForm = () => {
   const text = useSelector(selectAbout)
@@ -23,8 +24,8 @@ export const AboutForm = () => {
   })
 
   return (
-    <div className={styles.about}>
-      <p className={styles.title}>About</p>
+    <div className={classNames(styles.about, styles.form)}>
+      <h2>ABOUT</h2>
       <textarea value={value} onChange={onChange} className={styles.text} />
       <EditButton
         variant={EDIT_BUTTON_VARIANT.save}
