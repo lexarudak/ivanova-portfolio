@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux"
 import EditWrapper from "../../edit-wrapper/edit-wrapper"
-import styles from "./education.module.css"
+import styles from "./professional-experience.module.css"
+import { ExperienceItemForm } from "./experience-item/experience-item.form"
+import { ExperienceItemView } from "./experience-item"
 import { selectIsEditMode } from "../../../store/app/selectors"
 import {
   DndContext,
@@ -11,20 +13,20 @@ import {
 } from "@dnd-kit/core"
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable"
 import classNames from "classnames"
+import ProfessionalExpOverlay from "./dnd-overlay"
 import { messages } from "./messages"
-import { useEducationUpdate } from "./hooks"
+import { useWorkExperienceUpdate } from "./hooks"
 import EditButton from "../../shared-components/edit-button"
 import { EDIT_BUTTON_VARIANT } from "../../../shared/constants"
 import useOrder from "../../../shared/hooks/use-order"
-import { selectEducationOrder } from "../../../store/about/selectors"
-import { EducationItemForm, EducationItemView } from "../education-item"
-import EducationOverlay from "./dnd-overlay"
+import { selectExperienceOrder } from "../../../store/about/selectors"
 
-const Education = () => {
+const ProfessionalExperience = () => {
   const isEditMode = useSelector(selectIsEditMode)
   const sensors = useSensors(useSensor(PointerSensor))
-  const savedOrder = useSelector(selectEducationOrder)
-  const { addEducation, getRemoveCallback, saveOrder } = useEducationUpdate()
+  const savedOrder = useSelector(selectExperienceOrder)
+  const { addExperience, getRemoveCallback, saveOrder } =
+    useWorkExperienceUpdate()
   const {
     handleDragEnd,
     handleDragStart,
@@ -36,10 +38,10 @@ const Education = () => {
   return (
     <>
       <h2 className={classNames({ [styles.editMode]: isEditMode })}>
-        EDUCATION
+        EXPERIENCE
       </h2>
       {isEditMode && (
-        <button className={styles.add} onClick={addEducation}>
+        <button className={styles.add} onClick={addExperience}>
           {messages.add}
         </button>
       )}
@@ -69,13 +71,13 @@ const Education = () => {
                   text: messages.removeText,
                   remove: getRemoveCallback(id),
                 }}
-                form={<EducationItemForm id={id} />}
-                view={<EducationItemView id={id} />}
+                form={<ExperienceItemForm id={id} />}
+                view={<ExperienceItemView id={id} />}
               />
             ))}
           </SortableContext>
 
-          <EducationOverlay activeId={activeId} />
+          <ProfessionalExpOverlay activeId={activeId} />
         </DndContext>
       </div>
 
@@ -91,4 +93,4 @@ const Education = () => {
   )
 }
 
-export default Education
+export default ProfessionalExperience

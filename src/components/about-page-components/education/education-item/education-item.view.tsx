@@ -1,7 +1,7 @@
 import { FC } from "react"
 import styles from "./education-item.module.css"
 import { useSelector } from "react-redux"
-import { selectEducationById } from "../../../store/about/selectors"
+import { selectEducationById } from "../../../../store/about/selectors"
 import classNames from "classnames"
 
 type Props = {

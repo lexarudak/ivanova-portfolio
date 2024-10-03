@@ -3,7 +3,7 @@ import {
   DragOverlay,
   DropAnimation,
 } from "@dnd-kit/core"
-import { ExperienceItemView } from "../experience-item"
+import { ExperienceItemView } from "./experience-item"
 import EditWrapper from "../../edit-wrapper/edit-wrapper"
 import classNames from "classnames"
 import { FC } from "react"

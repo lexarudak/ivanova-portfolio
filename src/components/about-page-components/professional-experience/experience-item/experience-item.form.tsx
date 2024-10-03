@@ -1,19 +1,19 @@
 import { FC } from "react"
 import styles from "./experience-item.module.css"
-import { WorkExperienceData } from "../../../shared/types"
-import EditButton from "../../shared-components/edit-button"
-import { EDIT_BUTTON_VARIANT, NEW_ITEM_KEY } from "../../../shared/constants"
+import { WorkExperienceData } from "../../../../shared/types"
+import EditButton from "../../../shared-components/edit-button"
+import { EDIT_BUTTON_VARIANT, NEW_ITEM_KEY } from "../../../../shared/constants"
 import { useDispatch, useSelector } from "react-redux"
-import { aboutService } from "../../../service/about-service/about-service"
-import { setExperience, setExperienceOrder } from "../../../store/about"
+import { aboutService } from "../../../../service/about-service/about-service"
+import { setExperience, setExperienceOrder } from "../../../../store/about"
 import { Field, Form, Formik } from "formik"
 import { workExperienceSchema } from "./shema"
 import classNames from "classnames"
 import {
   selectExperienceById,
   selectExperienceOrder,
-} from "../../../store/about/selectors"
-import useSubmit from "../../../shared/hooks/use-submit"
+} from "../../../../store/about/selectors"
+import useSubmit from "../../../../shared/hooks/use-submit"
 
 type Props = {
   id: string

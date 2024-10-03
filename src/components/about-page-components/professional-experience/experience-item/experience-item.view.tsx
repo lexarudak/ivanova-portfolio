@@ -1,7 +1,7 @@
 import { FC } from "react"
 import styles from "./experience-item.module.css"
 import { useSelector } from "react-redux"
-import { selectExperienceById } from "../../../store/about/selectors"
+import { selectExperienceById } from "../../../../store/about/selectors"
 import classNames from "classnames"
 
 type Props = {

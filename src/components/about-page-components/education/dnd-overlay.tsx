@@ -7,7 +7,7 @@ import EditWrapper from "../../edit-wrapper/edit-wrapper"
 import classNames from "classnames"
 import { FC } from "react"
 import styles from "./education.module.css"
-import { EducationItemView } from "../education-item"
+import { EducationItemView } from "./education-item"
 
 const dropAnimationConfig: DropAnimation = {
   sideEffects: defaultDropAnimationSideEffects({

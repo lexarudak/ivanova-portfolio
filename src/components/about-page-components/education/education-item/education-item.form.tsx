@@ -1,19 +1,19 @@
 import { FC } from "react"
 import styles from "./education-item.module.css"
-import { ExperienceData } from "../../../shared/types"
-import EditButton from "../../shared-components/edit-button"
-import { EDIT_BUTTON_VARIANT, NEW_ITEM_KEY } from "../../../shared/constants"
+import { ExperienceData } from "../../../../shared/types"
+import EditButton from "../../../shared-components/edit-button"
+import { EDIT_BUTTON_VARIANT, NEW_ITEM_KEY } from "../../../../shared/constants"
 import { useDispatch, useSelector } from "react-redux"
-import { aboutService } from "../../../service/about-service/about-service"
-import { setEducation, setEducationOrder } from "../../../store/about"
+import { aboutService } from "../../../../service/about-service/about-service"
+import { setEducation, setEducationOrder } from "../../../../store/about"
 import { Field, Form, Formik } from "formik"
 import { EducationSchema } from "./schema"
 import classNames from "classnames"
 import {
   selectEducationById,
   selectEducationOrder,
-} from "../../../store/about/selectors"
-import useSubmit from "../../../shared/hooks/use-submit"
+} from "../../../../store/about/selectors"
+import useSubmit from "../../../../shared/hooks/use-submit"
 
 type Props = {
   id: string

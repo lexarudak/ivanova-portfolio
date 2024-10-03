@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from "react-redux"
 import styles from "./about.module.css"
-import { selectAbout } from "../../store/about/selectors"
-import { setAbout } from "../../store/about"
+import { selectAbout } from "../../../store/about/selectors"
+import { setAbout } from "../../../store/about"
 import { ChangeEvent, useState } from "react"
-import EditButton from "../shared-components/edit-button"
+import EditButton from "../../shared-components/edit-button"
 
-import { aboutService } from "../../service/about-service/about-service"
-import { EDIT_BUTTON_VARIANT } from "../../shared/constants"
-import useSubmit from "../../shared/hooks/use-submit"
+import { aboutService } from "../../../service/about-service/about-service"
+import { EDIT_BUTTON_VARIANT } from "../../../shared/constants"
+import useSubmit from "../../../shared/hooks/use-submit"
 import classNames from "classnames"
 
 export const AboutForm = () => {

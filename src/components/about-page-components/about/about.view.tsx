@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux"
 import styles from "./about.module.css"
-import { selectAbout } from "../../store/about/selectors"
+import { selectAbout } from "../../../store/about/selectors"
 
 export const AboutView = () => {
   const text = useSelector(selectAbout)

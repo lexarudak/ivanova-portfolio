@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom"
-import AboutInfo from "../../components/blocks/about-info"
-import ProfessionalExperience from "../../components/blocks/professional-experience"
+import AboutInfo from "../../components/about-page-components/about-info"
+import ProfessionalExperience from "../../components/about-page-components/professional-experience"
 import FilterIconBlock from "../../components/filter-icon-block"
 import { BLOCK_ID, FILTERS } from "../../shared/constants"
 import styles from "./about-page.module.css"
@@ -8,10 +8,16 @@ import { About } from "../../shared/types"
 import { useDispatch } from "react-redux"
 import EditWrapper from "../../components/edit-wrapper/edit-wrapper"
 import { setAboutData } from "../../store/about"
-import { AboutForm, AboutView } from "../../components/about"
+import {
+  AboutForm,
+  AboutView,
+} from "../../components/about-page-components/about"
 import { useEffect } from "react"
-import { SkillsForm, SkillsView } from "../../components/skills"
-import Education from "../../components/blocks/education"
+import {
+  SkillsForm,
+  SkillsView,
+} from "../../components/about-page-components/skills"
+import Education from "../../components/about-page-components/education"
 
 const AboutPage = () => {
   const aboutData = useLoaderData() as About
@@ -29,6 +35,13 @@ const AboutPage = () => {
         filters={[FILTERS.architect, FILTERS.design]}
         className={styles.filters}
       />
+
+      {/* <EditWrapper
+        className={styles.about}
+        id={BLOCK_ID.about}
+        view={<AboutView />}
+        form={<AboutForm />}
+      /> */}
 
       <img src={image} alt={title} className={styles.img} />
       <AboutInfo />

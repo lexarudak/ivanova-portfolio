@@ -1,6 +1,6 @@
 import styles from "./skills.module.css"
 import { useSelector } from "react-redux"
-import { selectSkills } from "../../store/about/selectors"
+import { selectSkills } from "../../../store/about/selectors"
 import classNames from "classnames"
 
 export const SkillsView = () => {
