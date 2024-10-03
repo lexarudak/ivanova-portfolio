@@ -1,4 +1,3 @@
-import { LoaderFunction } from "react-router-dom"
 import {
   About,
   ExperienceData,
@@ -8,7 +7,7 @@ import {
 } from "../../shared/types"
 interface ProjectService {
   (): {
-    getAbout: LoaderFunction<About>
+    getAbout: () => Promise<About>
     setAbout: (about: string) => Promise<{ about: string }>
     updateLocation: (location: string) => Promise<{ location: string }>
     setSkills: (skills: SkillsData) => Promise<{ skills: SkillsData }>

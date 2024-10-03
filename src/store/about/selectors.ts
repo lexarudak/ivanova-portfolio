@@ -47,3 +47,8 @@ export const selectEducationOrder = createSelector(
   selectAboutSlice,
   about => about.educationOrder,
 )
+
+export const selectAboutImage = createSelector(
+  selectAboutSlice,
+  about => about.image,
+)

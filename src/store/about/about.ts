@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { NEW_ITEM_KEY } from "../../shared/constants"
 import {
   About,
   ExperienceData,
@@ -6,7 +7,7 @@ import {
   TitleValueData,
   WorkExperienceData,
 } from "../../shared/types"
-import { NEW_ITEM_KEY } from "../../shared/constants"
+import { fetchPageInfo } from "./actions"
 
 type AboutState = {
   about: string
@@ -21,6 +22,7 @@ type AboutState = {
   education: ExperienceData[]
   experienceOrder: string[]
   educationOrder: string[]
+  isLoading: boolean
 }
 
 const initialState: AboutState = {
@@ -40,40 +42,13 @@ const initialState: AboutState = {
   experienceOrder: [],
   education: [],
   educationOrder: [],
+  isLoading: false,
 }
 
 export const aboutSlice = createSlice({
   name: "about",
   initialState,
   reducers: {
-    setAboutData: (
-      state,
-      {
-        payload: {
-          about,
-          skills,
-          education,
-          educationOrder,
-          experience,
-          experienceOrder,
-          location,
-          languages,
-        },
-      }: PayloadAction<About>,
-    ) => {
-      state.about = about
-      state.info.location = location
-      state.info.languages = languages
-      state.skills = skills
-      state.experience = experience
-      state.experienceOrder = experienceOrder
-        ? experienceOrder.split(",")
-        : experience.map(({ id }) => id)
-      state.education = education
-      state.educationOrder = educationOrder
-        ? educationOrder.split(",")
-        : education.map(({ id }) => id)
-    },
     setEducationOrder: (state, action) => {
       state.educationOrder = action.payload
     },
@@ -145,6 +120,47 @@ export const aboutSlice = createSlice({
       state.educationOrder = action.payload.educationOrder.split(",")
     },
   },
+  extraReducers: builder => {
+    builder
+      .addCase(fetchPageInfo.pending, state => {
+        state.isLoading = true
+      })
+      .addCase(
+        fetchPageInfo.fulfilled,
+        (
+          state,
+          {
+            payload: {
+              about,
+              skills,
+              education,
+              educationOrder,
+              experience,
+              experienceOrder,
+              location,
+              languages,
+              image,
+            },
+          }: PayloadAction<About>,
+        ) => {
+          state.isLoading = false
+
+          state.about = about
+          state.image = image
+          state.info.location = location
+          state.info.languages = languages
+          state.skills = skills
+          state.experience = experience
+          state.experienceOrder = experienceOrder
+            ? experienceOrder.split(",")
+            : experience.map(({ id }) => id)
+          state.education = education
+          state.educationOrder = educationOrder
+            ? educationOrder.split(",")
+            : education.map(({ id }) => id)
+        },
+      )
+  },
 })
 
 export const {
@@ -154,7 +170,6 @@ export const {
   setAllEducation,
   setEducationOrder,
   setAbout,
-  setAboutData,
   setSkills,
   setExperience,
   clearExperience,

@@ -1,8 +1,7 @@
-import { LoaderFunction } from "react-router-dom"
 import { TitleValueData } from "../../shared/types"
 interface ContactsService {
   (): {
-    getContacts: LoaderFunction<TitleValueData>
+    getContacts: () => Promise<TitleValueData>
     postContacts: (contacts: TitleValueData) => Promise<TitleValueData>
   }
 }

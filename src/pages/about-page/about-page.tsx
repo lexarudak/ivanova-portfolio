@@ -1,69 +1,54 @@
-import { useLoaderData } from "react-router-dom"
 import AboutInfo from "../../components/about-page-components/about-info"
 import ProfessionalExperience from "../../components/about-page-components/professional-experience"
 import FilterIconBlock from "../../components/filter-icon-block"
 import { BLOCK_ID, FILTERS } from "../../shared/constants"
 import styles from "./about-page.module.css"
-import { About } from "../../shared/types"
-import { useDispatch } from "react-redux"
 import EditWrapper from "../../components/edit-wrapper/edit-wrapper"
-import { setAboutData } from "../../store/about"
 import {
   AboutForm,
   AboutView,
 } from "../../components/about-page-components/about"
-import { useEffect } from "react"
 import {
   SkillsForm,
   SkillsView,
 } from "../../components/about-page-components/skills"
 import Education from "../../components/about-page-components/education"
+import AboutImage from "../../components/about-page-components/about-image/about-image"
+import PageWrapper from "../../components/page-wrapper/page-wrapper"
+import { fetchPageInfo } from "../../store/about/actions"
 
 const AboutPage = () => {
-  const aboutData = useLoaderData() as About
-  const { title, image } = aboutData
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(setAboutData(aboutData))
-  }, [aboutData, dispatch])
-
   return (
-    <section className={styles.page}>
-      <h1 className={styles.title}>{title}</h1>
-      <FilterIconBlock
-        filters={[FILTERS.architect, FILTERS.design]}
-        className={styles.filters}
-      />
+    <PageWrapper asyncThunk={fetchPageInfo}>
+      <section>
+        <h1 className={styles.title}>Darya Ivanova</h1>
+        <FilterIconBlock
+          filters={[FILTERS.architect, FILTERS.design]}
+          className={styles.filters}
+        />
 
-      {/* <EditWrapper
-        className={styles.about}
-        id={BLOCK_ID.about}
-        view={<AboutView />}
-        form={<AboutForm />}
-      /> */}
+        <AboutImage />
 
-      <img src={image} alt={title} className={styles.img} />
-      <AboutInfo />
+        <AboutInfo />
 
-      <EditWrapper
-        className={styles.about}
-        id={BLOCK_ID.about}
-        view={<AboutView />}
-        form={<AboutForm />}
-      />
+        <EditWrapper
+          className={styles.about}
+          id={BLOCK_ID.about}
+          view={<AboutView />}
+          form={<AboutForm />}
+        />
 
-      <EditWrapper
-        className={styles.skills}
-        id={BLOCK_ID.skills}
-        view={<SkillsView />}
-        form={<SkillsForm />}
-      />
+        <EditWrapper
+          id={BLOCK_ID.skills}
+          view={<SkillsView />}
+          form={<SkillsForm />}
+        />
 
-      <ProfessionalExperience />
+        <ProfessionalExperience />
 
-      <Education />
-    </section>
+        <Education />
+      </section>
+    </PageWrapper>
   )
 }
 

@@ -20,6 +20,7 @@ export enum LS_KEY {
 }
 
 export enum BLOCK_ID {
+  aboutImage = "about-image",
   about = "about",
   skills = "skills",
   experience = "experience",

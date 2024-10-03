@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { TitleValueData } from "../../shared/types"
+import { fetchContacts } from "./actions"
 
 const initialState = {
   contacts: [] as TitleValueData,
+  isLoading: false,
 }
 
 export const contactsSlice = createSlice({
@@ -12,6 +14,15 @@ export const contactsSlice = createSlice({
     setContacts: (state, action) => {
       state.contacts = action.payload
     },
+  },
+  extraReducers(builder) {
+    builder.addCase(fetchContacts.pending, state => {
+      state.isLoading = true
+    })
+    builder.addCase(fetchContacts.fulfilled, (state, action) => {
+      state.isLoading = false
+      state.contacts = action.payload
+    })
   },
 })
 
