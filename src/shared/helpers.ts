@@ -37,3 +37,25 @@ export const createNewTitleValueItem = (title = "", value = "") => ({
   title,
   value,
 })
+
+export const xToString = (x: number) => {
+  switch (x) {
+    case -1:
+      return "left"
+    case 1:
+      return "right"
+    default:
+      return "center"
+  }
+}
+
+export const yToString = (y: number) => {
+  switch (y) {
+    case -1:
+      return "top"
+    case 1:
+      return "bottom"
+    default:
+      return "center"
+  }
+}

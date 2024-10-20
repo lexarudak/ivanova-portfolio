@@ -48,7 +48,6 @@ export const EducationItemForm: FC<Props> = ({ id }) => {
       validateOnBlur
     >
       {({ errors, touched, dirty }) => {
-        console.log({ dirty })
         const errorStyle = (name: keyof ExperienceData) => ({
           [styles.error]: errors[name] && touched[name],
         })

@@ -1,6 +1,7 @@
 import {
   About,
   ExperienceData,
+  ImageInfo,
   SkillsData,
   TitleValueData,
   WorkExperienceData,
@@ -26,6 +27,7 @@ interface ProjectService {
       experience: WorkExperienceData,
     ) => Promise<WorkExperienceData>
     updateEducation: (education: ExperienceData) => Promise<ExperienceData>
+    updateImage: (image: ImageInfo) => Promise<{ image: ImageInfo }>
   }
 }
 
@@ -49,6 +51,17 @@ export const aboutService: ProjectService = () => {
         body: JSON.stringify({ about }),
       })
       const data: { about: string } = await res.json()
+
+      return data
+    },
+
+    async updateImage(image: ImageInfo) {
+      const res = await fetch(`${ORIGIN}/image`, {
+        method: "PATCH",
+        headers,
+        body: JSON.stringify({ image }),
+      })
+      const data: { image: ImageInfo } = await res.json()
 
       return data
     },
@@ -134,8 +147,6 @@ export const aboutService: ProjectService = () => {
       })
       const data: { experienceOrder: string } = await res.json()
 
-      console.log(data)
-
       return { order: data?.experienceOrder.split(",") || "" }
     },
 
@@ -146,8 +157,6 @@ export const aboutService: ProjectService = () => {
         body: JSON.stringify({ newOrder }),
       })
       const data: { educationOrder: string } = await res.json()
-
-      console.log(data)
 
       return { order: data?.educationOrder.split(",") || "" }
     },

@@ -3,6 +3,7 @@ import { NEW_ITEM_KEY } from "../../shared/constants"
 import {
   About,
   ExperienceData,
+  ImageInfo,
   SkillsData,
   TitleValueData,
   WorkExperienceData,
@@ -11,12 +12,11 @@ import { fetchPageInfo } from "./actions"
 
 type AboutState = {
   about: string
-  title: string
   info: {
     location: string
     languages: TitleValueData
   }
-  image: string
+  image: ImageInfo
   skills: SkillsData
   experience: WorkExperienceData[]
   education: ExperienceData[]
@@ -27,12 +27,16 @@ type AboutState = {
 
 const initialState: AboutState = {
   about: "",
-  title: "",
   info: {
     languages: [],
     location: "",
   },
-  image: "",
+  image: {
+    src: "",
+    x: 0,
+    y: 0,
+    zoom: 1,
+  },
   skills: {
     advanced: [],
     intermediate: [],
@@ -57,6 +61,9 @@ export const aboutSlice = createSlice({
     },
     setAbout: (state, action) => {
       state.about = action.payload
+    },
+    setAboutImage: (state, action) => {
+      state.image = action.payload
     },
     setLocation: (state, action) => {
       state.info.location = action.payload
@@ -146,7 +153,7 @@ export const aboutSlice = createSlice({
           state.isLoading = false
 
           state.about = about
-          state.image = image
+          state.image = image || initialState.image
           state.info.location = location
           state.info.languages = languages
           state.skills = skills
@@ -164,6 +171,7 @@ export const aboutSlice = createSlice({
 })
 
 export const {
+  setAboutImage,
   setEducation,
   clearEducation,
   deleteEducation,

@@ -1,0 +1,19 @@
+.save {
+  margin-top: 20px;
+}
+
+
+.img {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
+
+
+.container {
+    position: relative;
+}
