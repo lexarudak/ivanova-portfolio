@@ -8,6 +8,11 @@ export type WorkCardData = {
   filters: Array<FILTERS>
 }
 
+export type AllProjects = {
+  projects: WorkCardData[]
+  order: string
+}
+
 export type Block = {
   id: string
   text?: string[]
@@ -43,7 +48,6 @@ export type Project = {
 }
 
 export type About = {
-  title: string
   image: ImageInfo | null
   location: string
   languages: TitleValueData
@@ -72,5 +76,11 @@ export type ImageInfo = {
 }
 
 export type ServiceProps = {
-  useMockData: boolean
+  useMockData?: boolean
+}
+
+export type ProjectShort = {
+  title: string
+  year: number
+  img: string
 }

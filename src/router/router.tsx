@@ -15,7 +15,6 @@ const router = createBrowserRouter([
       {
         path: PAGES.works,
         element: <WorksPage />,
-        loader: projectService().getAllProjects,
       },
       {
         path: PAGES.project,

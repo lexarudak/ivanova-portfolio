@@ -1,13 +1,16 @@
+import { getMockedResponse } from "../../shared/helpers"
 import {
   About,
   ExperienceData,
   ImageInfo,
+  ServiceProps,
   SkillsData,
   TitleValueData,
   WorkExperienceData,
 } from "../../shared/types"
+import { MOCKED_ABOUT } from "./mock"
 interface ProjectService {
-  (): {
+  (props?: ServiceProps): {
     getAbout: () => Promise<About>
     setAbout: (about: string) => Promise<{ about: string }>
     updateLocation: (location: string) => Promise<{ location: string }>
@@ -33,11 +36,14 @@ interface ProjectService {
 
 const headers = { "Content-Type": "application/json" }
 
-export const aboutService: ProjectService = () => {
+export const aboutService: ProjectService = props => {
   const ORIGIN = `${import.meta.env.VITE_APP_API_URL}/about`
 
   return {
     async getAbout() {
+      if (props?.useMockData) {
+        return getMockedResponse<About>(MOCKED_ABOUT)
+      }
       const res = await fetch(ORIGIN)
       const data = await res.json()
 

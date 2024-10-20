@@ -2,7 +2,7 @@ import { getMockedResponse } from "../../shared/helpers"
 import { ServiceProps, TitleValueData } from "../../shared/types"
 import { MOCKED_CONTACTS } from "./mock"
 interface ContactsService {
-  (props: ServiceProps): {
+  (props?: ServiceProps): {
     getContacts: () => Promise<TitleValueData>
     postContacts: (contacts: TitleValueData) => Promise<TitleValueData>
   }
@@ -10,12 +10,12 @@ interface ContactsService {
 
 const headers = { "Content-Type": "application/json" }
 
-export const contactsService: ContactsService = ({ useMockData }) => {
+export const contactsService: ContactsService = props => {
   const ORIGIN = `${import.meta.env.VITE_APP_API_URL}/contacts`
 
   return {
     async getContacts() {
-      if (useMockData) {
+      if (props?.useMockData) {
         return getMockedResponse<TitleValueData>(MOCKED_CONTACTS)
       }
       const res = await fetch(ORIGIN)
