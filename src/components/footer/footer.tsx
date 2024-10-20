@@ -4,10 +4,13 @@ import { PAGES } from "../../router/constants"
 import useHomePage from "../../shared/hooks/use-home-page"
 import sharedStyles from "../../styles/shared.module.css"
 import Lock from "../lock"
+import { useFeature } from "../../feature-flag/hooks"
+import { FEATURE_FLAG } from "../../feature-flag/constants"
 
 const Footer = () => {
   const { isHomePage, currentPage } = useHomePage()
   const isContactsPage = currentPage == PAGES.contacts
+  const isEditBlocked = useFeature(FEATURE_FLAG.EDIT_BLOCK)
 
   if (isHomePage) {
     return null
@@ -21,7 +24,7 @@ const Footer = () => {
       >
         {isContactsPage ? "To my projects" : "Contact me"}
       </Link>
-      <Lock />
+      {!isEditBlocked && <Lock />}
     </footer>
   )
 }

@@ -59,3 +59,7 @@ export const yToString = (y: number) => {
       return "center"
   }
 }
+
+export const getMockedResponse = <T>(mockedData: T) => {
+  return Promise.resolve(mockedData)
+}

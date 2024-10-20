@@ -70,3 +70,7 @@ export type ImageInfo = {
   y: number
   zoom: number
 }
+
+export type ServiceProps = {
+  useMockData: boolean
+}
