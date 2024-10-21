@@ -14,6 +14,10 @@ const initialState = {
     year: "",
     location: "",
     participation: [],
+    team: {
+      link: "",
+      name: "",
+    },
     blocks: [],
   } as Project,
 }

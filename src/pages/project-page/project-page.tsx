@@ -28,8 +28,17 @@ const blockList = {
 
 const ProjectPage = () => {
   const { projectId } = useParams()
-  const { title, filters, id, image, location, participation, year, blocks } =
-    useSelector(selectAllProject)
+  const {
+    title,
+    filters,
+    id,
+    image,
+    location,
+    participation,
+    year,
+    blocks,
+    team,
+  } = useSelector(selectAllProject)
 
   const thunk = useMemo(
     () => fetchProject.bind(null, projectId || ""),
@@ -44,7 +53,7 @@ const ProjectPage = () => {
         <FilterIconBlock filters={filters} className={styles.filters} />
         <img src={image} alt={title} className={styles.img} />
 
-        <ProjectInfo {...{ location, participation, year }} />
+        <ProjectInfo {...{ location, participation, year, team }} />
 
         {blocks.map(({ blockType, ...rest }) =>
           blockList[blockType]({ ...rest }),

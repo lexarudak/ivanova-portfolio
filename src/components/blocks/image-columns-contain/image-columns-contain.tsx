@@ -10,7 +10,6 @@ const ImageColumnsContain: FC<Block> = ({ images, id }) => {
   return (
     <div key={id} className={styles.container}>
       {images.map((src, ind) => (
-        // <div className={styles.imgWrapper}>
         <div
           className={styles.img}
           style={{
@@ -18,7 +17,6 @@ const ImageColumnsContain: FC<Block> = ({ images, id }) => {
           }}
           key={ind}
         />
-        // </div>
       ))}
     </div>
   )

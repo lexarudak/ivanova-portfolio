@@ -42,6 +42,10 @@ export type Project = {
   year: string
   location: string
   participation: string[]
+  team: {
+    name: string
+    link: string
+  }
   blocks: (Block & { blockType: BLOCK_TYPE })[]
 }
 
