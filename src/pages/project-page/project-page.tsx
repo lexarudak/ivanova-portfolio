@@ -15,6 +15,7 @@ import { fetchProject } from "../../store/projects/actions"
 import { useSelector } from "react-redux"
 import { selectAllProject } from "../../store/projects/selectors"
 import { useMemo } from "react"
+import ImageColumnsContain from "../../components/blocks/image-columns-contain"
 
 const blockList = {
   [BLOCK_TYPE.carousel]: Carousel,
@@ -22,6 +23,7 @@ const blockList = {
   [BLOCK_TYPE.imageColumns]: imageColumns,
   [BLOCK_TYPE.halfImage]: HalfImage,
   [BLOCK_TYPE.halfImageRight]: HalfImageRight,
+  [BLOCK_TYPE.imageColumnsContain]: ImageColumnsContain,
 }
 
 const ProjectPage = () => {

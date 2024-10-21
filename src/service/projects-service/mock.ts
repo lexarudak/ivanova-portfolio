@@ -16,16 +16,6 @@ export const PROJECTS: Project[] = [
       "Construction Drawings (as part of team)",
     ],
     blocks: [
-      // {
-      //   blockType: BLOCK_TYPE.carousel,
-      //   id: "1",
-      //   images: [
-      //     "/st/st1.webp",
-      //     "/st/st2.webp",
-      //     "/st/st3.webp",
-      //     "/st/st4.webp",
-      //   ],
-      // },
       {
         id: "1",
         blockType: BLOCK_TYPE.halfImage,
@@ -69,7 +59,7 @@ export const PROJECTS: Project[] = [
       {
         id: "7",
         blockType: BLOCK_TYPE.imageColumns,
-        images: ["/st/st8.webp", "/st/st7.webp"],
+        images: ["/st/st8.webp", "/st/st6.webp"],
       },
       {
         id: "8",
@@ -97,7 +87,7 @@ export const PROJECTS: Project[] = [
       },
       {
         id: "12",
-        blockType: BLOCK_TYPE.imageColumns,
+        blockType: BLOCK_TYPE.imageColumnsContain,
         images: ["/st/st11.webp", "/st/st12.webp"],
       },
       {

@@ -11,6 +11,7 @@ export enum BLOCK_TYPE {
   carousel = "carousel",
   textColumns = "text-columns",
   imageColumns = "image-columns",
+  imageColumnsContain = "image-columns-contain",
   halfImage = "half-image",
   halfImageRight = "half-image-right",
 }
