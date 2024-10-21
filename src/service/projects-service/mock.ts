@@ -169,8 +169,8 @@ export const PROJECTS: Project[] = [
     location: "Minsk, Belarus",
     participation: ["3D Interior Concept", "Floor Plans", "Design Drawings"],
     team: {
-      name: "Teltsov & Partners",
-      link: "http://projectshop.by/en/",
+      name: "Personal project",
+      link: "#",
     },
     blocks: [
       {
