@@ -1,0 +1,6 @@
+.rightView {
+  & > img {
+    order: 2;
+    object-fit: contain;
+  }
+}

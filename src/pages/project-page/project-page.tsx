@@ -16,6 +16,7 @@ import { useSelector } from "react-redux"
 import { selectAllProject } from "../../store/projects/selectors"
 import { useMemo } from "react"
 import ImageColumnsContain from "../../components/blocks/image-columns-contain"
+import HalfImageRightContain from "../../components/blocks/half-image-right-contain"
 
 const blockList = {
   [BLOCK_TYPE.carousel]: Carousel,
@@ -24,6 +25,7 @@ const blockList = {
   [BLOCK_TYPE.halfImage]: HalfImage,
   [BLOCK_TYPE.halfImageRight]: HalfImageRight,
   [BLOCK_TYPE.imageColumnsContain]: ImageColumnsContain,
+  [BLOCK_TYPE.halfImageRightContain]: HalfImageRightContain,
 }
 
 const ProjectPage = () => {

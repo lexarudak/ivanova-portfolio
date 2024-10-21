@@ -14,6 +14,7 @@ export enum BLOCK_TYPE {
   imageColumnsContain = "image-columns-contain",
   halfImage = "half-image",
   halfImageRight = "half-image-right",
+  halfImageRightContain = "half-image-right-contain",
 }
 
 export enum LS_KEY {
