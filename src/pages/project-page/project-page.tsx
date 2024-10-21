@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import styles from "./project-page.module.css"
 import Crumbs from "../../components/crumbs"
 import { createCrumps } from "./helpers"
@@ -10,7 +10,11 @@ import TextColumns from "../../components/blocks/text-columns"
 import imageColumns from "../../components/blocks/image-columns"
 import HalfImage from "../../components/blocks/half-image"
 import HalfImageRight from "../../components/blocks/half-image-right"
-import { Project } from "../../shared/types"
+import PageWrapper from "../../components/page-wrapper/page-wrapper"
+import { fetchProject } from "../../store/projects/actions"
+import { useSelector } from "react-redux"
+import { selectAllProject } from "../../store/projects/selectors"
+import { useMemo } from "react"
 
 const blockList = {
   [BLOCK_TYPE.carousel]: Carousel,
@@ -21,21 +25,30 @@ const blockList = {
 }
 
 const ProjectPage = () => {
-  const { title, filters, id, image, info, blocks } = useLoaderData() as Project
+  const { projectId } = useParams()
+  const { title, filters, id, image, location, participation, year, blocks } =
+    useSelector(selectAllProject)
+
+  const thunk = useMemo(
+    () => fetchProject.bind(null, projectId || ""),
+    [projectId],
+  )
 
   return (
-    <section className={styles.page}>
-      <Crumbs links={createCrumps(filters, title, id)} />
-      <h1 className={styles.title}>{title}</h1>
-      <FilterIconBlock filters={filters} className={styles.filters} />
-      <img src={image} alt={title} className={styles.img} />
+    <PageWrapper asyncThunk={thunk}>
+      <section className={styles.page}>
+        <Crumbs links={createCrumps(filters, title, id)} />
+        <h1 className={styles.title}>{title}</h1>
+        <FilterIconBlock filters={filters} className={styles.filters} />
+        <img src={image} alt={title} className={styles.img} />
 
-      <ProjectInfo {...info} />
+        <ProjectInfo {...{ location, participation, year }} />
 
-      {blocks.map(({ blockType, ...rest }) =>
-        blockList[blockType]({ ...rest }),
-      )}
-    </section>
+        {blocks.map(({ blockType, ...rest }) =>
+          blockList[blockType]({ ...rest }),
+        )}
+      </section>
+    </PageWrapper>
   )
 }
 

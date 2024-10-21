@@ -39,11 +39,9 @@ export type Project = {
   title: string
   filters: FILTERS[]
   image: string
-  info: {
-    year: string
-    location: string
-    participation: string[]
-  }
+  year: string
+  location: string
+  participation: string[]
   blocks: (Block & { blockType: BLOCK_TYPE })[]
 }
 

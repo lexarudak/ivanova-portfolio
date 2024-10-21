@@ -10,3 +10,11 @@ export const fetchProjects = createAsyncThunk(
     return await projectService({ useMockData }).getAllProjects()
   },
 )
+
+export const fetchProject = createAsyncThunk(
+  "contacts/fetchProject",
+  async (id: string) => {
+    const useMockData = isFeatureFlagActive(FEATURE_FLAG.MOCK_DATA)
+    return await projectService({ useMockData }).getProject(id)
+  },
+)

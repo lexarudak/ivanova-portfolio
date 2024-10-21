@@ -4,6 +4,7 @@
 	height: 600px;
 	position: relative;
 	overflow: hidden;
+	margin: 150px 0;
 
 	@media (max-width:760px) {
 		height: 400px;

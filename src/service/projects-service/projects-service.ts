@@ -1,11 +1,9 @@
-import { LoaderFunction } from "react-router-dom"
-import { About, AllProjects, Project, ServiceProps } from "../../shared/types"
-import { MOCKED_ALL_PROJECTS } from "./mock"
+import { AllProjects, Project, ServiceProps } from "../../shared/types"
+import { MOCKED_ALL_PROJECTS, PROJECTS } from "./mock"
 interface ProjectService {
   (props?: ServiceProps): {
     getAllProjects: () => Promise<AllProjects>
-    getProject: LoaderFunction<Project>
-    getAbout: LoaderFunction<About>
+    getProject: (id: string) => Promise<Project>
   }
 }
 
@@ -22,15 +20,15 @@ export const projectService: ProjectService = props => {
       return data
     },
 
-    async getProject({ params: { projectId } }) {
+    async getProject(projectId) {
+      console.log(projectId)
+      console.log(PROJECTS.find(({ id }) => id === projectId) || PROJECTS[0])
+      if (props?.useMockData) {
+        return Promise.resolve<Project>(
+          PROJECTS.find(({ id }) => id === projectId) || PROJECTS[0],
+        )
+      }
       const res = await fetch(`${ORIGIN}/projects/${projectId}`)
-      const data = await res.json()
-
-      return data
-    },
-
-    async getAbout() {
-      const res = await fetch(`${ORIGIN}/about`)
       const data = await res.json()
 
       return data
