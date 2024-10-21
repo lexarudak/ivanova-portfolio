@@ -1,0 +1,46 @@
+.container {
+
+	margin-bottom: 25px;
+
+	&.view {
+		margin-bottom: 100px;
+	}
+
+}
+
+.listContainer {
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	gap: 50px;
+}
+
+.list {
+	flex: 1 1 auto;
+	min-width: 180px;
+	margin-left: -11px;
+}
+
+.block {
+	margin-right: 20px;
+}
+
+.title {
+	color: var(--font-secondary);
+	margin-bottom: 20px;
+	text-transform: capitalize;
+}
+
+.plus, .save {
+	margin-top: 20px;
+}
+
+.item {
+	margin-bottom: 5px;
+
+	& > p {
+		padding: var(--input-padding);
+		border: var(--common-border);
+	}
+	
+}

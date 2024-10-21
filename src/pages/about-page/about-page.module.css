@@ -7,23 +7,11 @@
 	margin-bottom: 50px;
 }
 
-.img {
-	width: 100%;
-	height: 400px;
-	object-fit: cover;
-}
-
 .about {
-	margin: 100px 0;
 	width: 50%;
 
 	@media (max-width:800px) {
 		width: 80%;
 	}
 
-}
-
-.desc {
-	color: var(--font-secondary);
-	padding-bottom: 20px;
 }

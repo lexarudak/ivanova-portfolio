@@ -1,0 +1,83 @@
+.container {
+	margin: 50px 0 25px;
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+
+	@media (max-width:800px) {
+		flex-direction: column;
+	}
+
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	&.infoView {
+		margin-bottom: 40px;
+	}
+
+	& > p {
+		margin-bottom: 5px;
+	}
+
+}
+
+.title {
+	color: var(--font-secondary);
+	display: inline-block;
+	width: 150px;
+	flex-shrink: 0;
+	padding: 6px 0;
+}
+
+.value {
+	padding-left: 11px;
+}
+
+.block {
+	display: flex;
+	width: 50%;
+
+	@media (max-width:800px) {
+		width: 100%;
+	}
+
+}
+
+.list {
+	@media (max-width:800px) {
+		& > li {
+			margin-bottom: 5px;
+		}
+
+	}
+
+}
+
+span.lang {
+	display: inline-block;
+	width: 90px;
+}
+
+li.lang {
+	margin: 0;
+}
+
+.editBlock {
+	li > span, input {
+		color: var(--font-main);
+	}
+
+	li > span:last-child, input:last-child {
+		width: 50px;
+	}
+
+}
+
+.saveLocation {
+	margin-left: 160px;
+	margin-top: 20px;
+}

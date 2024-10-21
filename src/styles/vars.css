@@ -14,7 +14,13 @@
   --font-main: #222222;
   --font-light: #ffffff;
   --font-secondary: #8e8e8e;
+  --font-placeholder: #bebebe;
+  --font-disabled: #e1dfdf;
 
   /* size */
   --header-height: 60px;
+
+  --input-padding: 1px 10px;
+  --input-border: 1px solid var(--font-secondary);
+  --common-border: 1px solid transparent;
 }

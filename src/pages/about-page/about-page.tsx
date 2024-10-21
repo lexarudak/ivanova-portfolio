@@ -1,34 +1,54 @@
-import AboutInfo from "../../components/blocks/about-info"
-import Education from "../../components/blocks/education"
-import ProfessionalExperience from "../../components/blocks/professional-experience"
-import Skills from "../../components/blocks/skills"
+import AboutInfo from "../../components/about-page-components/about-info"
+import ProfessionalExperience from "../../components/about-page-components/professional-experience"
 import FilterIconBlock from "../../components/filter-icon-block"
-import { MOCK_ABOUT } from "../../mock/mock-about"
-import { FILTERS } from "../../shared/constants"
+import { BLOCK_ID, FILTERS } from "../../shared/constants"
 import styles from "./about-page.module.css"
+import EditWrapper from "../../components/edit-wrapper/edit-wrapper"
+import {
+  AboutForm,
+  AboutView,
+} from "../../components/about-page-components/about"
+import {
+  SkillsForm,
+  SkillsView,
+} from "../../components/about-page-components/skills"
+import Education from "../../components/about-page-components/education"
+import AboutImage from "../../components/about-page-components/about-image/about-image"
+import PageWrapper from "../../components/page-wrapper/page-wrapper"
+import { fetchPageInfo } from "../../store/about/actions"
 
 const AboutPage = () => {
-  const title = "Darya Ivanova"
-  const { info, image, skills, experience, about, education } = MOCK_ABOUT
   return (
-    <section className={styles.page}>
-      <h1 className={styles.title}>{title}</h1>
-      <FilterIconBlock
-        filters={[FILTERS.architect, FILTERS.design]}
-        className={styles.filters}
-      />
-      <img src={image} alt={title} className={styles.img} />
-      <AboutInfo {...info} />
-      <Skills skills={skills} />
-      <ProfessionalExperience experience={experience} />
+    <PageWrapper asyncThunk={fetchPageInfo}>
+      <section>
+        <h1 className={styles.title}>Darya Ivanova</h1>
+        <FilterIconBlock
+          filters={[FILTERS.architect, FILTERS.design]}
+          className={styles.filters}
+        />
 
-      <div className={styles.about}>
-        <p className={styles.desc}>About</p>
-        <p>{about}</p>
-      </div>
+        <AboutImage />
 
-      <Education education={education} />
-    </section>
+        <AboutInfo />
+
+        <EditWrapper
+          className={styles.about}
+          id={BLOCK_ID.about}
+          view={<AboutView />}
+          form={<AboutForm />}
+        />
+
+        <EditWrapper
+          id={BLOCK_ID.skills}
+          view={<SkillsView />}
+          form={<SkillsForm />}
+        />
+
+        <ProfessionalExperience />
+
+        <Education />
+      </section>
+    </PageWrapper>
   )
 }
 

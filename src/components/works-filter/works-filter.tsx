@@ -1,6 +1,6 @@
-import { FILTERS } from "../../shared/constants"
+import { BUTTON_VARIANT, FILTERS } from "../../shared/constants"
 import useFilterNavigate from "../../shared/hooks/use-filter-navigate"
-import Button, { BUTTON_VARIANT } from "../shared-components/button"
+import Button from "../shared-components/button"
 import styles from "./works-filter.module.css"
 import { FC } from "react"
 import classNames from "classnames"
