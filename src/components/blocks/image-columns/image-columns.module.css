@@ -10,6 +10,12 @@
 	@media (max-width:760px) {
 		height: 340px;
 		gap: 20px;
+		gap: 150px;
+	}
+
+	@media (max-width:500px) {
+		flex-direction: column;
+		height: auto;
 	}
 
 }
@@ -19,4 +25,9 @@
 	flex: 1 1 auto;
 	height: 100%;
 	object-fit: cover;
+
+	@media (max-width:500px) {
+		width: 100%;
+		height: auto;
+	}
 }

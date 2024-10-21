@@ -24,14 +24,14 @@ export const MOCKED_ABOUT = {
     },
   ],
   about:
-    "As a young and driven architect with 8 years of experience using Revit, SketchUp, and Enscape, I have taken part in a wide range of projects, from large residential communities to private homes and apartments. Architecture plays a major role in my life and I am always eager to tackle new projects and challenges.",
+    "As a young and driven architect with 11 years of experience using Revit, SketchUp, and Enscape, I have taken part in a wide range of projects, from large residential communities to private homes and apartments. Architecture plays a major role in my life and I am always eager to tackle new projects and challenges.",
   image: { src: "", x: 0, y: 0, zoom: 1 },
   experienceOrder: "1,2,3",
   educationOrder: "1,2",
   skills: {
     advanced: ["Revit", "SketchUp", "Enscape", "AutoCAD"],
-    intermediate: ["ArchiCAD", "Adobe Photoshop", "CorelDRAW"],
-    novice: ["Figma"],
+    intermediate: ["Adobe Photoshop", "CorelDRAW"],
+    novice: ["ArchiCAD", "Figma"],
   },
   experience: [
     {
