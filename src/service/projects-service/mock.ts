@@ -176,7 +176,7 @@ export const PROJECTS: Project[] = [
       {
         id: "1",
         blockType: BLOCK_TYPE.halfImageRight,
-        images: ["/public/sh/sh1.jpg"],
+        images: ["/sh/sh1.jpg"],
         text: [
           "In this project, I served as both customer and designer for my own apartment, striving to make the most of a small area. I utilized the high ceiling of 3.3 meters to create a multi-level space, with key changes such as relocating the bathroom door from the entrance to the living room, combining the balcony door and window, and incorporating my love for second-tier spaces by placing the bed at a height of 2 meters.",
         ],
@@ -184,12 +184,12 @@ export const PROJECTS: Project[] = [
       {
         id: "2",
         blockType: BLOCK_TYPE.imageColumns,
-        images: ["/public/sh/sh6.jpg"],
+        images: ["/sh/sh6.jpg"],
       },
       {
         id: "3",
         blockType: BLOCK_TYPE.halfImageRightContain,
-        images: ["/public/sh/sh7.jpg"],
+        images: ["/sh/sh7.jpg"],
         text: [
           "The top plan shows how the apartment’s design avoids clutter. The elevated bed stays out of view, creating a cozy “nest.”",
         ],
@@ -197,7 +197,7 @@ export const PROJECTS: Project[] = [
       {
         id: "4",
         blockType: BLOCK_TYPE.imageColumns,
-        images: ["/public/sh/sh5.jpg"],
+        images: ["/sh/sh5.jpg"],
       },
       {
         id: "5",
@@ -210,12 +210,12 @@ export const PROJECTS: Project[] = [
       {
         id: "6",
         blockType: BLOCK_TYPE.imageColumns,
-        images: ["/public/sh/sh11.webp", "/public/sh/sh12.webp"],
+        images: ["/sh/sh11.webp", "/sh/sh12.webp"],
       },
       {
         id: "7",
         blockType: BLOCK_TYPE.imageColumns,
-        images: ["/public/sh/sh2.jpg", "/public/sh/sh13.webp"],
+        images: ["/sh/sh2.jpg", "/sh/sh13.webp"],
       },
       {
         id: "8",
@@ -229,7 +229,7 @@ export const PROJECTS: Project[] = [
       {
         id: "9",
         blockType: BLOCK_TYPE.halfImageRightContain,
-        images: ["/public/sh/sh4.jpg"],
+        images: ["/sh/sh4.jpg"],
         text: [
           "The sectional view illustrates how each level serves multiple purposes, maximizing the space.",
         ],
@@ -238,7 +238,7 @@ export const PROJECTS: Project[] = [
       {
         id: "10",
         blockType: BLOCK_TYPE.halfImage,
-        images: ["/public/sh/sh10.webp"],
+        images: ["/sh/sh10.webp"],
         text: [
           "The bathroom was designed to feel wide without being clinical, using microcement for walls and floors.",
         ],
@@ -246,7 +246,7 @@ export const PROJECTS: Project[] = [
       {
         id: "12",
         blockType: BLOCK_TYPE.halfImage,
-        images: ["/public/sh/sh9.webp"],
+        images: ["/sh/sh9.webp"],
         text: [""],
       },
     ],
