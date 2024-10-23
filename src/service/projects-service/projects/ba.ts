@@ -5,7 +5,7 @@ export const BA: Project = {
   id: "8",
   title: "Barbershop",
   year: "2019",
-  image: "/public/ba/1ba.jpg",
+  image: "/ba/1ba.jpg",
   filters: [FILTERS.design],
   location: "Minsk, Belarus",
   participation: [
@@ -22,7 +22,7 @@ export const BA: Project = {
     {
       id: "1",
       blockType: BLOCK_TYPE.halfImageRight,
-      images: ["/public/ba/10ba.jpg"],
+      images: ["/ba/10ba.jpg"],
       text: [
         "This men's salon design project was a passion-driven endeavor aimed at creating a space that would stand out from the typical barbershop. Inspired by primitive times, the design focused on creating a unique atmosphere reminiscent of a cave, while maintaining modern functionality",
       ],
@@ -30,23 +30,23 @@ export const BA: Project = {
     {
       id: "2",
       blockType: BLOCK_TYPE.imageColumnsContain,
-      images: ["/public/ba/2ba.jpg"],
+      images: ["/ba/2ba.jpg"],
     },
     {
       id: "2",
       blockType: BLOCK_TYPE.imageColumnsContain,
-      images: ["/public/ba/5ba.jpg"],
+      images: ["/ba/5ba.jpg"],
     },
 
     {
       id: "1",
       blockType: BLOCK_TYPE.imageColumns,
-      images: ["/public/ba/11ba.jpg"],
+      images: ["/ba/11ba.jpg"],
     },
     {
       id: "1",
       blockType: BLOCK_TYPE.imageColumns,
-      images: ["/public/ba/8ba.jpg", "/public/ba/7ba.jpg"],
+      images: ["/ba/8ba.jpg", "/ba/7ba.jpg"],
     },
     {
       id: "3",
@@ -59,7 +59,7 @@ export const BA: Project = {
     {
       id: "1",
       blockType: BLOCK_TYPE.halfImageRight,
-      images: ["/public/ba/4ba.jpg"],
+      images: ["/ba/4ba.jpg"],
       text: [
         "The walls were adorned with murals depicting rough stone, evoking a natural, primal feel. A fireplace added warmth and a striking contrast to the technological metal structures that serve a functional purpose in the salon",
       ],
@@ -68,13 +68,13 @@ export const BA: Project = {
     {
       id: "1",
       blockType: BLOCK_TYPE.imageColumns,
-      images: ["/public/ba/3ba.jpg", "/public/ba/9ba.jpg"],
+      images: ["/ba/3ba.jpg", "/ba/9ba.jpg"],
     },
 
     {
       id: "1",
       blockType: BLOCK_TYPE.halfImageRight,
-      images: ["/public/ba/6ba.jpg"],
+      images: ["/ba/6ba.jpg"],
       text: [
         "The final result is a barbershop that is both functional and atmospheric, offering a unique experience for clients. Balancing the raw, natural elements with modern practicality was a challenge, but the outcome successfully reflects the creative vision",
       ],
