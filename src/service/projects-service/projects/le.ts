@@ -80,12 +80,16 @@ export const LE = {
     {
       id: "11",
       blockType: BLOCK_TYPE.imageColumns,
-      images: ["/le/12le.jpg", "/le/11le.jpg"],
+      images: ["/le/12le.jpg", "/le/18le.jpg"],
+    },
+    {
+      id: "11",
+      blockType: BLOCK_TYPE.imageColumns,
+      images: ["/le/11le.jpg", "/le/19le.JPG"],
     },
     {
       id: "7",
-      blockType: BLOCK_TYPE.halfImage,
-      images: ["/le/3le.jpg"],
+      blockType: BLOCK_TYPE.textColumns,
       text: [
         "From a personal standpoint, this project highlights my ability to balance form and function. My design achieved a modern, warm atmosphere while incorporating functional elements that enhance the living experience. This project stands out in my portfolio as an example of simple, elegant design combined with effective use of natural light",
       ],
