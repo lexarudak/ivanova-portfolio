@@ -4,6 +4,14 @@
 	justify-content: space-between;
 	margin: 100px 0;
 
+	&.center > p {
+		text-align: center;
+	}
+
+	&.italic > p {
+		font-style: italic;
+	}
+
 	@media (max-width:760px) {
 		gap: 20px;
 	}

@@ -17,6 +17,10 @@ export type Block = {
   id: string
   text?: string[]
   images?: string[]
+  options?: {
+    align?: string
+    fontStyle?: string
+  }
 }
 
 export type ExperienceData = {

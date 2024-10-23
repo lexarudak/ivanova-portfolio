@@ -7,7 +7,7 @@ import ProjectInfo from "../../components/blocks/project-info"
 import { BLOCK_TYPE } from "../../shared/constants"
 import Carousel from "../../components/blocks/carousel"
 import TextColumns from "../../components/blocks/text-columns"
-import imageColumns from "../../components/blocks/image-columns"
+import ImageColumns from "../../components/blocks/image-columns"
 import HalfImage from "../../components/blocks/half-image"
 import HalfImageRight from "../../components/blocks/half-image-right"
 import PageWrapper from "../../components/page-wrapper/page-wrapper"
@@ -21,7 +21,7 @@ import HalfImageRightContain from "../../components/blocks/half-image-right-cont
 const blockList = {
   [BLOCK_TYPE.carousel]: Carousel,
   [BLOCK_TYPE.textColumns]: TextColumns,
-  [BLOCK_TYPE.imageColumns]: imageColumns,
+  [BLOCK_TYPE.imageColumns]: ImageColumns,
   [BLOCK_TYPE.halfImage]: HalfImage,
   [BLOCK_TYPE.halfImageRight]: HalfImageRight,
   [BLOCK_TYPE.imageColumnsContain]: ImageColumnsContain,
