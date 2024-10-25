@@ -5,7 +5,7 @@ export const HC: Project = {
   id: "10",
   title: "House concept",
   year: "2023",
-  image: "/public/hc/9hc.jpg",
+  image: "/hc/9hc.jpg",
   filters: [FILTERS.architect, FILTERS.design],
   location: "Middle Asia",
   participation: [],
@@ -17,7 +17,7 @@ export const HC: Project = {
     {
       id: "1",
       blockType: BLOCK_TYPE.halfImageRight,
-      images: ["/public/hc/3hc.jpg"],
+      images: ["/hc/3hc.jpg"],
       text: [
         "In this project, my primary role was to develop the sketch layout, focusing on how different areas would function together. This included balancing the size and flow of spaces to ensure that while the house had substantial volume, it still felt pleasant and livable, without becoming too spacious or impersonal. I also had to ensure that, even though it was a sketch, the design was structurally sound and could be built in reality",
       ],
@@ -25,12 +25,12 @@ export const HC: Project = {
     {
       id: "2",
       blockType: BLOCK_TYPE.imageColumnsContain,
-      images: ["/public/hc/11hc.jpg"],
+      images: ["/hc/11hc.jpg"],
     },
     {
       id: "3",
       blockType: BLOCK_TYPE.imageColumnsContain,
-      images: ["/public/hc/1hc.jpg"],
+      images: ["/hc/1hc.jpg"],
     },
     {
       id: "4",
@@ -43,7 +43,7 @@ export const HC: Project = {
     {
       id: "5",
       blockType: BLOCK_TYPE.imageColumns,
-      images: ["/public/hc/14hc.jpg"],
+      images: ["/hc/14hc.jpg"],
     },
     {
       id: "6",
@@ -56,7 +56,7 @@ export const HC: Project = {
     {
       id: "7",
       blockType: BLOCK_TYPE.halfImageRight,
-      images: ["/public/hc/6hc.jpg"],
+      images: ["/hc/6hc.jpg"],
       text: [
         "This project reflects my personal design philosophy, especially my love for minimalism. However, I also strive to grow in other design directions, incorporating native and ethnic elements into my work to add depth and warmth. I believe this balance between minimalism and cultural richness is what makes this project stand out",
       ],
@@ -72,13 +72,13 @@ export const HC: Project = {
     {
       id: "9",
       blockType: BLOCK_TYPE.imageColumns,
-      images: ["/public/hc/12hc.jpg"],
+      images: ["/hc/12hc.jpg"],
     },
 
     {
       id: "10",
       blockType: BLOCK_TYPE.halfImageRight,
-      images: ["/public/hc/8hc.jpg"],
+      images: ["/hc/8hc.jpg"],
       text: [
         "Given more time or resources, I wouldn’t change much in this project. I’m someone who prefers to move forward rather than reworking past designs. I enjoy taking feedback and applying it to new challenges rather than revisiting previous work",
       ],
@@ -94,7 +94,7 @@ export const HC: Project = {
     {
       id: "9",
       blockType: BLOCK_TYPE.imageColumns,
-      images: ["/public/hc/7hc.jpg", "/public/hc/2hc.jpg"],
+      images: ["/hc/7hc.jpg", "/hc/2hc.jpg"],
     },
   ],
 }
