@@ -8,7 +8,12 @@ export const HC: Project = {
   image: "/hc/9hc.jpg",
   filters: [FILTERS.architect, FILTERS.design],
   location: "Middle Asia",
-  participation: [],
+  participation: [
+    "Layouts Creation",
+    "Functionality Research",
+    "Exterior Design",
+    "Interior Flow and Space Optimization (part of team)",
+  ],
   team: {
     name: "Level 80",
     link: "https://level80.pro/",
