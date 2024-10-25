@@ -34,7 +34,9 @@ export const OK: Project = {
         align: "center",
         fontStyle: "italic",
       },
-      text: ["Photos taken from the LEVEL80 architects website"],
+      text: [
+        "Photos taken from the <a target='_blanc' href='https://level80.pro/en/projects/ok-hill-house/'>LEVEL80 architects website</a>",
+      ],
     },
     {
       id: "3",
