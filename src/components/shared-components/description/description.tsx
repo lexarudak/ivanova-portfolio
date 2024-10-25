@@ -23,7 +23,11 @@ const Description: FC<Props> = ({
       className={classNames(className, styles.container, styles[textAlign])}
     >
       {text.map((message, id) => (
-        <p key={id}>{message}</p>
+        <p
+          className={styles.p}
+          key={id}
+          dangerouslySetInnerHTML={{ __html: message }}
+        />
       ))}
     </article>
   )
