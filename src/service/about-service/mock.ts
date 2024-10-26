@@ -36,23 +36,12 @@ export const MOCKED_ABOUT = {
   experience: [
     {
       id: "1",
-      title: "L80",
-      location: "Almaty, Kazakhstan",
-      position: "Architect",
-      time: "Full time",
-      workType: "Remote",
-      period: "May 2022 - October 2024",
-      isSaved: true,
-      achievements: [],
-    },
-    {
-      id: "2",
       title: "LEVEL80 | architects",
-      location: "Minsk, Belarus",
+      location: "Minsk, Belarus / Almaty, Kazakhstan",
       position: "Architect",
       time: "Full-time",
       workType: "Office / Remote",
-      period: "May 2020 - September 2021",
+      period: "May 2020 - Present",
       isSaved: true,
       achievements: [
         "High-rise residential complex Concept Developing (3D Exterior Concept, Floor Plans, Side Plan)",
@@ -60,7 +49,7 @@ export const MOCKED_ABOUT = {
       ],
     },
     {
-      id: "3",
+      id: "2",
       title: "Teltsov&partners",
       location: "Minsk, Belarus",
       position: "Architect",

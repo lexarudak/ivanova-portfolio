@@ -4,13 +4,22 @@
   height: 16px;
   border-radius: 100%;
   position: relative;
+  transition: .3s;
 
   &.design {
     background-color: var(--clr-design);
+
+    &:hover {
+      background-color: var(--clr-design-light);
+    }
   }
 
   &.architect {
     background-color: var(--clr-architect);
+
+     &:hover {
+      background-color: var(--clr-architect-light);
+    }
   }
 
 
