@@ -6,7 +6,7 @@ export const SC: Project = {
   title: "School",
   year: "2024",
   image: "/sc/7.jpg",
-  filters: [FILTERS.architect, FILTERS.design],
+  filters: [FILTERS.design],
   location: "Russia",
   participation: [
     "3D Interior Concept Development",
@@ -47,12 +47,12 @@ export const SC: Project = {
       images: ["/sc/1.jpg"],
     },
     {
-      id: "10",
+      id: "5",
       blockType: BLOCK_TYPE.imageColumns,
       images: ["/sc/2ref.jpg"],
     },
     {
-      id: "5",
+      id: "6",
       blockType: BLOCK_TYPE.textColumns,
       text: [
         "White and gray tones were used for a clean, neutral base across most areas, promoting focus and calmness",
@@ -60,17 +60,17 @@ export const SC: Project = {
       ],
     },
     {
-      id: "10",
+      id: "7",
       blockType: BLOCK_TYPE.imageColumnsContain,
       images: ["/sc/12.jpg"],
     },
     {
-      id: "6",
+      id: "8",
       blockType: BLOCK_TYPE.imageColumnsContain,
       images: ["/sc/9.jpg"],
     },
     {
-      id: "8",
+      id: "9",
       blockType: BLOCK_TYPE.halfImageRightContain,
       images: ["/sc/8.jpg"],
       text: [
@@ -84,7 +84,7 @@ export const SC: Project = {
       images: ["/sc/13.jpg"],
     },
     {
-      id: "10",
+      id: "11",
       blockType: BLOCK_TYPE.halfImageRightContain,
       images: ["/sc/6.jpg"],
       text: [
@@ -92,12 +92,12 @@ export const SC: Project = {
       ],
     },
     {
-      id: "7",
+      id: "12",
       blockType: BLOCK_TYPE.imageColumnsContain,
       images: ["/sc/7.jpg"],
     },
     {
-      id: "5",
+      id: "13",
       blockType: BLOCK_TYPE.textColumns,
       text: [
         "By using cost-effective materials and focusing on a minimalistic design approach, the project remained within budget without compromising quality or creativity",
@@ -106,7 +106,7 @@ export const SC: Project = {
     },
 
     {
-      id: "1",
+      id: "14",
       blockType: BLOCK_TYPE.halfImageRightContain,
       images: ["/sc/10.jpg"],
       text: [
@@ -114,7 +114,7 @@ export const SC: Project = {
       ],
     },
     {
-      id: "5",
+      id: "15",
       blockType: BLOCK_TYPE.textColumns,
       text: [
         "Accent colors were strategically applied to walls and furniture to maintain a cohesive design with the rest of the building while preserving the functionality of the hall",
@@ -123,18 +123,18 @@ export const SC: Project = {
     },
 
     {
-      id: "10",
+      id: "16",
       blockType: BLOCK_TYPE.imageColumns,
       images: ["/sc/1ref.jpg", "/sc/3ref.jpg"],
     },
 
     {
-      id: "10",
+      id: "17",
       blockType: BLOCK_TYPE.imageColumns,
       images: ["/sc/4ref.jpg", "/sc/5ref.jpg"],
     },
     {
-      id: "1",
+      id: "18",
       blockType: BLOCK_TYPE.textColumns,
 
       text: [
@@ -146,7 +146,7 @@ export const SC: Project = {
       },
     },
     {
-      id: "10",
+      id: "19",
       blockType: BLOCK_TYPE.halfImageRight,
       images: ["/sc/7ref.jpg"],
       text: [

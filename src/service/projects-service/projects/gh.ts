@@ -10,7 +10,7 @@ export const GH: Project = {
   location: "Minsk, Belarus",
   team: {
     name: "Teltsov & Partners",
-    link: "http://projectshop.by/en/",
+    link: "https://teltsov.by/",
   },
   participation: [
     "Schematic Design",

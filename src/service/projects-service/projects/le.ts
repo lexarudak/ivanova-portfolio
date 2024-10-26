@@ -15,7 +15,7 @@ export const LE = {
   ],
   team: {
     name: "Teltsov & Partners",
-    link: "http://projectshop.by/en/",
+    link: "https://teltsov.by/",
   },
   blocks: [
     {
