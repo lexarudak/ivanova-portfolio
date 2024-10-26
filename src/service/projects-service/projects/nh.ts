@@ -7,7 +7,7 @@ export const NH: Project = {
   year: "2023",
   image: "/nh/13nh.png",
   filters: [FILTERS.architect, FILTERS.design],
-  location: "Minsk, Belarus",
+  location: "Everywhere",
   participation: [
     "3D Schemes and Details",
     "Floor Plans",
