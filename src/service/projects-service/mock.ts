@@ -2,7 +2,7 @@ import { Project, WorkCardData } from "../../shared/types"
 import { AI } from "./projects/ai"
 import { BA } from "./projects/ba"
 import { BT } from "./projects/bt"
-import { CR } from "./projects/cr"
+import { VR } from "./projects/vr"
 import { GH } from "./projects/gh"
 import { HC } from "./projects/hc"
 import { LE } from "./projects/le"
@@ -15,6 +15,8 @@ import { SH } from "./projects/sh"
 import { ST } from "./projects/st"
 import { ZK } from "./projects/zk"
 import { ZS } from "./projects/zs"
+import { KR } from "./projects/kr"
+import { NR } from "./projects/nr"
 
 export const PROJECTS: Project[] = [
   ST,
@@ -29,10 +31,12 @@ export const PROJECTS: Project[] = [
   HC,
   NH,
   SC,
-  CR,
+  VR,
   ZK,
   ZS,
   ML,
+  KR,
+  NR,
 ]
 
 export const MOCKED_WORK_CARDS: WorkCardData[] = PROJECTS.map(
@@ -47,5 +51,5 @@ export const MOCKED_WORK_CARDS: WorkCardData[] = PROJECTS.map(
 
 export const MOCKED_ALL_PROJECTS = {
   projects: MOCKED_WORK_CARDS,
-  order: "1,12,11,10,2,3,4,5,6,7,8,9,13,14,15,16",
+  order: "1,12,11,10,2,3,4,5,6,7,8,9,13,17,18,14,15,16",
 }
