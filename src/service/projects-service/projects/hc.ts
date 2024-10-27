@@ -90,14 +90,14 @@ export const HC: Project = {
     },
 
     {
-      id: "8",
+      id: "11",
       blockType: BLOCK_TYPE.textColumns,
       text: [
         "Inside, we focused on minimalism, blending the indoors with the outdoors. The ornamental railing around the staircase and elevator core adds a textured contrast to the otherwise clean design. The open-plan layout keeps things functional and luxurious, while maintaining a balance between private and communal spaces",
       ],
     },
     {
-      id: "9",
+      id: "12",
       blockType: BLOCK_TYPE.imageColumns,
       images: ["/hc/7hc.jpg", "/hc/2hc.jpg"],
     },

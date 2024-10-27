@@ -33,23 +33,23 @@ export const BA: Project = {
       images: ["/ba/2ba.jpg"],
     },
     {
-      id: "2",
+      id: "3",
       blockType: BLOCK_TYPE.imageColumnsContain,
       images: ["/ba/5ba.jpg"],
     },
 
     {
-      id: "1",
+      id: "4",
       blockType: BLOCK_TYPE.imageColumns,
       images: ["/ba/11ba.jpg"],
     },
     {
-      id: "1",
+      id: "5",
       blockType: BLOCK_TYPE.imageColumns,
       images: ["/ba/8ba.jpg", "/ba/7ba.jpg"],
     },
     {
-      id: "3",
+      id: "6",
       blockType: BLOCK_TYPE.textColumns,
       text: [
         "From large-format stone installations to artificial animal skins, each element was carefully selected to enhance the barbershop’s distinct vibe",
@@ -57,7 +57,7 @@ export const BA: Project = {
       ],
     },
     {
-      id: "1",
+      id: "7",
       blockType: BLOCK_TYPE.halfImageRight,
       images: ["/ba/4ba.jpg"],
       text: [
@@ -66,13 +66,13 @@ export const BA: Project = {
     },
 
     {
-      id: "1",
+      id: "8",
       blockType: BLOCK_TYPE.imageColumns,
       images: ["/ba/3ba.jpg", "/ba/9ba.jpg"],
     },
 
     {
-      id: "1",
+      id: "9",
       blockType: BLOCK_TYPE.halfImageRight,
       images: ["/ba/6ba.jpg"],
       text: [

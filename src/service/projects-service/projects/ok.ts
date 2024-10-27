@@ -46,17 +46,17 @@ export const OK: Project = {
       images: ["/ok/ok1.jpg", "/ok/ok10.jpg"],
     },
     {
-      id: "10",
+      id: "4",
       blockType: BLOCK_TYPE.imageColumns,
       images: ["/ok/out2.webp"],
     },
     {
-      id: "4",
+      id: "5",
       blockType: BLOCK_TYPE.imageColumns,
       images: ["/ok/ok2.jpg"],
     },
     {
-      id: "5",
+      id: "6",
       blockType: BLOCK_TYPE.halfImageRight,
       images: ["/ok/ok4.jpg"],
       text: [
@@ -64,12 +64,12 @@ export const OK: Project = {
       ],
     },
     {
-      id: "9",
+      id: "7",
       blockType: BLOCK_TYPE.imageColumns,
       images: ["/ok/ok7.webp"],
     },
     {
-      id: "7",
+      id: "8",
       blockType: BLOCK_TYPE.halfImageRight,
       images: ["/ok/ok8.jpg"],
       text: [
@@ -77,18 +77,18 @@ export const OK: Project = {
       ],
     },
     {
-      id: "8",
+      id: "9",
       blockType: BLOCK_TYPE.imageColumnsContain,
       images: ["/ok/ok5.jpg"],
     },
 
     {
-      id: "9",
+      id: "10",
       blockType: BLOCK_TYPE.imageColumnsContain,
       images: ["/ok/ok6.jpg"],
     },
     {
-      id: "6",
+      id: "11",
       blockType: BLOCK_TYPE.halfImageRight,
       images: ["/ok/ok3.jpg"],
       text: [

@@ -32,22 +32,22 @@ export const LE = {
       images: ["/le/1le.jpg"],
     },
     {
-      id: "4",
+      id: "3",
       blockType: BLOCK_TYPE.imageColumns,
       images: ["/le/8le.jpg"],
     },
     {
-      id: "5",
+      id: "4",
       blockType: BLOCK_TYPE.imageColumns,
       images: ["/le/7le.jpg"],
     },
     {
-      id: "3",
+      id: "5",
       blockType: BLOCK_TYPE.imageColumnsContain,
       images: ["/le/2le.jpg"],
     },
     {
-      id: "7",
+      id: "6",
       blockType: BLOCK_TYPE.halfImage,
       images: ["/le/10le.jpg"],
       text: [
@@ -55,7 +55,7 @@ export const LE = {
       ],
     },
     {
-      id: "8",
+      id: "7",
       blockType: BLOCK_TYPE.textColumns,
       text: [
         "Every element was designed for both aesthetic and functional purposes, including wooden surfaces that added warmth and texture to the atmosphere",
@@ -63,7 +63,7 @@ export const LE = {
       ],
     },
     {
-      id: "6",
+      id: "8",
       blockType: BLOCK_TYPE.imageColumns,
       images: ["/le/5le.jpg"],
     },
@@ -83,12 +83,12 @@ export const LE = {
       images: ["/le/12le.jpg", "/le/18le.jpg"],
     },
     {
-      id: "11",
+      id: "12",
       blockType: BLOCK_TYPE.imageColumns,
       images: ["/le/11le.jpg", "/le/19le.JPG"],
     },
     {
-      id: "7",
+      id: "13",
       blockType: BLOCK_TYPE.textColumns,
       text: [
         "From a personal standpoint, this project highlights my ability to balance form and function. My design achieved a modern, warm atmosphere while incorporating functional elements that enhance the living experience. This project stands out in my portfolio as an example of simple, elegant design combined with effective use of natural light",

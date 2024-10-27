@@ -55,7 +55,7 @@ export const AI: Project = {
       images: ["/ai/1ai.jpg"],
     },
     {
-      id: "6",
+      id: "7",
       blockType: BLOCK_TYPE.textColumns,
       text: [
         "From my perspective, this project was an exciting opportunity to work with a gigantic array of shapes. Designing the house felt like a creative playground, especially with the challenge of making it appear unreal-ly light despite its size. The use of console levers and contrasting colors added a unique dynamic, giving the house a modern, floating quality that plays with visual balance",

@@ -21,8 +21,6 @@ export const projectService: ProjectService = props => {
     },
 
     async getProject(projectId) {
-      console.log(projectId)
-      console.log(PROJECTS.find(({ id }) => id === projectId) || PROJECTS[0])
       if (props?.useMockData) {
         return Promise.resolve<Project>(
           PROJECTS.find(({ id }) => id === projectId) || PROJECTS[0],

@@ -6,9 +6,14 @@ import { Link } from "react-router-dom"
 
 type Props = {
   color: FILTERS
+  withoutLinks?: true
 }
 
-const FilterIcon: FC<Props> = ({ color }) => {
+const FilterIcon: FC<Props> = ({ color, withoutLinks }) => {
+  if (withoutLinks) {
+    return <div className={classNames(styles.icon, styles[color])} />
+  }
+
   const href = `/works?filter=${color}`
 
   return <Link to={href} className={classNames(styles.icon, styles[color])} />
