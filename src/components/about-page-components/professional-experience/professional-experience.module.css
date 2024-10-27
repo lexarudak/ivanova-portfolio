@@ -1,0 +1,58 @@
+.add {
+	margin: 0 10px 50px;
+	display: flex;
+	padding: 10px 20px;
+	border: 1px dashed var(--font-secondary);
+	border-radius: 5px;
+	color: var(--font-secondary);
+	transition: .3s;
+
+	&:hover {
+		color: var(--font-main);
+		border-color: var(--font-main);
+	}
+
+	&:disabled {
+		cursor: default;
+		background-color: var(--font-disabled);
+
+		&:hover {
+			color: var(--font-secondary);
+			border-color: var(--font-secondary);
+		}
+
+	}
+
+}
+
+.overlay {
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.container {
+	border: 2px dashed transparent;
+	transition: .3s;
+	overflow: hidden;
+	margin-bottom: 20px;
+
+	&.changed {
+		border-color: var(--bg-active);
+		border-radius: 10px;
+	}
+
+}
+
+.saveOrder {
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+
+	&.hide {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.editMode {
+	margin-left: 20px;
+}

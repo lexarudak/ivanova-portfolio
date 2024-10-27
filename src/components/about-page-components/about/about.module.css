@@ -1,0 +1,24 @@
+.text {
+	width: 100%;
+	margin-left: -11px;
+	min-height: 100px;
+	padding: var(--input-padding);
+	border: var(--common-border);
+	white-space: pre-line
+}
+
+textarea.text {
+	border: var(--input-border);
+}
+
+.save {
+	margin-top: 20px;
+}
+
+.about {
+  margin-bottom: 100px;
+
+  &.form {
+    margin-bottom: 54px;
+  }
+}

@@ -1,0 +1,39 @@
+.title {
+	display: inline-block;
+	width: 100px;
+	color: var(--font-secondary);
+}
+
+.save, .plus {
+	margin: 20px 0 0 10px;
+}
+
+.value {
+	width: 235px;
+}
+
+.li {
+	margin-bottom: 5px;
+	gap: 5px;
+	display: flex;
+	align-items: center;
+
+	& > span {
+		border: var(--common-border);
+		padding: var(--input-padding);
+	}
+
+}
+
+.list {
+	width: fit-content;
+	position: relative;
+}
+
+.container {
+	display: flex;
+
+	&.viewContainer {
+		margin-bottom: 75px;
+	}
+}

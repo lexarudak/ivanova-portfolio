@@ -8,7 +8,7 @@ const WorkCard: FC<WorkCardData> = ({ id, image, title, filters, year }) => {
   return (
     <Link className={styles.card} to={id}>
       <img src={image} alt={title} className={styles.img} />
-      <FilterIconBlock filters={filters} />
+      <FilterIconBlock filters={filters} withoutLinks />
       <p className={styles.year}>{year}</p>
       <p className={styles.title}>{title}</p>
     </Link>

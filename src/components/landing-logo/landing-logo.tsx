@@ -1,8 +1,8 @@
 import { FC } from "react"
 import styles from "./landing-logo.module.css"
 import classNames from "classnames"
-import Button, { BUTTON_VARIANT } from "../shared-components/button"
-import { FILTERS } from "../../shared/constants"
+import Button from "../shared-components/button"
+import { BUTTON_VARIANT, FILTERS } from "../../shared/constants"
 import useFilterNavigate from "../../shared/hooks/use-filter-navigate"
 
 type Props = {

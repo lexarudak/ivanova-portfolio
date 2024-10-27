@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes, FC } from "react"
 import styles from "./button.module.css"
 import classNames from "classnames"
-import { BUTTON_VARIANT } from "./constants"
+import { BUTTON_VARIANT } from "../../../shared/constants"
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant: BUTTON_VARIANT

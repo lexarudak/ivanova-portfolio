@@ -6,14 +6,15 @@ import classNames from "classnames"
 
 type Props = {
   filters: FILTERS[]
+  withoutLinks?: true
   className?: string
 }
 
-const FilterIconBlock: FC<Props> = ({ filters, className }) => {
+const FilterIconBlock: FC<Props> = ({ filters, className, withoutLinks }) => {
   return (
     <div className={classNames(styles.filters, className)}>
       {filters.map(filter => (
-        <FilterIcon color={filter} key={filter} />
+        <FilterIcon color={filter} key={filter} withoutLinks={withoutLinks} />
       ))}
     </div>
   )

@@ -1,19 +1,17 @@
-import { MOCK_CONTACTS } from "../../mock/mock-contacts"
 import styles from "./contacts-page.module.css"
+import ContactsList from "../../components/contacts-list"
+import PageWrapper from "../../components/page-wrapper/page-wrapper"
+import { fetchContacts } from "../../store/contacts/actions"
 
 const ContactsPage = () => {
-  const { contacts } = MOCK_CONTACTS
   return (
-    <section className={styles.page}>
-      <ul className={styles.list}>
-        {contacts.map(({ title, value }, idx) => (
-          <li key={idx}>
-            <span className={styles.title}>{title}</span>
-            <span className={styles.value}>{value}</span>
-          </li>
-        ))}
-      </ul>
-    </section>
+    <PageWrapper asyncThunk={fetchContacts}>
+      <section className={styles.page}>
+        <div className={styles.container}>
+          <ContactsList />
+        </div>
+      </section>
+    </PageWrapper>
   )
 }
 
