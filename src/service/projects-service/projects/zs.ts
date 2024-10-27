@@ -32,9 +32,14 @@ export const ZS: Project = {
       id: "2",
       blockType: BLOCK_TYPE.textColumns,
       images: ["/zk/7.jpg"],
-      text: ["TBD"],
+      text: ["Photos taken from the Teltsov architects website"],
       options: {
         align: "center",
+        fontStyle: "italic",
+        link: {
+          text: "Teltsov architects website",
+          href: "https://teltsov.by/architecture/zhiloi-dom-tovarischa-k?page=5",
+        },
       },
     },
   ],

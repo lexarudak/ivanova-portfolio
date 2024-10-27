@@ -11,6 +11,7 @@ const TextColumns: FC<Block> = ({ text, id, options }) => {
     <Description
       key={id}
       text={text}
+      link={options?.link}
       className={classNames(styles.container, {
         [styles[align]]: align,
         [styles[fontStyle]]: fontStyle,

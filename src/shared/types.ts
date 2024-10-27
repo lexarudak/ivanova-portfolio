@@ -13,6 +13,12 @@ export type AllProjects = {
   order: string
 }
 
+export type TextLink = {
+  text: string
+  href: string
+  internal?: true
+}
+
 export type Block = {
   id: string
   text?: string[]
@@ -20,6 +26,7 @@ export type Block = {
   options?: {
     align?: string
     fontStyle?: string
+    link?: TextLink
   }
 }
 
