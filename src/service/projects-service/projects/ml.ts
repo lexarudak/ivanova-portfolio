@@ -1,10 +1,11 @@
 import { BLOCK_TYPE, FILTERS } from "../../../shared/constants"
+import { Project } from "../../../shared/types"
 
-export const ML = {
+export const ML: Project = {
   id: "16",
   title: "MotorLAND",
   year: "2014",
-  image: "/le/4le.jpg",
+  image: "/ml/2.jpg",
   filters: [FILTERS.architect],
   location: "Minsk, Belarus",
   participation: ["Design Drawings"],
@@ -15,10 +16,33 @@ export const ML = {
   blocks: [
     {
       id: "1",
-      blockType: BLOCK_TYPE.halfImageRight,
-      images: ["/le/9le.jpg"],
+      blockType: BLOCK_TYPE.halfImageRightContain,
+      images: ["/ml/4.jpg"],
       text: [
-        "The Lebiajy project was a complete renovation of an apartment in Minsk, Belarus, with the goal of creating an open, well-lit space. One of the key challenges was to integrate the entrance into the common area while ensuring ample natural light throughout. The design used similar-form windows and functional decor elements to achieve this, resulting in a modern and cohesive living environment",
+        "The reconstruction project was a defining moment in my career as an architect. As a newcomer to the field, I was challenged to create construction drawings for a large building complex with an area of 12,000 square meters. Despite the obstacles, I saw it as a chance to sharpen my skills and deepen my understanding of the design and",
+      ],
+    },
+    {
+      id: "2",
+      blockType: BLOCK_TYPE.imageColumnsContain,
+      images: ["/ml/3.jpg"],
+    },
+    {
+      id: "3",
+      blockType: BLOCK_TYPE.imageColumnsContain,
+      images: ["/ml/2.jpg"],
+    },
+    {
+      id: "4",
+      blockType: BLOCK_TYPE.imageColumnsContain,
+      images: ["/ml/1.jpg"],
+    },
+    {
+      id: "5",
+      blockType: BLOCK_TYPE.halfImageRightContain,
+      images: ["/ml/5.jpg"],
+      text: [
+        "I started by using Revit, but eventually switched to AutoCad, providing me with a unique opportunity to work with both digital and manual graphics. Through careful attention to detail and meticulous drawing of each design element, I developed a deep appreciation for the art and science of architecture",
       ],
     },
   ],

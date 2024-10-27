@@ -47,5 +47,5 @@ export const MOCKED_WORK_CARDS: WorkCardData[] = PROJECTS.map(
 
 export const MOCKED_ALL_PROJECTS = {
   projects: MOCKED_WORK_CARDS,
-  order: "1,12,11,10,2,3,4,5,6,7,8,9,13,14,15",
+  order: "1,12,11,10,2,3,4,5,6,7,8,9,13,14,15,16",
 }
