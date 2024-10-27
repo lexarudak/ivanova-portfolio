@@ -42,7 +42,7 @@ export const NR: Project = {
     {
       id: "10",
       blockType: BLOCK_TYPE.imageColumnsContain,
-      images: ["/cr/15.jpg", "/cr/22.jpg"],
+      images: ["/cr/22.jpg", "/cr/15.jpg"],
     },
 
     {
