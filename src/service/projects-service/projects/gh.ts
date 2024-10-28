@@ -27,13 +27,13 @@ export const GH: Project = {
       ],
     },
     {
-      id: "5",
+      id: "2",
       blockType: BLOCK_TYPE.imageColumnsContain,
       images: ["/gh/1gh.jpg"],
     },
 
     {
-      id: "2",
+      id: "3",
       blockType: BLOCK_TYPE.imageColumnsContain,
       images: ["/gh/2gh.jpg"],
     },
@@ -44,7 +44,7 @@ export const GH: Project = {
       images: ["/gh/4gh.jpg"],
     },
     {
-      id: "7",
+      id: "5",
       blockType: BLOCK_TYPE.halfImageRightContain,
       images: ["/gh/5gh.jpg"],
       text: [
@@ -52,17 +52,56 @@ export const GH: Project = {
       ],
     },
     {
-      id: "3",
+      id: "6",
       blockType: BLOCK_TYPE.imageColumnsContain,
       images: ["/gh/3gh.jpg"],
     },
     {
-      id: "6",
+      id: "7",
+      blockType: BLOCK_TYPE.halfImageRightContain,
+      images: ["/gh/4.jpg"],
+      text: [
+        "The TYPE 5 project, created for the same client and area as the Green Harbor complex, posed a unique challenge: designing a large, ready-made house that would appeal to diverse buyers in Belarus. With no specific buyer in mind, the design had to be versatile and attractive to a broad audience. We focused on an adaptable layout that allows future owners to personalize the space without altering its main structure",
+      ],
+    },
+    {
+      id: "8",
+      blockType: BLOCK_TYPE.imageColumnsContain,
+      images: ["/gh/3.jpg"],
+    },
+    {
+      id: "9",
+      blockType: BLOCK_TYPE.imageColumnsContain,
+      images: ["/gh/2.jpg"],
+    },
+    {
+      id: "10",
       blockType: BLOCK_TYPE.textColumns,
       text: [
-        "You can view the Green Harbor residential complex project built by <a href='https://a-100development.by/proekty/zhilaya-nedvizhimost/zhiloy-kompleks-zelenaya-gavan/' target='_blanc'>A100 on their official website</a>",
+        "The modular approach includes flexible floor plans and multi-purpose spaces, enabling easy reconfiguration for various needs—whether that’s adding a home office, a playroom, or even a private gym. The reinforced concrete frame and expanded-clay concrete block walls ensure durability, while high ceilings and large glass surfaces create a bright, inviting atmosphere that blends with the natural surroundings",
+        "TYPE 5 demonstrates my ability to design functional, universally appealing homes that can evolve with their owners, offering a compelling solution for Belarus’s emerging market in modular housing",
       ],
-      options: { align: "center", fontStyle: "italic" },
+    },
+
+    {
+      id: "11",
+      blockType: BLOCK_TYPE.imageColumnsContain,
+      images: ["/gh/1.jpg", "/gh/6.jpg"],
+    },
+    {
+      id: "12",
+      blockType: BLOCK_TYPE.textColumns,
+      text: [
+        "You can view the Green Harbor residential complex project built by A100 on their official website",
+      ],
+      options: {
+        align: "center",
+        fontStyle: "italic",
+        link: {
+          text: "A100 on their official website",
+          href: "https://a-100development.by/proekty/zhilaya-nedvizhimost/zhiloy-kompleks-zelenaya-gavan/",
+        },
+      },
     },
   ],
 }
