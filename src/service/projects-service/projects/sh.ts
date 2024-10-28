@@ -1,7 +1,7 @@
 import { BLOCK_TYPE, FILTERS } from "../../../shared/constants"
 
 export const SH = {
-  id: "3",
+  id: "shchorsa",
   title: "Shchorsa",
   year: "2020",
   image: "/works/shch-prev.webp",

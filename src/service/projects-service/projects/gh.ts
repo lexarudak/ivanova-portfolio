@@ -2,7 +2,7 @@ import { BLOCK_TYPE, FILTERS } from "../../../shared/constants"
 import { Project } from "../../../shared/types"
 
 export const GH: Project = {
-  id: "9",
+  id: "green-harbor",
   title: "Green harbor",
   year: "2018",
   image: "/gh/1gh.jpg",

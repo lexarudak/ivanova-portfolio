@@ -1,7 +1,7 @@
 import { BLOCK_TYPE, FILTERS } from "../../../shared/constants"
 
 export const BT = {
-  id: "2",
+  id: "batagai",
   title: "Batagai",
   year: "2021",
   image: "/bt/bt5.jpg",

@@ -2,7 +2,7 @@ import { BLOCK_TYPE, FILTERS } from "../../../shared/constants"
 import { Project } from "../../../shared/types"
 
 export const VR: Project = {
-  id: "13",
+  id: "vera",
   title: "Vera's room",
   year: "2018",
   image: "/cr/8.jpg",

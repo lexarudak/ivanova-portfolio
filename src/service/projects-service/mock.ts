@@ -17,6 +17,7 @@ import { ZK } from "./projects/zk"
 import { ZS } from "./projects/zs"
 import { KR } from "./projects/kr"
 import { NR } from "./projects/nr"
+import { TM } from "./projects/tm"
 
 export const PROJECTS: Project[] = [
   ST,
@@ -37,6 +38,29 @@ export const PROJECTS: Project[] = [
   ML,
   KR,
   NR,
+  TM,
+]
+
+const order = [
+  "striker",
+  "school",
+  "now-house",
+  "house-concept",
+  "batagai",
+  "shchorsa",
+  "ok-hill",
+  "lebiaji",
+  "aidyn",
+  "nebesnaya",
+  "barbershop",
+  "tempo",
+  "green-harbor",
+  "vera",
+  "kate",
+  "nina",
+  "konstantin",
+  "sergei",
+  "motorland",
 ]
 
 export const MOCKED_WORK_CARDS: WorkCardData[] = PROJECTS.map(
@@ -51,5 +75,5 @@ export const MOCKED_WORK_CARDS: WorkCardData[] = PROJECTS.map(
 
 export const MOCKED_ALL_PROJECTS = {
   projects: MOCKED_WORK_CARDS,
-  order: "1,12,11,10,2,3,4,5,6,7,8,9,13,17,18,14,15,16",
+  order: order.toString(),
 }

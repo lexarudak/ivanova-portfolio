@@ -1,7 +1,7 @@
 import { BLOCK_TYPE, FILTERS } from "../../../shared/constants"
 
 export const ZK = {
-  id: "14",
+  id: "konstantin",
   title: "Konstantin",
   year: "2017",
   image: "/zk/2.jpg",

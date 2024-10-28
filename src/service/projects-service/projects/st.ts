@@ -1,7 +1,7 @@
 import { BLOCK_TYPE, FILTERS } from "../../../shared/constants"
 
 export const ST = {
-  id: "1",
+  id: "striker",
   title: "Striker",
   year: "2024",
   image: "/st/st1.webp",
