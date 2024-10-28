@@ -8,7 +8,7 @@ export const ST = {
   filters: [FILTERS.design],
   location: "Warsaw, Poland",
   team: {
-    name: "L80",
+    name: "Level 80",
     link: "https://level80.pro/",
   },
   participation: [
