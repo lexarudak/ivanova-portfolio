@@ -44,12 +44,12 @@ export const DE: Project = {
     {
       id: "3",
       blockType: BLOCK_TYPE.imageColumns,
-      images: ["/de/13.jpg"],
+      images: ["/de/15.jpg"],
     },
     {
       id: "4",
       blockType: BLOCK_TYPE.imageColumns,
-      images: ["/de/14.jpg"],
+      images: ["/de/16.jpg"],
     },
     {
       id: "5",
