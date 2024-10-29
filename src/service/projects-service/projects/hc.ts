@@ -22,7 +22,7 @@ export const HC: Project = {
     {
       id: "1",
       blockType: BLOCK_TYPE.halfImageRight,
-      images: ["/hc/3hc.jpg"],
+      images: ["/hc/10hc.jpg"],
       text: [
         "In this project, my primary role was to develop the sketch layout, focusing on how different areas would function together. This included balancing the size and flow of spaces to ensure that while the house had substantial volume, it still felt pleasant and livable, without becoming too spacious or impersonal. I also had to ensure that, even though it was a sketch, the design was structurally sound and could be built in reality",
       ],
@@ -55,7 +55,7 @@ export const HC: Project = {
       blockType: BLOCK_TYPE.textColumns,
       text: [
         "The most challenging aspect was managing the vast amount of space and ensuring that every area was thoughtfully laid out. The goal was to make the home functional and cohesive while maintaining the luxury and comfort expected of a house this size",
-        "I’m particularly proud of the staircase and elevator core, which were clad in ornamental railings. I love how it contrasts with the minimalistic design of the house, adding a unique texture that ties the interior to the exterior while maintaining the modern aesthetic",
+        "Inside, we focused on minimalism, blending the indoors with the outdoors. The ornamental railing around the staircase and elevator core adds a textured contrast to the otherwise clean design. The open-plan layout keeps things functional and luxurious, while maintaining a balance between private and communal spaces",
       ],
     },
     {
@@ -83,7 +83,7 @@ export const HC: Project = {
     {
       id: "10",
       blockType: BLOCK_TYPE.halfImageRight,
-      images: ["/hc/8hc.jpg"],
+      images: ["/hc/13hc.jpg"],
       text: [
         "Given more time or resources, I wouldn’t change much in this project. I’m someone who prefers to move forward rather than reworking past designs. I enjoy taking feedback and applying it to new challenges rather than revisiting previous work",
       ],
@@ -93,7 +93,7 @@ export const HC: Project = {
       id: "11",
       blockType: BLOCK_TYPE.textColumns,
       text: [
-        "Inside, we focused on minimalism, blending the indoors with the outdoors. The ornamental railing around the staircase and elevator core adds a textured contrast to the otherwise clean design. The open-plan layout keeps things functional and luxurious, while maintaining a balance between private and communal spaces",
+        "I’m particularly proud of the staircase and elevator core, which were clad in ornamental railings. I love how it contrasts with the minimalistic design of the house, adding a unique texture that ties the interior to the exterior while maintaining the modern aesthetic",
       ],
     },
     {

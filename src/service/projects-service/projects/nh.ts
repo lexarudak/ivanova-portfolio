@@ -73,10 +73,10 @@ export const NH: Project = {
     },
     {
       id: "10",
-      blockType: BLOCK_TYPE.halfImageRight,
+      blockType: BLOCK_TYPE.halfImageRightContain,
       images: ["/nh/3nh.jpg"],
       text: [
-        "For me, working on this project was particularly rewarding. I love tiny houses for their coziness and the unique challenge of optimizing small spaces. Every square meter matters, and as someone who enjoys being deeply involved in all aspects of a design, this was an ideal project",
+        "The attention to detail required when working with smaller areas is something I thrive on, ensuring the space works perfectly both aesthetically and functionally",
       ],
     },
 
@@ -90,7 +90,7 @@ export const NH: Project = {
       blockType: BLOCK_TYPE.halfImageRight,
       images: ["/nh/4nh.jpg"],
       text: [
-        "The attention to detail required when working with smaller areas is something I thrive on, ensuring the space works perfectly both aesthetically and functionally",
+        "For me, working on this project was particularly rewarding. I love tiny houses for their coziness and the unique challenge of optimizing small spaces. Every square meter matters, and as someone who enjoys being deeply involved in all aspects of a design, this was an ideal project",
       ],
     },
   ],
