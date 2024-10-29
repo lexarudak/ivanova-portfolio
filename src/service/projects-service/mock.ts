@@ -18,6 +18,7 @@ import { ZS } from "./projects/zs"
 import { KR } from "./projects/kr"
 import { NR } from "./projects/nr"
 import { TM } from "./projects/tm"
+import { YU } from "./projects/yu"
 
 export const PROJECTS: Project[] = [
   ST,
@@ -39,6 +40,7 @@ export const PROJECTS: Project[] = [
   KR,
   NR,
   TM,
+  YU,
 ]
 
 const order = [
@@ -49,10 +51,11 @@ const order = [
   "batagai",
   "shchorsa",
   "ok-hill",
-  "lebiaji",
   "aidyn",
   "nebesnaya",
+  "lebiaji",
   "barbershop",
+  "yuzufovo",
   "tempo",
   "green-harbor",
   "vera",

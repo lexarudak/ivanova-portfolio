@@ -32,9 +32,6 @@ export const TM: Project = {
       id: "2",
       blockType: BLOCK_TYPE.imageColumnsContain,
       images: ["/tm/2.jpg"],
-      text: [
-        "As a team, we took on the challenge of transforming Tempo, an outdated pizzeria, into a vibrant, cozy space that would resonate with customers and drive business. Our goal was clear: create an inviting, functional setting that maximized seating capacity without compromising comfort. We also wanted to position the bar as a central, welcoming feature that would draw guests in and set the tone for their experience",
-      ],
     },
     {
       id: "3",
