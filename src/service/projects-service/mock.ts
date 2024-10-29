@@ -19,6 +19,7 @@ import { KR } from "./projects/kr"
 import { NR } from "./projects/nr"
 import { TM } from "./projects/tm"
 import { YU } from "./projects/yu"
+import { DE } from "./projects/de"
 
 export const PROJECTS: Project[] = [
   ST,
@@ -41,6 +42,7 @@ export const PROJECTS: Project[] = [
   NR,
   TM,
   YU,
+  DE,
 ]
 
 const order = [
@@ -58,6 +60,7 @@ const order = [
   "yuzufovo",
   "tempo",
   "green-harbor",
+  "dechkee",
   "vera",
   "kate",
   "nina",

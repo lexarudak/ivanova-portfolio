@@ -37,7 +37,7 @@ export const ZK = {
         fontStyle: "italic",
         link: {
           text: "Teltsov architects website",
-          href: "https://teltsov.by/architecture/zhiloi-dom-tovarischa-k?page=5",
+          href: "https://teltsov.by/architecture/zhiloi-dom-tovarischa-k",
         },
       },
     },
