@@ -7,7 +7,7 @@ import ImageForm from "../../image-form/image-form"
 import { xToString, yToString } from "../../../shared/helpers"
 
 const AboutImage = () => {
-  const defaultImageSrc = "/ivanova.png"
+  const defaultImageSrc = "/ivanova.jpg"
   const { src, x, y } = useSelector(selectAboutImage)
   const imageSrc = src || defaultImageSrc
 

@@ -1,12 +1,12 @@
 import { BLOCK_TYPE, FILTERS } from "../../../shared/constants"
 
 export const BT = {
-  id: "batagai",
-  title: "Batagai",
+  id: "residential-complex",
+  title: "Residential Complex",
   year: "2021",
   image: "/bt/bt5.jpg",
   filters: [FILTERS.architect],
-  location: "Middle Asia",
+  location: "Earth",
   participation: [
     "Preliminary Site Plan",
     "Preliminary Floor Plans",

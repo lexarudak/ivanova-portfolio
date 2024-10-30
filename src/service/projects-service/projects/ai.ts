@@ -2,12 +2,12 @@ import { BLOCK_TYPE, FILTERS } from "../../../shared/constants"
 import { Project } from "../../../shared/types"
 
 export const AI: Project = {
-  id: "aidyn",
-  title: "Aidyn",
+  id: "big-house",
+  title: "Big House",
   year: "2020",
   image: "/ai/4ai.jpg",
   filters: [FILTERS.architect],
-  location: "Middle Asia",
+  location: "Earth",
   participation: [
     "Schematic Design",
     "Preliminary Exterior 3D Concept",
@@ -23,7 +23,7 @@ export const AI: Project = {
       blockType: BLOCK_TYPE.halfImageRight,
       images: ["/ai/2ai.jpg"],
       text: [
-        "This project involved the design of a large private house in Central Asia, focusing on both the floor plans and exterior. It was an exciting challenge, as it was my first experience designing a house of this scale, particularly one that needed to incorporate traditional cultural elements",
+        "This project involved the design of a large private house, focusing on both the floor plans and exterior. It was an exciting challenge, as it was my first experience designing a house of this scale, particularly one that needed to incorporate traditional cultural elements",
       ],
     },
     {
