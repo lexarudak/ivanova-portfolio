@@ -69,7 +69,7 @@ export const MOCKED_ABOUT = {
     {
       id: "1",
       title: "Belorussian National Technical University",
-      location: "Minsk, Belarus sas",
+      location: "Minsk, Belarus",
       position: "Bachelor of Architecture",
       isSaved: true,
       period: "September 2008 - June 2014",
