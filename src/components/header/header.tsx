@@ -8,9 +8,14 @@ export const Header = () => {
   const { isHomePage } = useHomePage()
 
   return (
-    <header className={cn(styles.header, { [styles.fullScreen]: isHomePage })}>
-      <LandingLogo isActive={isHomePage} />
-      <Nav />
-    </header>
+    <>
+      <header
+        className={cn(styles.header, { [styles.fullScreen]: isHomePage })}
+      >
+        <LandingLogo isActive={isHomePage} />
+        <Nav />
+      </header>
+      <div className={styles.headerPlaceholder} />
+    </>
   )
 }

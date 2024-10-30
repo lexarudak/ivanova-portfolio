@@ -10,11 +10,15 @@
 	background-color: var(--bg-main);
 	transition: 1s;
 	height: var(--header-height);
-	/* left: 50%;
-	transform: translateX(-50%); */
 
 	&.fullScreen {
 		height: 100vh;
 	}
 
+}
+
+.headerPlaceholder {
+	z-index: 99;
+	width: 100%;
+	height: var(--header-height);
 }
