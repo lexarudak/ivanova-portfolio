@@ -7,7 +7,7 @@ export const SC: Project = {
   year: "2024",
   image: "/sc/7.jpg",
   filters: [FILTERS.design],
-  location: "Russia",
+  location: "Earth",
   participation: [
     "3D Interior Concept Development",
     "Zoning & Material Specifications",
@@ -16,7 +16,7 @@ export const SC: Project = {
   ],
   team: {
     name: "Level 80",
-    link: "https://level80.pro/",
+    link: "https://level80.pro/en/",
   },
   blocks: [
     {

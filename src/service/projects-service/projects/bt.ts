@@ -14,7 +14,7 @@ export const BT = {
   ],
   team: {
     name: "Level 80",
-    link: "https://level80.pro/",
+    link: "https://level80.pro/en/",
   },
   blocks: [
     {

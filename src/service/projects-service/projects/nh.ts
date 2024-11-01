@@ -16,7 +16,7 @@ export const NH: Project = {
   ],
   team: {
     name: "Level 80",
-    link: "https://level80.pro/",
+    link: "https://level80.pro/en/",
   },
   blocks: [
     {

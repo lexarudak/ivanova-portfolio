@@ -9,7 +9,7 @@ export const ST = {
   location: "Warsaw, Poland",
   team: {
     name: "Level 80",
-    link: "https://level80.pro/",
+    link: "https://level80.pro/en/",
   },
   participation: [
     "3D Interior Concept",
@@ -67,7 +67,7 @@ export const ST = {
       id: "8",
       blockType: BLOCK_TYPE.textColumns,
       text: [
-        "Multi-Use Bedroom: The master bedroom now includes a work area, ensuring flexibility. There’s also a separate cabinet that serves as an additional workspace or guest room when needed.",
+        "Multi-Use Bedroom: The primary bedroom now includes a work area, ensuring flexibility. There’s also a separate office that serves as an additional workspace or guest room when needed.",
       ],
     },
     {
